@@ -53,9 +53,25 @@ PreToolUse:Edit hook error: [powershell -NoProfile -ExecutionPolicy Bypass -File
 
 `python --version` → не найден (срабатывает заглушка Microsoft Store: «Python wurde nicht gefunden…»). `py --version` → команда не найдена.
 
-**Python не установлен — `python tools/validate_factory.py` не выполнялся, вывода нет.** Для валидации нужно установить Python (python.org, с опцией «Add to PATH») и повторить запуск.
+**Python не установлен — `python tools/validate_factory.py` не выполнялся, вывода нет.**
+
+### C (повтор после установки Python)
+
+Python установлен через winget: `Python.Python.3.14`, scope user, `C:\Users\yens\AppData\Local\Programs\Python\Python314\`. Путь добавлен в пользовательский PATH перед заглушкой WindowsApps.
+
+`python --version` → `Python 3.14.7`
+
+`python tools/validate_factory.py` (exit 0), полный вывод:
+
+```
+BooksFactory — валидация чистоты фабрики
+============================================================
+
+РЕЗУЛЬТАТ: ЧИСТО (0 нарушений)
+```
 
 ## Итог
 
 - Хуки PowerShell: работают оба (блокировка + журнал).
-- Открыто: кодировка сообщения блокировки; валидация фабрики (нужен Python).
+- Валидация фабрики: чисто, 0 нарушений.
+- Кодировка сообщения блокировки: исправлено — в начало `check_chapter_status.ps1` добавлено `[Console]::OutputEncoding = [System.Text.Encoding]::UTF8`. Повторный тест (`hooktest3.md`, `status: final`): Edit заблокирован, сообщение по-русски: `BLOCK: Глава имеет статус 'final'. Редактирование запрещено без явного подтверждения автора.` Тестовый файл — в `archive/2026-10-01_session0/`, его строка `auto:` удалена из `production_state.md`.

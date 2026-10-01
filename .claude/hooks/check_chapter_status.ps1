@@ -1,6 +1,7 @@
 ﻿# PreToolUse (Write|Edit) — блокирует правку глав со статусом `final`.
 # PowerShell 5.1+ (есть на любом Windows, установка не нужна). 2026-10-01.
 # Fail-open: любая ошибка разбора -> exit 0; блок (exit 2) только при явном `final`.
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $ErrorActionPreference = 'Stop'
 try {
     [Console]::InputEncoding = [System.Text.Encoding]::UTF8

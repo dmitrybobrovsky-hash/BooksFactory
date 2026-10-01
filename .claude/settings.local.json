@@ -11,7 +11,12 @@
       "PowerShell(Get-Content .claude/memory/production_state.md -Encoding UTF8 -Tail 5; \\(Get-Content .claude/memory/production_state.md -Encoding UTF8 | Measure-Object -Line\\).Lines)",
       "PowerShell(Get-Content .claude/memory/production_state.md -Encoding UTF8 -Tail 6; \\(Get-Content .claude/memory/production_state.md -Encoding UTF8 | Measure-Object -Line\\).Lines; Get-Content _testing/hooktest.md -Encoding UTF8)",
       "PowerShell(python --version)",
-      "PowerShell(py --version)"
+      "PowerShell(py --version)",
+      "PowerShell(winget --version)",
+      "PowerShell(winget search --id Python.Python.3 --source winget --disable-interactivity)",
+      "PowerShell(winget install --id Python.Python.3.14 --source winget --scope user --silent --accept-package-agreements --accept-source-agreements --disable-interactivity; \"exit: $LASTEXITCODE\")",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\('Path','Machine'\\) + ';' + [Environment]::GetEnvironmentVariable\\('Path','User'\\); $env:PYTHONIOENCODING='utf-8'; python tools/validate_factory.py; \"exit: $LASTEXITCODE\")",
+      "PowerShell($b = [System.IO.File]::ReadAllBytes\\('.claude/hooks/check_chapter_status.ps1'\\)[0..2]; \\($b | ForEach-Object { '{0:X2}' -f $_ }\\) -join ' ')"
     ]
   }
 }

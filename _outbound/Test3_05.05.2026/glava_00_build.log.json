@@ -1,0 +1,170 @@
+{
+  "chapter": "00",
+  "chapter_title": "Введение — Почему карты, а не разговор",
+  "date": "2026-05-07",
+  "status": "draft",
+  "total_words": 3546,
+  "beats_count": 13,
+  "sum_target_words": 4400,
+  "draft_fat_range": "3955–4520",
+  "note": "total_words 3546 below draft_fat lower bound 3955 — see per-beat notes",
+  "beats": [
+    {
+      "beat_id": 1,
+      "section": "§1 Зачем нужен образ там, где есть слова",
+      "target_words": 400,
+      "actual_words": 306,
+      "ratio": 0.765,
+      "iterations": 3,
+      "accepted_on_iter": 3,
+      "flags_at_acceptance": ["volume_short"],
+      "warning": "Принят на iter 3 с ratio 0.765 — ниже порога 0.85. Constraints beat-а (обрыв на якоре без вывода) органично ограничивают объём. Рекомендация редактору: проверить, достаточно ли развёрнута арена KS-R07."
+    },
+    {
+      "beat_id": 2,
+      "section": "§1 Зачем нужен образ там, где есть слова",
+      "target_words": 400,
+      "actual_words": 362,
+      "ratio": 0.905,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 3,
+      "section": "§1 Зачем нужен образ там, где есть слова",
+      "target_words": 400,
+      "actual_words": 364,
+      "ratio": 0.910,
+      "iterations": 1,
+      "accepted_on_iter": 1,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 4,
+      "section": "§2 Что отличает организационный МАК от клинического",
+      "target_words": 370,
+      "actual_words": 330,
+      "ratio": 0.892,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 5,
+      "section": "§2 Что отличает организационный МАК от клинического",
+      "target_words": 370,
+      "actual_words": 349,
+      "ratio": 0.943,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 6,
+      "section": "§2 Что отличает организационный МАК от клинического",
+      "target_words": 360,
+      "actual_words": 335,
+      "ratio": 0.931,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 7,
+      "section": "§3 Кому эта книга",
+      "target_words": 300,
+      "actual_words": 277,
+      "ratio": 0.923,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 8,
+      "section": "§3 Кому эта книга",
+      "target_words": 300,
+      "actual_words": 286,
+      "ratio": 0.953,
+      "iterations": 1,
+      "accepted_on_iter": 1,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 9,
+      "section": "§3 Кому эта книга",
+      "target_words": 300,
+      "actual_words": 291,
+      "ratio": 0.970,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 10,
+      "section": "§4 Устройство книги",
+      "target_words": 300,
+      "actual_words": 270,
+      "ratio": 0.900,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 11,
+      "section": "§4 Устройство книги",
+      "target_words": 300,
+      "actual_words": 265,
+      "ratio": 0.883,
+      "iterations": 1,
+      "accepted_on_iter": 1,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 12,
+      "section": "§4 Устройство книги",
+      "target_words": 300,
+      "actual_words": 264,
+      "ratio": 0.880,
+      "iterations": 1,
+      "accepted_on_iter": 1,
+      "flags_at_acceptance": [],
+      "warning": null
+    },
+    {
+      "beat_id": 13,
+      "section": "§4 Устройство книги",
+      "target_words": 300,
+      "actual_words": 296,
+      "ratio": 0.987,
+      "iterations": 2,
+      "accepted_on_iter": 2,
+      "flags_at_acceptance": [],
+      "warning": null,
+      "is_last_beat": true,
+      "closure_optimistic": false,
+      "quellen_in_beat": false
+    }
+  ],
+  "summary": {
+    "beats_hit_max_iterations": [1],
+    "beats_with_volume_warning": [1],
+    "verbot_liste_violations_remaining": [],
+    "signatur_figures_used": 2,
+    "signatur_figures_limit": 8,
+    "taro_count": 1,
+    "taro_limit": 1,
+    "bibliography_mode": "unified",
+    "per_chapter_bibliography_added": false
+  }
+}

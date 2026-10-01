@@ -1,0 +1,137 @@
+{
+  "chapter": "01",
+  "title": "Эффект Даннинга-Крюгера: эксперимент 1999 года",
+  "book": "IU — Иллюзия ума",
+  "date": "2026-05-03",
+  "status": "draft",
+  "total_words": 3556,
+  "beats_count": 13,
+  "total_iterations": 28,
+  "beats": [
+    {
+      "beat_id": 1,
+      "section": "§1 Хук — знакомая ловушка",
+      "target_words": 450,
+      "actual_words": 399,
+      "iterations": 3,
+      "action_history": ["revise", "revise", "accept"],
+      "flags_history": [["word_count_low", "scene_too_short"], ["word_count_low"], []]
+    },
+    {
+      "beat_id": 2,
+      "section": "§1 Хук — знакомая ловушка",
+      "target_words": 350,
+      "actual_words": 234,
+      "iterations": 3,
+      "action_history": ["revise", "revise", "accept"],
+      "flags_history": [["word_count_low"], ["word_count_low"], []],
+      "note": "Принят на 3-й итерации по лимиту; объём ниже target, функция выполнена"
+    },
+    {
+      "beat_id": 3,
+      "section": "§1 Хук — знакомая ловушка",
+      "target_words": 350,
+      "actual_words": 298,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 4,
+      "section": "§2 Эксперимент Крюгера и Даннинга",
+      "target_words": 420,
+      "actual_words": 283,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 5,
+      "section": "§2 Эксперимент Крюгера и Даннинга",
+      "target_words": 380,
+      "actual_words": 268,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 6,
+      "section": "§2 Эксперимент Крюгера и Даннинга",
+      "target_words": 500,
+      "actual_words": 398,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 7,
+      "section": "§2 Эксперимент Крюгера и Даннинга",
+      "target_words": 400,
+      "actual_words": 303,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 8,
+      "section": "§2 Эксперимент Крюгера и Даннинга",
+      "target_words": 300,
+      "actual_words": 239,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 9,
+      "section": "§3 Критика и уточнение",
+      "target_words": 450,
+      "actual_words": 288,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 10,
+      "section": "§3 Критика и уточнение",
+      "target_words": 420,
+      "actual_words": 298,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 11,
+      "section": "§3 Критика и уточнение",
+      "target_words": 380,
+      "actual_words": 265,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 12,
+      "section": "§4 Удар и выход",
+      "target_words": 400,
+      "actual_words": 273,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    },
+    {
+      "beat_id": 13,
+      "section": "§4 Удар и выход",
+      "target_words": 300,
+      "actual_words": 210,
+      "iterations": 2,
+      "action_history": ["revise", "accept"],
+      "flags_history": [["word_count_low"], []]
+    }
+  ],
+  "word_count_summary": {
+    "target_sum_beats": 5100,
+    "actual_sum_beats": 3556,
+    "chapter_target": 4500,
+    "ratio_actual_to_chapter_target": 0.790,
+    "note": "Итоговый объём ниже chapter_target. Все beats приняты по содержательным критериям. Editor-фаза компенсирует объём или принимает решение о плотности текста."
+  }
+}

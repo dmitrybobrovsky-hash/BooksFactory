@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "",
+    "code": "",
+    "language": "de",
+    "created": "",
+    "factory_version": "2.5"
+  },
+  "series": {
+    "enabled": false,
+    "name": null,
+    "volume": null,
+    "bible_path": null,
+    "abgrenzung_path": null
+  },
+  "voice": {
+    "tones": [],
+    "provocation_level": 3,
+    "wow_factor": false,
+    "target_audience": "",
+    "address_form": "du",
+    "micro_modes": []
+  },
+  "structure": {
+    "chapters_planned": 20,
+    "words_per_chapter": 6000,
+    "intro_words": 3000,
+    "outro_words": 3000,
+    "arenas_target": 3,
+    "signature_figure_limit": 8,
+    "layout": "flat",
+    "parts": []
+  },
+  "content": {
+    "core_ideas": [],
+    "forbidden": [],
+    "metaphor_territories": {
+      "use": [],
+      "avoid": []
+    },
+    "bibliography_mode": "unified",
+    "chapter_genre_block": null,
+    "lead_technique": null
+  },
+  "paths": {
+    "tonal_compass": null,
+    "verbot_liste": null,
+    "anweisungen": null,
+    "arbeitsplan": null,
+    "session_template": null,
+    "arenen_pool": null,
+    "quellen_pool": null,
+    "reference_chapter": null,
+    "skvoznye_formuly": null,
+    "case_protocol": null,
+    "session_state": "_SESSION_STATE.md",
+    "drafts_dir": "_drafts/"
+  }
+}

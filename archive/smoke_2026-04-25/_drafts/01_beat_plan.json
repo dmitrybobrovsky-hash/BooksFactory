@@ -1,0 +1,19 @@
+{
+  "book": "SmokeTest 2026-04-25",
+  "chapter_number": 1,
+  "chapter_title": "Pipeline-Integrity",
+  "language": "ru",
+  "chapter_target_words": 1500,
+  "sum_target_words": 1695,
+  "beats": [
+    {"beat_id": 1, "section": "§1 Постановка задачи", "thema": "Что такое smoke-test", "target_words": 150, "style_anchor": "REFERENZ маркер №1", "constraints": ["сухая аналитика"]},
+    {"beat_id": 2, "section": "§1 Постановка задачи", "thema": "Что измеряем", "target_words": 200, "style_anchor": "REFERENZ маркер №1", "constraints": ["сухая аналитика"]},
+    {"beat_id": 3, "section": "§1 Постановка задачи", "thema": "Что НЕ измеряем", "target_words": 165, "style_anchor": "REFERENZ маркер №1", "constraints": ["сухая аналитика"]},
+    {"beat_id": 4, "section": "§2 Архитектура цепочки", "thema": "researcher → material-author", "target_words": 165, "style_anchor": "REFERENZ маркер №2", "constraints": ["контурная схема"]},
+    {"beat_id": 5, "section": "§2 Архитектура цепочки", "thema": "planner → compiler", "target_words": 165, "style_anchor": "REFERENZ маркер №2", "constraints": ["контурная схема"]},
+    {"beat_id": 6, "section": "§2 Архитектура цепочки", "thema": "coordinator → writer-loop → editor → humanizer → translator", "target_words": 220, "style_anchor": "REFERENZ маркер №2", "constraints": ["контурная схема"]},
+    {"beat_id": 7, "section": "§3 Условия завершения", "thema": "Все агенты вызваны", "target_words": 165, "style_anchor": "REFERENZ маркер №3", "constraints": ["чек-лист"]},
+    {"beat_id": 8, "section": "§3 Условия завершения", "thema": "Все артефакты совпадают с контрактом", "target_words": 220, "style_anchor": "REFERENZ маркер №3", "constraints": ["чек-лист"]},
+    {"beat_id": 9, "section": "§3 Условия завершения", "thema": "Вердикт зафиксирован", "target_words": 165, "style_anchor": "REFERENZ маркер №3", "constraints": ["чек-лист"], "is_last_beat": true}
+  ]
+}

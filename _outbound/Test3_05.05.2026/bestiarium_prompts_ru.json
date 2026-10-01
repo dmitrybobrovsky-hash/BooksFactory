@@ -1,0 +1,658 @@
+﻿{
+  "meta": {
+    "project": "Бестиарий офисных существ",
+    "version": "1.0-RU",
+    "total_cards": 87,
+    "style_baseline": "allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, subtle satire, not cartoonish, no text on image",
+    "image_size": {
+      "width": 832,
+      "height": 1424
+    },
+    "output_format": "png",
+    "language_edition": "Russian",
+    "overlay_language": "ru"
+  },
+  "categories": {
+    "A": {
+      "name": "Архетипы",
+      "name_de": "Archetypen",
+      "border": "ornamental brass border",
+      "count": 30
+    },
+    "S": {
+      "name": "Ситуации",
+      "name_de": "Situationen",
+      "border": "mechanical gear-pattern border",
+      "count": 20
+    },
+    "Z": {
+      "name": "Состояния",
+      "name_de": "Zustände",
+      "border": "smoky dissolving border",
+      "count": 15
+    },
+    "K": {
+      "name": "Системные силы",
+      "name_de": "Systemkräfte",
+      "border": "industrial chain-link border",
+      "count": 10
+    },
+    "R": {
+      "name": "Ресурсы",
+      "name_de": "Ressourcen",
+      "border": "luminous glowing border",
+      "count": 12
+    }
+  },
+  "cards": [
+    {
+      "code": "A01",
+      "name_de": "Der KPI-Priester",
+      "category": "A",
+      "prompt": "A solemn priest-like figure in a dark suit and brass stole stands before a glowing altar made of KPI dashboards and performance charts, arms raised in ritual blessing, green and amber numbers floating like sacred symbols around his head, a congregation of small worker silhouettes kneeling in the background of a mechanical temple with pipe-organ columns made of spreadsheets. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic upward lighting from the altar, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Жрец KPI"
+    },
+    {
+      "code": "A02",
+      "name_de": "Der Zahlenmagier",
+      "category": "A",
+      "prompt": "A magician figure in a tailored vest and brass-rimmed spectacles levitates floating spreadsheets and calculation gears with both hands, numbers swirling in golden spirals around his fingers, standing on a stage made of ledger pages, mechanical abacus and astronomical instruments scattered around him, dim audience of desks in the background. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic spotlight from above, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Маг Цифр"
+    },
+    {
+      "code": "A03",
+      "name_de": "Der Strategische Nebelwerfer",
+      "category": "A",
+      "prompt": "A tall executive figure in a long dark coat releases thick clouds of golden fog from brass nozzles built into his sleeves, obscuring a strategy map on the wall behind him, confused employees stumble through the mist below, mechanical fog machines line the floor of a grand corporate boardroom with vaulted ceilings. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), diffused backlighting through fog, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Повелитель Тумана"
+    },
+    {
+      "code": "A04",
+      "name_de": "Der HR-Schamane",
+      "category": "A",
+      "prompt": "A shamanic HR figure wearing a suit adorned with tribal-corporate totems beats a large brass drum etched with KPI symbols, spectral corporate spirits — translucent figures in business attire — circle above in a ritual dance, feathers made of policy documents hang from a ceremonial headdress, the setting is a dimly lit HR office transformed into a ritual space with filing cabinets as standing stones. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm firelight mixed with cold office fluorescence, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "HR-Шаман"
+    },
+    {
+      "code": "A05",
+      "name_de": "Der Kulturmissionar",
+      "category": "A",
+      "prompt": "A zealous missionary figure in a pristine white shirt and brass cufflinks stands at a pulpit made of stacked corporate value handbooks, radiating golden light from an open glowing book of company values, small employees gather below looking up with mixed expressions of awe and skepticism, banners of corporate mottos hang from mechanical pulleys in a cathedral-like open office. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), radiant front lighting from the book, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Миссионер Культуры"
+    },
+    {
+      "code": "A06",
+      "name_de": "Der Empathie-Manager",
+      "category": "A",
+      "prompt": "A manager figure wearing an exaggerated warm smile mask made of polished brass, one hand gently placed on a small employee's shoulder, the other hand hidden behind their back adjusting empathy meter dials, multiple spinning brass empathy gauges mounted on the wall behind, the office setting has a therapy-room facade with mechanical levers visible behind the wallpaper. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), soft warm frontal light with cold mechanical backlight, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Менеджер Эмпатии"
+    },
+    {
+      "code": "A07",
+      "name_de": "Der Meeting-Dirigent",
+      "category": "A",
+      "prompt": "A conductor figure in formal attire stands on a podium wielding a brass baton, directing an orchestra of laptops, conference phones, and whiteboards that float like musical instruments, employees sit at a curved meeting table like orchestra members each playing their device, musical notes made of agenda items drift through the air, chandeliers of tangled cables hang above. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic concert-hall lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Дирижёр Совещаний"
+    },
+    {
+      "code": "A08",
+      "name_de": "Der PowerPoint-Ritter",
+      "category": "A",
+      "prompt": "A knight in dark business armor made of laptop screens and brass plates holds a giant glowing presentation slide as a shield in one hand and a laser pointer as a sword in the other, standing heroically atop a pile of defeated paper documents, a projected bar chart glows behind like a stained-glass window in a corporate chapel. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic heroic backlighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Рыцарь PowerPoint"
+    },
+    {
+      "code": "A09",
+      "name_de": "Der Gatekeeper",
+      "category": "A",
+      "prompt": "A stern imposing figure in a dark overcoat stands guard before a massive brass vault door with elaborate locks and gears, one hand resting on a ring of oversized keys, small hopeful employees line up in the shadows behind a velvet rope, the door has faint engravings of organizational charts, dim corridor stretches endlessly behind the queue. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), stark directional light on the door, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Привратник"
+    },
+    {
+      "code": "A10",
+      "name_de": "Der Compliance-Inquisitor",
+      "category": "A",
+      "prompt": "An inquisitor figure in a high-collared dark robe sits behind a massive open book of policies and regulations, a brass magnifying monocle over one eye, one finger pointed accusingly at the viewer, shelves of compliance manuals tower behind like a law library, a mechanical scale of justice with gears hangs from the ceiling, scattered audit stamps and red ink on the desk. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), harsh interrogation-style overhead light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Ревизор Правил"
+    },
+    {
+      "code": "A11",
+      "name_de": "Der Prozess-Wächter",
+      "category": "A",
+      "prompt": "A vigilant guardian figure in industrial overalls and brass goggles operates a colossal machine made entirely of flowcharts, process diagrams, and interlocking gears, pulling levers and turning valves, tubes and pipes connect different departmental chambers visible through glass panels, the machine hums with blue-lit energy flowing through transparent conduits. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), blue industrial glow mixed with amber brass light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Страж Процессов"
+    },
+    {
+      "code": "A12",
+      "name_de": "Der Audit-Prophet",
+      "category": "A",
+      "prompt": "A prophet-like figure draped in a dark academic gown unfurls enormous financial scrolls that cascade to the floor, eyes glowing with amber light as visions of future disasters and opportunities appear as ghostly projections in the air — crumbling balance sheets, burning budgets, mechanical warning symbols — a crystal ball made of brass gears sits on a desk surrounded by scattered calculator keys. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), mystical amber glow from scrolls, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Пророк Аудита"
+    },
+    {
+      "code": "A13",
+      "name_de": "Der Narzisstische Leader",
+      "category": "A",
+      "prompt": "A commanding leader figure sits on an elaborate throne constructed from trophies, awards, and brass mirrors reflecting their own face from every angle, one leg crossed confidently, employees visible as tiny reflections in the mirrors looking up, a massive portrait of the leader hangs above in an ornate frame, the floor is a polished surface reflecting everything upward. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic self-glorifying golden spotlight, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Нарциссический Лидер"
+    },
+    {
+      "code": "A14",
+      "name_de": "Der Passive Saboteur",
+      "category": "A",
+      "prompt": "A quiet unassuming office worker with a pleasant expression discreetly loosens bolts and disconnects wires of a large corporate machine with one hand hidden behind their back, a wrench concealed in their sleeve, the machine shows subtle signs of malfunction — steam leaks, wobbling gears — while other employees work obliviously around it, shadows play across the saboteur's face revealing a subtle knowing expression. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), split lighting half-shadow half-light on face, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Пассивный Саботажник"
+    },
+    {
+      "code": "A15",
+      "name_de": "Der Karriere-Chamäleon",
+      "category": "A",
+      "prompt": "A figure mid-transformation changes their appearance between multiple business personas — their suit shifts between different styles and colors like a chameleon's skin, one half casual startup the other half corporate formal, a wardrobe of hanging masks and costumes surrounds them, a mirror shows a different reflection than reality, corporate jungle plants with mechanical leaves fill the background. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), shifting colored lights, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Карьерный Хамелеон"
+    },
+    {
+      "code": "A16",
+      "name_de": "Der Überlebenskünstler",
+      "category": "A",
+      "prompt": "A resourceful survivor figure navigates through a maze of office corridors made of cubicle walls and filing cabinets, wearing makeshift armor crafted from office supplies — binder-clip shields, ruler swords — a compass made of a broken clock in hand, cracks in the walls reveal mechanical dangers, dim emergency-style lighting guides the way, the figure moves with careful determination. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dim corridor lighting with pockets of warm amber, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Мастер Выживания"
+    },
+    {
+      "code": "A17",
+      "name_de": "Der Stille Kündiger",
+      "category": "A",
+      "prompt": "A translucent fading figure sits at their desk becoming increasingly transparent, their body dissolving into particles that drift away like dust, the desk and chair remain solid but the person is half-ghost, colleagues around are fully solid and busy not noticing the disappearance, a clock on the wall shows perpetual 5 PM, the workspace around the fading figure is immaculate but untouched. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), ethereal fading light around the figure, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Тихий Увольняющийся"
+    },
+    {
+      "code": "A18",
+      "name_de": "Der Burnout-Veteran",
+      "category": "A",
+      "prompt": "A weary veteran figure hunches forward carrying an enormous pack made of compressed files, exhausted reports, and drained coffee cups strapped to their back with leather belts, their suit is worn and frayed, medals of completed projects pinned to their chest but tarnished, deep shadows under their eyes, walking through a corridor lined with closed office doors, a trail of scattered papers behind them. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), exhausted dim overhead light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Ветеран Выгорания"
+    },
+    {
+      "code": "A19",
+      "name_de": "Der Agile-Evangelist",
+      "category": "A",
+      "prompt": "An enthusiastic preacher figure in a modern slim suit stands before a congregation of skeptical employees, arms spread wide, behind them spin enormous brass wheels inscribed with sprint cycles, Kanban boards float like stained glass windows, sticky notes flutter through the air like confetti, the pulpit is a standing desk, employees in the pews hold various expressions from devotion to doubt. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), zealous warm spotlight on the preacher, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Пророк Agile"
+    },
+    {
+      "code": "A20",
+      "name_de": "Der Visionäre CEO",
+      "category": "A",
+      "prompt": "A visionary leader figure stands at the edge of a rooftop platform gazing at a glowing mechanical future city on the horizon, wind sweeping their long coat, one hand extended toward the cityscape of brass towers and luminous buildings, the city is half-built half-holographic, employees far below are tiny figures working on the foundations, telescopes and navigational instruments surround the leader. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), golden horizon glow with dark foreground, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Визионер-CEO"
+    },
+    {
+      "code": "A21",
+      "name_de": "Der Daten-Orakel",
+      "category": "A",
+      "prompt": "An oracle figure sits cross-legged on a platform surrounded by floating holographic data visualizations — pie charts, heat maps, scatter plots, neural network diagrams — orbiting like planets, hands touching invisible data streams, eyes closed in data-meditation, the room is a server cathedral with blinking lights as stars, cables hang like vines, brass analytical instruments are scattered around. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), blue-green data glow illuminating the face, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Оракул Данных"
+    },
+    {
+      "code": "A22",
+      "name_de": "Der Bürokrat",
+      "category": "A",
+      "prompt": "A bureaucrat figure sits rigidly at a desk completely submerged in paperwork, only their head and one stamping hand visible above the paper tide, rubber stamps in both hands mechanically pounding documents, an endless conveyor belt delivers more forms from the left, completed stacks exit to the right, the room is a paper canyon with walls of filing cabinets reaching the ceiling, brass pneumatic tubes overhead. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), flat institutional fluorescent light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Бюрократ"
+    },
+    {
+      "code": "A23",
+      "name_de": "Der Schattenmanager",
+      "category": "A",
+      "prompt": "A shadowy figure sits behind a meeting table in darkness, visible only as a silhouette, their hands manipulate brass puppet strings connected to smaller figures seated at the table who gesture and speak, the puppeteered employees appear to make decisions independently but strings glint in the dim light, a web of threads covers the ceiling, one lamp illuminates only the puppet figures leaving the controller in shadow. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic chiaroscuro single-source light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Теневой Менеджер"
+    },
+    {
+      "code": "A24",
+      "name_de": "Der Loyalitätswächter",
+      "category": "A",
+      "prompt": "A watchful sentinel figure in a formal dark uniform stands beside an enormous brass loyalty meter with a swinging needle, one hand resting on the meter, eyes scanning a line of employees who pass through a loyalty checkpoint, each employee has a faintly glowing loyalty badge on their chest at different intensities, the setting is a corporate entrance hall with surveillance brass telescopes mounted on walls. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold scanning light mixed with warm brass glow, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Страж Лояльности"
+    },
+    {
+      "code": "A25",
+      "name_de": "Der Optimierungsfanatiker",
+      "category": "A",
+      "prompt": "A manic perfectionist figure frantically adjusts an enormous wall of brass dials, sliders, and efficiency gauges, sweat on their brow, each dial labeled with a tiny icon of a business metric, some dials spin out of control as they fix others, wrenches and tools hang from a belt, the floor is covered in discarded previous settings, a massive efficiency percentage display flickers overhead. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), frantic flickering amber light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Фанатик Оптимизации"
+    },
+    {
+      "code": "A26",
+      "name_de": "Der Projektheld",
+      "category": "A",
+      "prompt": "A heroic figure charges forward carrying a burning project timeline scroll like a torch, their suit singed and torn from battle, deadline flames lick at their heels, a path of completed milestones glows behind them like stepping stones, ahead a finish line made of brass gears awaits, colleagues cheer from the sidelines but none step forward to help, determination blazes in the hero's eyes. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dynamic motion-blur lighting with fire glow, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Герой Проекта"
+    },
+    {
+      "code": "A27",
+      "name_de": "Der Systemzweifler",
+      "category": "A",
+      "prompt": "A thoughtful solitary figure crouches beside the corporate machine examining deep cracks in its brass surface, one hand touching the fractures where dim light seeps through, a magnifying glass in the other hand reveals hidden flaws invisible to others, the machine stretches upward beyond the frame, other workers march past ignoring the cracks, the doubter's expression is a mixture of concern and quiet vindication. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), subtle light leaking through cracks, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Системный Скептик"
+    },
+    {
+      "code": "A28",
+      "name_de": "Der Konfliktvermeider",
+      "category": "A",
+      "prompt": "A timid figure crouches behind a towering barricade of stacked reports, binders, and folders, peeking over the top with nervous eyes, on the other side two colleague silhouettes argue with lightning-like energy crackling between them, the figure clutches a white flag made of a blank memo, the floor around them is littered with unsent messages and unspoken words materialized as crumpled paper. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), tense divided lighting warm and cold, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Беглец от Конфликтов"
+    },
+    {
+      "code": "A29",
+      "name_de": "Der Informelle Anführer",
+      "category": "A",
+      "prompt": "A casually dressed figure without any formal title badge leads a small group of colleagues through a dark labyrinthine office holding a lantern made of a glowing coffee mug, the official corridors are blocked by bureaucratic barriers, the informal leader finds hidden passages through cubicle walls, followers trust and lean toward the light, official signage points in wrong directions while the leader navigates by instinct. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm lantern glow in dark surroundings, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Неформальный Лидер"
+    },
+    {
+      "code": "A30",
+      "name_de": "Der Alte Veteran",
+      "category": "A",
+      "prompt": "An elderly seasoned worker sits quietly in a worn leather chair surrounded by the evolving office — half the scene shows old analog equipment being replaced by holographic screens and robotic arms, the veteran remains still like a rock in a river of change, old photographs and awards line one wall while the opposite wall is being demolished for renovation, their expression is serene with deep knowing eyes. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm nostalgic amber light on the veteran cold blue light on the changes, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, ornamental brass border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Старый Ветеран"
+    },
+    {
+      "code": "S01",
+      "name_de": "Das Performance-Gespräch",
+      "category": "S",
+      "prompt": "A manager and an employee face each other across a ceremonial table carved with evaluation scales, the manager holds a glowing performance scorecard like a judge's verdict, the employee sits rigid with hands clenched, a brass balance scale between them weighs achievements against expectations, shadowy figures of past employees haunt the corners of the dimly lit evaluation chamber, gears in the walls slowly turn measuring time. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), tense overhead spotlight on the table, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Оценка Эффективности"
+    },
+    {
+      "code": "S02",
+      "name_de": "Die Reorganisation",
+      "category": "S",
+      "prompt": "An office interior violently shifts and rearranges — walls slide on brass rails, desks rotate on mechanical platforms, floors split apart revealing new levels beneath, employees stumble and grab onto moving furniture, a large figure at a control panel pulls levers orchestrating the chaos, department nameplates spin and swap positions, dust and paper fly through the air as the entire structure transforms. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), chaotic strobing mechanical light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Реорганизация"
+    },
+    {
+      "code": "S03",
+      "name_de": "Der Strategieworkshop",
+      "category": "S",
+      "prompt": "Senior executives huddle around an enormous brass mechanical map of the company spread across a war-room table, moving miniature building pieces and figurines like generals planning a campaign, magnifying glasses and compasses in hand, the map has movable gears representing departments, glowing routes show strategic paths, a large clock ticks overhead, whiteboards covered in diagrams surround the room. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm strategic amber lamplight over the table, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Стратегическая Сессия"
+    },
+    {
+      "code": "S04",
+      "name_de": "Das Team-Building",
+      "category": "S",
+      "prompt": "Employees gathered in a circle around a symbolic brass fire bowl that burns with motivational energy, some genuinely connecting across the flames while others wear polite masks, trust-fall exercises visible in the background as silhouettes, a facilitator figure waves motivational flags, team banners hang from mechanical poles, the setting is half corporate conference room half campfire ritual space, mixed expressions of bonding and discomfort. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm communal firelight, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Тимбилдинг"
+    },
+    {
+      "code": "S05",
+      "name_de": "Das Mitarbeitergespräch",
+      "category": "S",
+      "prompt": "An employee sits across from their manager in a narrow room under the watchful gaze of giant brass performance charts mounted on every wall, the charts lean inward creating a sense of compression, the manager reads from an evaluation scroll while the employee's reflection in a polished table shows a different more vulnerable version of themselves, a pendulum clock swings between them marking the ritual's cadence. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold clinical institutional light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Беседа с Сотрудником"
+    },
+    {
+      "code": "S06",
+      "name_de": "Die Restrukturierung",
+      "category": "S",
+      "prompt": "A violent mechanical storm tears through corporate departments — brass walls crumble, desk platforms split and reassemble, employees cling to their workstations as the floor shifts beneath them, a tornado-like vortex of org charts and role descriptions spins at the center, dark clouds of uncertainty gather at the ceiling, some figures fall through the gaps while others are lifted to new levels. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), turbulent flashing lightning-like industrial light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Реструктуризация"
+    },
+    {
+      "code": "S07",
+      "name_de": "Die Zielvereinbarung",
+      "category": "S",
+      "prompt": "A manager and employee jointly sign a glowing contract scroll that hovers between them emitting golden KPI light, brass chains subtly connect from the contract to the employee's wrists, target numbers float upward from the document like ascending sparks, a notary stamp mechanism clicks overhead, witnesses — other managers — observe from elevated brass balconies, the scene has the gravity of a sacred pact being sealed. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), golden contractual glow, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Целеполагание"
+    },
+    {
+      "code": "S08",
+      "name_de": "Der Feedback-Zirkus",
+      "category": "S",
+      "prompt": "A circus-like corporate arena where performers in business attire juggle speech bubbles of feedback, a ringmaster in a brass top hat cracks a whip, acrobats on tightropes balance between constructive and destructive criticism, a clown figure offers fake smiling feedback while another performer swallows difficult truths like a sword-swallower, an audience of managers watches from tiered brass seating with scorecards. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), theatrical circus spotlights, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Цирк Обратной Связи"
+    },
+    {
+      "code": "S09",
+      "name_de": "Die Kulturinitiative",
+      "category": "S",
+      "prompt": "Corporate missionaries plant brass flag poles bearing value banners into the office floor like colonizers claiming territory, some employees embrace the new flags while others look at their old desk decorations being removed, a steamroller made of HR policy flattens individuality into uniform corporate culture, fresh paint covers old walls but cracks show through, potted corporate-approved plants replace personal items. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), artificially bright institutional lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Культурная Инициатива"
+    },
+    {
+      "code": "S10",
+      "name_de": "Das Agile-Ritual",
+      "category": "S",
+      "prompt": "A team stands in a sacred circle around a spinning brass sprint wheel embedded in the floor, each member holds a sticky note like a prayer card, a scrum master figure in ceremonial robes leads the daily standup ritual, Kanban columns rise behind them like temple pillars, a velocity chart burns like an eternal flame in the center, the scene mixes genuine collaboration with ritualistic absurdity. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), circular ceremonial lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Аджайл-Ритуал"
+    },
+    {
+      "code": "S11",
+      "name_de": "Der Compliance-Alarm",
+      "category": "S",
+      "prompt": "Brass warning sirens mounted on office walls blare red light as compliance officers in dark uniforms rush through cubicles, a central alarm figure pulls a massive brass lever activating the system, papers scatter in panic, employees freeze at their desks or dive under them, mechanical shutters begin closing over windows and exits, a giant rotating warning beacon spins at the ceiling casting sweeping red shadows. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), urgent red alarm lighting with brass amber, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Тревога Комплаенса"
+    },
+    {
+      "code": "S12",
+      "name_de": "Der Projekt-Kickoff",
+      "category": "S",
+      "prompt": "A team launches a rocket assembled from documents, Gantt charts, and brass components from a launchpad made of a conference table, the project manager holds the ignition lever, team members brace themselves around the table, exhaust made of sticky notes and memos blasts downward, the rocket is half-built revealing optimistic but incomplete planning inside, spectators on balconies wave little deadline flags. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), explosive upward launch lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Старт Проекта"
+    },
+    {
+      "code": "S13",
+      "name_de": "Der Budgetkrieg",
+      "category": "S",
+      "prompt": "Department heads face off across a battlefield made of a long boardroom table, wielding shields made of financial ledgers and swords made of budget proposals, coins and resources pile in the contested center, each side has trenches of stacked binders, a CFO figure sits elevated as an arbiter watching the battle through opera glasses, casualties of cut line items litter the floor. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), confrontational split lighting from two sides, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Бюджетная Война"
+    },
+    {
+      "code": "S14",
+      "name_de": "Die Beförderung",
+      "category": "S",
+      "prompt": "A single employee is mechanically elevated on a brass platform rising through the office floor to a higher level, their colleagues watch from below with mixed expressions of congratulation and envy, the platform is operated by a lever pulled by senior management, the higher level is brighter and more luxurious but also more isolated, golden spotlights illuminate the ascending figure while the lower level dims. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), ascending golden elevator light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Повышение"
+    },
+    {
+      "code": "S15",
+      "name_de": "Die Kündigungsrunde",
+      "category": "S",
+      "prompt": "Shadow figures file out of a corporate building through a heavy brass exit gate, each carrying a small box of personal belongings, their forms becoming less defined as they step through the threshold into grey mist, remaining employees watch from windows above with haunted expressions, the exit gate has a mechanical counter clicking with each departure, the building continues to glow and hum behind them indifferent to the loss. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold grey exit light contrasting warm interior glow, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Волна Увольнений"
+    },
+    {
+      "code": "S16",
+      "name_de": "Der Konflikt im Team",
+      "category": "S",
+      "prompt": "Two groups of employees stand on opposite sides of a cracking office floor, tangled brass wires and cables stretch between them crackling with electrical tension, each side pulls their wires tighter creating sparks at the center, a mediator figure stands on the fracture line trying to reconnect severed cables, personal items from both sides have fallen into the growing gap, the ceiling above shows stress fractures mirroring the floor. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), electric crackling light between the groups, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Конфликт в Команде"
+    },
+    {
+      "code": "S17",
+      "name_de": "Der Change-Workshop",
+      "category": "S",
+      "prompt": "Workshop participants rearrange massive mechanical structures — brass walls, gear assemblies, pipe systems — in a vast industrial hall, a change consultant in a hard hat directs the reconstruction from blueprints, some workers dismantle old structures enthusiastically while others cling to familiar machinery refusing to let go, half the space is old and patinated the other half is newly polished, sparks fly from welding new connections. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), industrial construction lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Воркшоп Изменений"
+    },
+    {
+      "code": "S18",
+      "name_de": "Der Innovationspitch",
+      "category": "S",
+      "prompt": "An inventor figure stands on a stage presenting a glowing brass prototype invention that floats and spins above their outstretched hands, a panel of executives sits in elevated judgment chairs casting long shadows, the invention radiates warm golden light contrasting with the cold skeptical faces of the panel, rejected inventions litter the floor behind the stage, a single spotlight pins the presenter in place. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic single spotlight with golden invention glow, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Питч Инновации"
+    },
+    {
+      "code": "S19",
+      "name_de": "Der Jahresabschluss",
+      "category": "S",
+      "prompt": "Massive brass accounting gears turn in a grand hall as finance workers feed in final documents, an enormous mechanical calendar clicks to December 31st, exhausted accountants surrounded by towers of completed ledgers celebrate wearily, champagne glasses clink beside calculator machines, the giant gears mesh perfectly completing the annual cycle, golden sparks shower from the machinery like New Year fireworks. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), celebratory golden sparks lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Закрытие Года"
+    },
+    {
+      "code": "S20",
+      "name_de": "Der Krisenmodus",
+      "category": "S",
+      "prompt": "A crisis control room packed with employees frantically operating brass instruments, flashing signal panels cover every wall, a central command figure stands amid the chaos directing traffic with both arms, red warning tubes glow with pressure, multiple brass screens display cascading failures, steam vents release pressure, coffee cups are overturned, ties are loosened, sleeves rolled up, the atmosphere is controlled panic under industrial emergency lighting. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), flashing red and amber emergency lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, mechanical gear-pattern border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Режим Кризиса"
+    },
+    {
+      "code": "Z01",
+      "name_de": "Burnout",
+      "category": "Z",
+      "prompt": "A drained worker slumps in their chair as translucent energy tubes connected to their body leak glowing life force into the corporate machine surrounding them, their color fades to grey while the machine grows brighter, wilted personal items on the desk, a cracked coffee mug drips the last drops, the figure is half-dissolved into the chair becoming part of the furniture, dim exhausted lighting pervades everything. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), draining dim light flowing away from the figure, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Выгорание"
+    },
+    {
+      "code": "Z02",
+      "name_de": "Hoffnung",
+      "category": "Z",
+      "prompt": "A small solitary figure stands in a dark office corridor as a tiny warm golden light appears at the far end, the figure reaches one hand toward it, the corridor walls are oppressive and mechanical but the light softens everything it touches, a single small plant grows from a crack in the brass floor near the figure's feet, their posture shifts from hunched to slightly upright, the light reflects in their eyes. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), single distant warm golden light source, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Надежда"
+    },
+    {
+      "code": "Z03",
+      "name_de": "Zynismus",
+      "category": "Z",
+      "prompt": "A worker wearing cracked dark glasses leans against a brass column with arms folded, their expression is a bitter knowing smirk, through their cracked lenses the corporate motivational posters on the walls appear as they truly are — empty mechanisms and puppet strings, the world through the cracks is sharper but darker, other employees walk past in naive brightness while the cynic exists in a personal shadow of disillusion. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold desaturated personal lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Цинизм"
+    },
+    {
+      "code": "Z04",
+      "name_de": "Angst",
+      "category": "Z",
+      "prompt": "A terrified employee crouches as enormous shadows of deadlines, evaluations, and termination notices chase them through a narrowing office corridor, the shadows have clawed hands reaching forward, the employee's body language is pure flight response, the corridor walls close in mechanically, a ticking clock face looms overhead growing larger, the floor beneath shows cracks of instability, personal dread radiates from the central figure. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), threatening shadows with cold blue-grey light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Тревога"
+    },
+    {
+      "code": "Z05",
+      "name_de": "Resignation",
+      "category": "Z",
+      "prompt": "A still figure sits quietly beneath a gentle rain of falling paperwork, not moving to catch or dodge any of it, documents settle on their shoulders like snow, their hands lie open and empty in their lap, their gaze is distant and unfocused, the office continues around them at normal speed but they exist in slow motion, a window nearby shows an outside world they no longer try to reach, muted palette surrounding them. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), flat resigned even lighting without drama, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Смирение"
+    },
+    {
+      "code": "Z06",
+      "name_de": "Loyalität",
+      "category": "Z",
+      "prompt": "A devoted employee stands guard beside a large company emblem mounted on a brass pedestal, one hand placed over their heart the other touching the emblem, their body language conveys deep personal attachment, years of service are visible in their weathered but proud appearance, the emblem glows warmly under their touch, around them newer employees rush past indifferently, the setting is a corporate lobby with time-worn elegance. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm devoted amber glow around the emblem, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Преданность"
+    },
+    {
+      "code": "Z07",
+      "name_de": "Frustration",
+      "category": "Z",
+      "prompt": "A frustrated worker pulls against stuck mechanical gears with their bare hands, veins visible from exertion, the gears refuse to turn despite maximum effort, other mechanisms around them work smoothly mocking the struggle, torn documents and broken tools litter the floor from previous attempts, the worker's expression is strained between determination and despair, sweat and oil mix on their hands. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), harsh industrial effort lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Фрустрация"
+    },
+    {
+      "code": "Z08",
+      "name_de": "Anpassung",
+      "category": "Z",
+      "prompt": "A worker's body physically reshapes to fit into a corporate mold press — their posture bending, features smoothing, clothes standardizing — emerging from the other side as a more uniform version of themselves, the before-and-after visible in the same frame, personal quirks fall away as metal shavings, the mold is brass and mechanical with company insignia, their expression transitions from resistance to neutral acceptance. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), transformation process lighting warm to cold, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Адаптация"
+    },
+    {
+      "code": "Z09",
+      "name_de": "Wut",
+      "category": "Z",
+      "prompt": "An enraged worker stands amidst the corporate engine as sparks and small flames ignite around them from the intensity of their fury, their fists are clenched, tie loosened, jaw set, the mechanical corporate engine around them shows heat damage — brass melting, gauges cracking, steam bursting from joints — the anger is a physical force distorting the surroundings, other workers have pulled back leaving a circle of empty space. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), hot angry red-amber glow radiating from center, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Гнев"
+    },
+    {
+      "code": "Z10",
+      "name_de": "Müdigkeit",
+      "category": "Z",
+      "prompt": "An exhausted figure barely stays upright at their desk under dim dying office lights, heavy eyelids drooping, coffee long cold, the desk lamp flickers weakly, piles of unfinished work create shadows that seem to press down physically on the figure's shoulders, a clock shows late evening hours, the office is empty except for this solitary tired soul, their body sags into the chair as if gravity has doubled. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dying flickering dim light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Усталость"
+    },
+    {
+      "code": "Z11",
+      "name_de": "Euphorie",
+      "category": "Z",
+      "prompt": "An ecstatic employee rises above the office floor on wings made of success reports and achievement certificates, arms spread wide in triumph, golden light radiates from their chest, below them colleagues look up some admiringly some warily, the office ceiling opens to reveal a brass sky of possibilities, the figure's feet barely touch the ground as momentum carries them upward, confetti of approved proposals swirls around. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), ecstatic golden uplighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Эйфория"
+    },
+    {
+      "code": "Z12",
+      "name_de": "Unsicherheit",
+      "category": "Z",
+      "prompt": "A worried figure walks across unstable bridges made of shifting office platforms connected by wobbly brass walkways, some bridges are missing planks, the figure's arms are out for balance, below is a misty void of unknown outcomes, multiple paths branch ahead each equally uncertain, signposts point in contradictory directions, the figure looks down at their next step with doubt, the entire structure sways gently. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), unstable shifting ambient light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Неуверенность"
+    },
+    {
+      "code": "Z13",
+      "name_de": "Isolation",
+      "category": "Z",
+      "prompt": "A solitary figure sits inside a transparent glass cubicle tower high above the office floor, pressing one hand against the glass, visible but unreachable, colleagues far below work in connected groups never looking up, the glass walls muffle all sound creating visible but silent isolation, the figure's desk has only the bare minimum, no personal items, cold light from above makes the glass glow like a specimen container. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold isolated clinical light inside warm communal light outside, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Изоляция"
+    },
+    {
+      "code": "Z14",
+      "name_de": "Erschöpfung",
+      "category": "Z",
+      "prompt": "A completely drained figure lies collapsed beneath accumulating piles of reports and documents that bury them slowly like sediment, only their face and one outstretched hand remain visible, the hand reaches weakly upward but cannot lift the weight, the pile grows as a mechanical conveyor continues delivering more work overhead, the figure's eyes are open but empty, the surrounding office continues its mechanical rhythm indifferent. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dim buried fading light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Истощение"
+    },
+    {
+      "code": "Z15",
+      "name_de": "Aufbruch",
+      "category": "Z",
+      "prompt": "A renewed figure steps out of a cracked and broken mechanical shell of their former corporate self like a butterfly from a chrysalis, the old machine-body splits open revealing a vibrant person within, one foot forward into new light, behind them the broken machine still hums but they are disconnected from it, ahead is an open doorway filled with warm morning light, scattered brass components of the old self litter the ground. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dawn-like renewal light ahead dark mechanical behind, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, smoky dissolving border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Обновление"
+    },
+    {
+      "code": "K01",
+      "name_de": "Macht",
+      "category": "K",
+      "prompt": "A towering armored figure in brass power-armor stands atop interlocking mechanical gears that form a pyramid of hierarchy, looking down at smaller worker figures adjusting the mechanisms below, massive industrial chains descend from the powerful figure's gauntlets connecting to the gear system, the workers below are dwarfed by the machinery they serve, the power figure's helmet reflects distorted images of the organization beneath. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), dramatic top-down authoritarian lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Власть"
+    },
+    {
+      "code": "K02",
+      "name_de": "Kontrolle",
+      "category": "K",
+      "prompt": "A central surveillance operator sits in an elevated brass observation chair surrounded by dozens of mechanical periscopes, telescopes, and viewing tubes all aimed at different departments below, each tube shows a different employee being watched, the operator pulls levers that adjust the surveillance angles, recording devices inscribe behavior onto brass cylinders, employees below sense the watching without seeing the watcher, panopticon architecture. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), cold clinical observation lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Контроль"
+    },
+    {
+      "code": "K03",
+      "name_de": "Angst (systemisch)",
+      "category": "K",
+      "prompt": "An enormous faceless brass machine generates waves of dark shadow that spread across office cubicles like a systemic flood, the shadow is not from any person but from the system itself, workers at their desks feel the chill and hunch their shoulders without knowing the source, pressure gauges on the machine climb into red zones, the machine has no operator — it runs autonomously producing fear as a byproduct, dark tentacle-like shadows reach under cubicle walls. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), oppressive systemic cold dark light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Страх (системный)"
+    },
+    {
+      "code": "K04",
+      "name_de": "Illusion",
+      "category": "K",
+      "prompt": "A massive brass projector casts holographic corporate promises — images of growth, bonuses, happy workers, green pastures — onto office walls, employees reach for the projections but their hands pass through, behind the projector screen the reality is visible as a stark mechanical operation, a projectionist figure feeds optimistic slides into the machine from behind a curtain, the holographic images flicker and glitch occasionally revealing the truth beneath. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), deceptive warm projected light vs cold reality behind, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Иллюзия"
+    },
+    {
+      "code": "K05",
+      "name_de": "Abhängigkeit",
+      "category": "K",
+      "prompt": "Workers connected to the company building by brass chains and energy umbilicals that feed both ways — company resources flow to the workers while the workers' labor flows back — the chains are comfortable and padded but inescapable, some workers pull at their tethers testing the range while others have decorated their chains with personal items accepting them, the building pulses like a living organism feeding on and feeding its dependents. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), symbiotic pulsing amber light through chains, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Зависимость"
+    },
+    {
+      "code": "K06",
+      "name_de": "Wettbewerb",
+      "category": "K",
+      "prompt": "Office workers race frantically across a track made of connected desks, leaping over obstacles of paperwork, each runner trying to outpace the others, brass finish-line mechanisms measure microsecond differences, some runners trip others subtly, a scoreboard displays rankings that constantly shift, the track is circular meaning there is no real finish line only endless competition, exhausted runners who stopped are trampled by those behind. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), competitive harsh directional track lighting, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Конкуренция"
+    },
+    {
+      "code": "K07",
+      "name_de": "Bürokratie",
+      "category": "K",
+      "prompt": "An immense labyrinth constructed from towering walls of filing folders, forms, and rubber-stamp stations stretches to infinity, a lone figure navigates the corridors following a trail of approved documents, dead ends are marked by rejection stamps, brass pneumatic tubes carry documents overhead like highways, the labyrinth shifts and rearranges itself mechanically when no one watches, other lost souls wander different corridors visible through gaps. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), institutional maze lighting from above, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Бюрократия"
+    },
+    {
+      "code": "K08",
+      "name_de": "Anpassungsdruck",
+      "category": "K",
+      "prompt": "A massive mechanical press with brass plates slowly pushes diverse differently shaped worker figures through standardizing molds, pressure gauges show the force being applied, the figures emerge on the other side uniform and identical, personal accessories and unique features are crushed off and collected in reject bins below, the press operates automatically without a visible operator, a conveyor feeds new diverse individuals into the machine. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), crushing industrial overhead light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Давление Стаи"
+    },
+    {
+      "code": "K09",
+      "name_de": "Schweigen",
+      "category": "K",
+      "prompt": "Employees sit at their desks with brass mechanical tape sealed across their mouths, their unspoken words materialize as visible bubbles that rise and accumulate at the ceiling forming a dark cloud of suppressed communication, some employees try to communicate through eye contact alone, the silence is enforced by large brass acoustic dampeners mounted on walls, a suggestion box overflows with ignored notes, the atmosphere is heavy and pressurized. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), muffled dampened diffused light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Молчание"
+    },
+    {
+      "code": "K10",
+      "name_de": "Loyalität (systemisch)",
+      "category": "K",
+      "prompt": "A vast loyalty enforcement machine pumps devotion-inducing golden light through brass pipes connected to employee workstations, the machine has no face but displays the company logo prominently, workers bathed in the golden glow show automatic devotion, those in the shadows where pipes don't reach look on with independent but fearful expressions, loyalty scores display on mechanical counters above each desk, the system rewards compliance and starves independence. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), systemic golden loyalty light from pipes, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, industrial chain-link border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Лояльность (системная)"
+    },
+    {
+      "code": "R01",
+      "name_de": "Mut",
+      "category": "R",
+      "prompt": "A determined figure breaks through brass chains binding them to a corporate machine, shattered chain links flying outward in a dynamic explosion, the figure lunges forward with fierce resolve, behind them the broken system sparks and sputters, ahead warm light floods in, their posture is powerful and decisive, a trail of discarded restraints marks the path behind, the act of breaking free creates visible shockwaves in the surrounding air. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), explosive liberating forward light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Мужество"
+    },
+    {
+      "code": "R02",
+      "name_de": "Klarheit",
+      "category": "R",
+      "prompt": "A calm figure holds a brass lantern that emits perfectly clear light cutting through the fog of a complex office maze, the light reveals hidden pathways, true relationships between cubicles, and the actual structure beneath the confusion, everything the lantern touches becomes sharp and comprehensible, the figure walks with quiet confidence, the maze that seemed impossible becomes navigable in the light, fog retreats from the clarity. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), pure clear radiant lantern light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Ясность"
+    },
+    {
+      "code": "R03",
+      "name_de": "Solidarität",
+      "category": "R",
+      "prompt": "A group of employees stand shoulder to shoulder in a protective circle, their hands connected by glowing golden threads of solidarity that form a web of mutual support, each connection point where threads meet pulses with warm light, outside their circle the corporate machine grinds on but cannot penetrate the formation, their diverse faces show shared determination, the threads strengthen with each new connection like a living network of trust. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm interconnected golden web light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Солидарность"
+    },
+    {
+      "code": "R04",
+      "name_de": "Grenzen setzen",
+      "category": "R",
+      "prompt": "A resolute figure builds a luminous protective barrier around their personal workspace, the barrier is made of solid light and brass reinforcement, corporate pressures — represented as mechanical arms, demands, and reaching shadows — press against the barrier but cannot penetrate, the space inside is calm organized and personal, the figure maintains the boundary with one firm outstretched hand, their expression is peaceful but immovable. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), protective warm inner light against cold outer pressure, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Свои Границы"
+    },
+    {
+      "code": "R05",
+      "name_de": "Exit",
+      "category": "R",
+      "prompt": "A liberated figure walks purposefully out of a massive corporate machine through a grand brass doorway into open warm light, their silhouette is confident and forward-moving, behind them the intricate machinery of the organization is visible in full mechanical complexity, the doorway frame glows with possibility, the outside light is natural and warm contrasting with the industrial interior, personal items carried lightly in one hand, not looking back. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), liberating warm natural light flooding from the exit, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Выход"
+    },
+    {
+      "code": "R06",
+      "name_de": "Vertrauen",
+      "category": "R",
+      "prompt": "Two figures face each other in a dark corporate space and together hold a glowing brass sphere of trust between their open palms, the sphere illuminates both their faces with warm golden light, the sphere is delicate and both handle it with care, around them mechanical corporate dangers lurk in shadows but dare not approach the light of their shared trust, the connection between them creates a visible bridge of warm light spanning the darkness. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm shared golden sphere light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Доверие"
+    },
+    {
+      "code": "R07",
+      "name_de": "Humor",
+      "category": "R",
+      "prompt": "A laughing figure sits atop a broken corporate machine using its parts as a playground, swinging from a disconnected chain, wearing a gear as a silly hat, the laughter sends visible golden ripples through the dark mechanical environment causing rigid structures to soften and bend, nearby colleagues crack smiles despite themselves, the humor is subversive and freeing, the heavy atmosphere lightens where the laughter reaches, cracks in the machine fill with light. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), warm radiating ripple-light from laughter, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Юмор"
+    },
+    {
+      "code": "R08",
+      "name_de": "Distanz",
+      "category": "R",
+      "prompt": "A composed figure stands on a elevated observation platform above the corporate machinery observing the system with calm detachment through brass binoculars, the distance provides perspective — patterns invisible from inside become clear from above, the chaos below is visible but does not reach the observer, their posture is relaxed and analytical not cold, a notebook in hand records insights, wind moves their hair suggesting fresh air unavailable below. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), clear elevated perspective light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Дистанция"
+    },
+    {
+      "code": "R09",
+      "name_de": "Selbstwirksamkeit",
+      "category": "R",
+      "prompt": "A confident figure operates their own personal brass control panel, every lever and dial responsive to their touch, the machine around them that seemed autonomous now reveals individual control points that this person has mastered, energy flows FROM the person INTO the machine rather than the reverse, their posture is upright and capable, completed projects orbit around them like satellites, their personal workspace is ordered and intentional. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), empowered personal radiant light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Самоэффективность"
+    },
+    {
+      "code": "R10",
+      "name_de": "Perspektivwechsel",
+      "category": "R",
+      "prompt": "A figure rotates a massive brass kaleidoscope that refracts the corporate environment into multiple alternative views, each lens facet shows the same office from a radically different angle — from above, from below, from inside the machine, from outside — the viewer's expression shifts with each rotation from confusion to insight to wonder, fractured light creates rainbow-like prismatic patterns across the dark office walls. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), prismatic multi-angle refracting light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Смена Перспективы"
+    },
+    {
+      "code": "R11",
+      "name_de": "Akzeptanz",
+      "category": "R",
+      "prompt": "A serene figure sits in the center of the corporate machine at rest, not fighting it not serving it, simply present, their breathing is visible as gentle warm mist in the cold mechanical air, the machine around them has not changed but their relationship to it has — gears turn without grinding against them, their open hands rest on their knees palms up in acceptance, a gentle warm aura surrounds their seated form creating a pocket of peace. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), gentle peaceful warm aura light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Принятие"
+    },
+    {
+      "code": "R12",
+      "name_de": "Loslassen",
+      "category": "R",
+      "prompt": "A figure opens their hands releasing brass objects upward — old titles, roles, expectations, attachments — that float away like rising lanterns into a dark sky above the office, each released object transforms into a point of light as it ascends, the figure's body visibly lightens with each release, their posture straightens, shoulders drop, the surrounding mechanical office remains but feels less heavy, a gentle updraft carries everything away that no longer serves. Allegorical corporate steampunk, dark academic palette (#0F172A #1E293B #1F2A44 #274C77 #5B4B8A), brass accents (#C59A3D #B0892F), upward releasing ascending light, symbolic corporate psychology, highly detailed illustration, vertical tarot card composition, luminous glowing border, subtle satire, not cartoonish, no text on image",
+      "name_ru": "Освобождение"
+    }
+  ]
+}

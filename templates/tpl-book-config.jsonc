@@ -1,0 +1,69 @@
+// book_config.json — схема конфигурации проекта (книги)
+//
+// Единый источник проектного контекста для всех агентов фабрики.
+// Создаётся при инициализации книги (init_book.py или HTML-форма).
+// Агенты читают этот файл вместо хардкода имён проектных файлов.
+//
+// ПРАВИЛО: ни один файл фабрики (.claude/agents/, skills/, architecture/)
+// не содержит конкретных имён книг, серий или проектных файлов.
+// Всё проектное — только через book_config.json.
+//
+// Пример заполненного конфига (книга «Карты на стол»):
+{
+  "_schema_version": "1.0",
+
+  "identity": {
+    "title": "Карты на стол",
+    "code": "KS",
+    "language": "ru",
+    "created": "2026-05-15"
+  },
+
+  "series": {
+    "is_series": true,
+    "series_name": "Психология корпоративных психопатов",
+    "volume_number": 6,
+    "series_bible_path": "../Serie/series-bible-psychopaths.md",
+    "other_volumes_path": "../Serie/"
+  },
+
+  "voice": {
+    "base_tone": "провокационно-аналитический",
+    "address": "ты",
+    "provocation_level": "high",
+    "wow_factor": true,
+    "forbidden_tones": ["коучинг", "академизм", "менторство"]
+  },
+
+  "audience": {
+    "primary": "руководители и HR-специалисты DACH",
+    "expertise_level": "практик, не теоретик",
+    "language_register": "разговорный профессиональный"
+  },
+
+  "structure": {
+    "planned_chapters": 16,
+    "words_per_chapter": [5000, 7000],
+    "arena_count": 5,
+    "signature_figure_limit": 8,
+    "leading_technique": "МАК-карты"
+  },
+
+  "paths": {
+    // Пути к проектным файлам. Агенты читают ТОЛЬКО отсюда.
+    // null = файл не существует (standalone книга без серии и т.д.)
+    "book_root": "KS/",
+    "anweisungen": "KS/anweisungen_KS.md",
+    "stil_und_ton": "KS/stil_und_ton_KS.md",
+    "verbot_liste": "KS/verbot_liste_KS.md",
+    "arbeitsplan": "KS/arbeitsplan_KS.md",
+    "arenen_pool": "KS/arenen_pool_KS.md",
+    "quellen_pool": "KS/quellen_pool_KS.md",
+    "session_template": "KS/session_template_KS.md",
+    "session_state": "KS/_SESSION_STATE.md",
+    "skvoznye_formuly": "KS/_skvoznye_formuly_KS.md",
+    "reference_chapter": null,
+    "series_bible": "../Serie/series-bible-psychopaths.md",
+    "drafts": "KS/_drafts/"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "chapter": "01",
+  "book": "KS",
+  "run": "opus",
+  "date": "2026-05-08",
+  "session_file": "Session_Glava_01_KS.md",
+  "beat_plan_file": "01_beat_plan.json",
+  "beats_dir": "01_beats_opus/",
+  "output_file": "Glava_01_KS_draft_opus.md",
+  "total_words_estimate": 6148,
+  "beats_count": 15,
+  "beats": [
+    {"beat_id": 1, "section": "Секция 1", "target_words": 460, "actual_words": 390, "iterations": 1, "action": "accept"},
+    {"beat_id": 2, "section": "Секция 1", "target_words": 470, "actual_words": 245, "iterations": 1, "action": "accept"},
+    {"beat_id": 3, "section": "Секция 1", "target_words": 460, "actual_words": 320, "iterations": 1, "action": "accept"},
+    {"beat_id": 4, "section": "Секция 2", "target_words": 380, "actual_words": 340, "iterations": 1, "action": "accept"},
+    {"beat_id": 5, "section": "Секция 2", "target_words": 460, "actual_words": 410, "iterations": 1, "action": "accept"},
+    {"beat_id": 6, "section": "Секция 2", "target_words": 440, "actual_words": 395, "iterations": 1, "action": "accept"},
+    {"beat_id": 7, "section": "Секция 3", "target_words": 400, "actual_words": 390, "iterations": 1, "action": "accept"},
+    {"beat_id": 8, "section": "Секция 3", "target_words": 390, "actual_words": 310, "iterations": 1, "action": "accept"},
+    {"beat_id": 9, "section": "Секция 3", "target_words": 380, "actual_words": 365, "iterations": 1, "action": "accept"},
+    {"beat_id": 10, "section": "Секция 4", "target_words": 430, "actual_words": 380, "iterations": 1, "action": "accept"},
+    {"beat_id": 11, "section": "Секция 4", "target_words": 430, "actual_words": 385, "iterations": 1, "action": "accept"},
+    {"beat_id": 12, "section": "Секция 4", "target_words": 430, "actual_words": 340, "iterations": 1, "action": "accept"},
+    {"beat_id": 13, "section": "Секция 5", "target_words": 380, "actual_words": 310, "iterations": 1, "action": "accept"},
+    {"beat_id": 14, "section": "Секция 5", "target_words": 400, "actual_words": 400, "iterations": 1, "action": "accept"},
+    {"beat_id": 15, "section": "Секция 5", "target_words": 390, "actual_words": 368, "iterations": 1, "action": "accept"}
+  ],
+  "notes": "Прогон B (opus-critic). Все биты приняты с первой итерации. Beat 2 — volume_short (245 vs 470 target): структурный потолок арены (обрыв на якоре без вывода). Beat 8 — volume_short (310 vs 390): micro-кейс + сигнатура, anchor-constraint. Opus-critic принял оба без revise — в отличие от sonnet-прогона, где beat 1 дошёл до iter 3 по volume. Разница: opus оценивает volume_short на anchor-beats как structural ceiling, не как volume_fail."
+}

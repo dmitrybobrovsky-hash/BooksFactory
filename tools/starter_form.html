@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BooksFactory — Стартовый пакет</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#5a4a7a;--primary-dark:#3d3055;--primary-light:#7a6a9a;--accent:#b8a060;--accent-dark:#8a7540;--bg:#ffffff;--bg2:#fafafa;--bg3:#f5f5f5;--bd:#e8e8e8;--bd2:#d0d0d0;--tx:#2a2a2a;--tx2:#505050;--tx3:#808080;--red:#c0392b;--grn:#27ae60;--font-sans:'Source Sans Pro',-apple-system,sans-serif;--font-serif:'Source Serif Pro',Georgia,serif;--font-mono:'JetBrains Mono','Fira Code','Consolas',monospace;--r:6px;--tr:0.2s ease}
+body.dark{--primary:#8b7bb8;--primary-dark:#b39dd4;--primary-light:#6d5d96;--accent:#d4c080;--accent-dark:#b8a060;--bg:#1a1625;--bg2:#2a2435;--bg3:#342d42;--bd:#3d364d;--bd2:#4a4358;--tx:#e8e6ee;--tx2:#b8b5c0;--tx3:#8a8795}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--tx);background:var(--bg);line-height:1.65;transition:background var(--tr),color var(--tr);-webkit-font-smoothing:antialiased}
+.wrap{max-width:700px;margin:0 auto;padding:36px 22px 64px}
+.header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:44px}
+.brand-label{font-family:var(--font-mono);font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--tx3);margin-bottom:6px}
+.brand-title{font-family:var(--font-serif);font-size:28px;font-weight:600;color:var(--primary);line-height:1.2}
+.brand-sub{font-size:13px;color:var(--tx3);margin-top:5px}
+.controls{display:flex;gap:8px;align-items:flex-start;flex-shrink:0}
+.lang-sw{display:flex;background:var(--bg3);border:1px solid var(--bd);border-radius:var(--r);overflow:hidden}
+.lang-sw button{padding:5px 10px;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;border:none;background:transparent;color:var(--tx3);cursor:pointer;transition:all var(--tr)}
+.lang-sw button.active{background:var(--primary);color:#fff}
+.dark-btn{width:36px;height:32px;border:1px solid var(--bd);border-radius:var(--r);background:var(--bg3);color:var(--tx3);cursor:pointer;font-size:16px;transition:all var(--tr);display:flex;align-items:center;justify-content:center}
+.dark-btn:hover{border-color:var(--primary);color:var(--primary)}
+.sec{margin-bottom:34px}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.sec-icon{width:26px;height:26px;border-radius:5px;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex-shrink:0}
+.sec-title{font-family:var(--font-serif);font-size:16px;font-weight:600;color:var(--tx);letter-spacing:0.2px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;color:var(--tx2);margin-bottom:5px}
+.hint{font-size:11px;color:var(--tx3);margin-bottom:5px}
+input[type=text],input[type=number],select{width:100%;padding:9px 12px;font-family:var(--font-sans);font-size:14px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r);color:var(--tx);outline:none;transition:border-color var(--tr),box-shadow var(--tr)}
+input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(90,74,122,0.12)}
+body.dark input:focus,body.dark select:focus{box-shadow:0 0 0 3px rgba(139,123,184,0.18)}
+select{cursor:pointer}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{display:inline-flex;align-items:center;padding:5px 14px;border-radius:20px;border:1px solid var(--bd2);color:var(--tx3);font-size:12px;font-weight:600;cursor:pointer;user-select:none;transition:all var(--tr);background:var(--bg3)}
+.chip:hover{border-color:var(--primary-light);color:var(--primary)}
+.chip.on{border-color:var(--primary);background:rgba(90,74,122,0.1);color:var(--primary)}
+body.dark .chip.on{background:rgba(139,123,184,0.15)}
+.chip.off{opacity:.4;text-decoration:line-through}
+.check{display:flex;align-items:center;gap:10px;cursor:pointer;margin-bottom:14px;user-select:none}
+.check-box{width:18px;height:18px;border-radius:4px;border:2px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;font-weight:900;transition:all var(--tr);flex-shrink:0}
+.check-box.on{border-color:var(--primary);background:var(--primary)}
+.check-box.red.on{border-color:var(--red);background:var(--red)}
+.check-lbl{font-size:13px;color:var(--tx3);transition:color var(--tr)}
+.check.active .check-lbl{color:var(--tx)}
+.opt-row{display:flex;gap:8px;margin-bottom:14px}
+.opt{flex:1;padding:9px 14px;border-radius:var(--r);border:1px solid var(--bd);font-size:13px;font-weight:600;color:var(--tx3);cursor:pointer;text-align:center;transition:all var(--tr);background:var(--bg3)}
+.opt:hover{border-color:var(--primary-light)}
+.opt.on{border-color:var(--primary);background:rgba(90,74,122,0.08);color:var(--primary)}
+body.dark .opt.on{background:rgba(139,123,184,0.12)}
+.tag-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:6px;min-height:4px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;background:rgba(90,74,122,0.08);border:1px solid rgba(90,74,122,0.2);border-radius:14px;font-size:12px;color:var(--primary)}
+body.dark .tag{background:rgba(139,123,184,0.12);border-color:rgba(139,123,184,0.3)}
+.tag .x{cursor:pointer;color:var(--tx3);font-size:14px;line-height:1}
+.ti{display:flex;gap:6px}
+.ti input{flex:1;font-size:13px}
+.ti button{padding:8px 14px;font-weight:600;background:var(--bg3);color:var(--tx2);border:1px solid var(--bd);border-radius:var(--r);cursor:pointer;font-size:13px;transition:all var(--tr)}
+.ti button:hover{border-color:var(--primary);color:var(--primary)}
+.idea-row{display:flex;gap:6px;margin-bottom:7px;align-items:center}
+.idea-num{font-family:var(--font-mono);font-size:11px;color:var(--tx3);min-width:18px}
+.idea-row input{flex:1;font-size:13px}
+.rm{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:17px;padding:0 2px;transition:color var(--tr)}
+.rm:hover{color:var(--red)}
+.part-row{display:flex;gap:8px;margin-bottom:7px;align-items:center}
+.part-lbl{font-size:12px;color:var(--tx3);min-width:55px}
+.part-row input{width:70px;text-align:center}
+.part-unit{font-size:12px;color:var(--tx3)}
+.slider-row{display:flex;align-items:center;gap:12px}
+.slider-row input[type=range]{flex:1;accent-color:var(--primary)}
+body.dark .slider-row input[type=range]{accent-color:var(--accent)}
+.slider-val{font-family:var(--font-mono);font-size:11px;color:var(--tx3);min-width:80px}
+.add-btn{padding:6px 14px;font-size:11px;font-weight:600;letter-spacing:.5px;background:var(--bg3);color:var(--tx3);border:1px solid var(--bd);border-radius:var(--r);cursor:pointer;transition:all var(--tr)}
+.add-btn:hover{border-color:var(--primary);color:var(--primary)}
+.badge{display:inline-flex;padding:6px 14px;border-radius:var(--r);border:1px solid var(--primary);background:rgba(90,74,122,0.08);color:var(--primary);font-family:var(--font-mono);font-size:14px;font-weight:600}
+body.dark .badge{background:rgba(139,123,184,0.12)}
+.indent{padding-left:28px;margin-top:10px}
+.hidden{display:none}
+.adv-toggle{text-align:center;padding:12px 0;cursor:pointer;font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--tx3);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);user-select:none;transition:color var(--tr);margin:4px 0}
+.adv-toggle:hover{color:var(--primary)}
+#advanced{display:none;padding-top:26px}
+#advanced.open{display:block}
+.summary{padding:8px 14px;background:var(--bg3);border-radius:var(--r);font-family:var(--font-mono);font-size:12px;color:var(--tx3);text-align:center;margin-top:12px}
+.req{font-size:11px;color:var(--red);margin-top:4px;display:none}
+.req.show{display:block}
+.gen-wrap{text-align:center;margin-top:40px}
+.gen-btn{padding:13px 40px;font-family:var(--font-sans);font-size:14px;font-weight:600;letter-spacing:.5px;background:var(--primary);color:#fff;border:none;border-radius:var(--r);cursor:pointer;transition:background var(--tr)}
+.gen-btn:hover{background:var(--primary-dark)}
+.gen-btn:disabled{background:var(--bd2);color:var(--tx3);cursor:not-allowed}
+.gen-req{font-size:12px;color:var(--red);margin-top:8px}
+#output{display:none;margin-top:28px;padding:22px;background:var(--bg2);border:1px solid var(--bd);border-radius:var(--r)}
+#output.show{display:block}
+.out-label{font-family:var(--font-mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--grn);margin-bottom:12px}
+#json-out{font-family:var(--font-mono);font-size:11px;color:var(--tx2);max-height:360px;overflow:auto;white-space:pre-wrap;line-height:1.5;background:var(--bg3);padding:12px;border-radius:4px;border:1px solid var(--bd)}
+.out-btn{margin-top:14px;padding:10px 26px;font-family:var(--font-sans);font-size:13px;font-weight:600;background:var(--accent);color:#fff;border:none;border-radius:var(--r);cursor:pointer;transition:background var(--tr)}
+.out-btn:hover{background:var(--accent-dark)}
+.footer{margin-top:52px;padding-top:16px;border-top:1px solid var(--bd);text-align:center;font-size:11px;color:var(--tx3)}
+.footer a{color:var(--primary);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="header">
+  <div>
+    <div class="brand-label">BooksFactory v2.5</div>
+    <div class="brand-title" id="h-title">Стартовый пакет</div>
+    <div class="brand-sub" id="h-sub">Инициализация книжного проекта → book_config.json</div>
+  </div>
+  <div class="controls">
+    <div class="lang-sw">
+      <button class="active" onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('de')">DE</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
+    <button class="dark-btn" onclick="toggleDark()" id="dark-icon">🌙</button>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-head"><div class="sec-icon">■</div><div class="sec-title" data-t="s_meta">Идентификация</div></div>
+  <div class="field"><label data-t="title">Название книги</label><input type="text" id="f-title" data-ph="title_ph" placeholder="Рабочее название"></div>
+  <div class="row">
+    <div class="field"><label data-t="code">Код</label><div class="hint" data-t="code_hint">2-3 буквы</div><input type="text" id="f-code" maxlength="4" style="text-transform:uppercase"></div>
+    <div class="field"><label data-t="book_lang">Язык книги</label><select id="f-lang" onchange="onLangChange()"><option value="de">Deutsch</option><option value="ru">Русский</option><option value="en">English</option></select></div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="sec-head"><div class="sec-icon">▲</div><div class="sec-title" data-t="s_voice">Голос</div></div>
+  <div class="field"><label data-t="tone">Тон</label><div class="hint" data-t="tone_hint">Выбери один или несколько</div>
+    <div class="chips" id="tone-chips"></div>
+    <div class="ti"><input type="text" id="custom-tone" data-ph="custom_tone_ph" placeholder="Свой вариант…"><button onclick="addCustomTone()">+</button></div>
+    <div class="req" id="tone-req" data-t="req_tone">Выберите хотя бы один тон</div>
+  </div>
+  <div class="field hidden" id="micro-sec"><label data-t="micro">Микрорежимы</label><div class="hint" data-t="micro_hint">Авто от тонов. Отключи ненужные, добавь свои.</div>
+    <div class="chips" id="micro-chips"></div>
+    <div class="ti"><input type="text" id="custom-micro" data-ph="micro_custom_ph" placeholder="Свой микрорежим…"><button onclick="addCustomMicro()">+</button></div>
+  </div>
+  <div class="field"><label id="prov-lbl">Провокация: 3/5</label>
+    <div class="slider-row"><input type="range" id="f-prov" min="1" max="5" value="3" oninput="updateProv()"><span class="slider-val" id="prov-val">умеренно</span></div>
+  </div>
+  <div class="check" id="wow-check" onclick="toggleWow()"><div class="check-box red" id="wow-box"></div><span class="check-lbl" data-t="wow">«wow на грани фола»</span></div>
+  <div class="field"><label data-t="audience">Целевая аудитория</label><input type="text" id="f-audience" data-ph="audience_ph" placeholder="Менеджеры среднего звена в DACH-регионе">
+    <div class="req" id="aud-req" data-t="req_audience">Укажите целевую аудиторию</div>
+  </div>
+  <div class="field"><label data-t="address">Обращение к читателю</label><span class="badge" id="f-address">du</span><span style="font-size:11px;color:var(--tx3);margin-left:8px" data-t="address_fixed">фиксировано языком</span></div>
+</div>
+
+<div class="sec">
+  <div class="sec-head"><div class="sec-icon">◈</div><div class="sec-title" data-t="s_ideas">Основные идеи</div></div>
+  <div class="hint" style="margin-bottom:10px" data-t="ideas_hint">3-7 ключевых тезисов книги</div>
+  <div id="ideas-list"></div>
+  <button class="add-btn" onclick="addIdea()" data-t="add">+ добавить</button>
+  <div class="req" id="ideas-req" data-t="req_ideas">Добавьте хотя бы одну идею</div>
+</div>
+
+<div class="sec">
+  <div class="sec-head"><div class="sec-icon">◆</div><div class="sec-title" data-t="s_series">Серия</div></div>
+  <div class="check" id="series-check" onclick="toggleSeries()"><div class="check-box" id="series-box"></div><span class="check-lbl" data-t="series">Книга входит в серию</span></div>
+  <div class="indent hidden" id="series-fields">
+    <div class="field"><label data-t="series_name">Название серии</label><input type="text" id="f-sname"></div>
+    <div class="row">
+      <div class="field"><label data-t="volume">Том №</label><input type="number" id="f-vol" min="1"></div>
+      <div class="field"><label data-t="bible">Путь к серийному канону</label><input type="text" id="f-bible" placeholder="../Serie/series-bible.md"></div>
+    </div>
+  </div>
+</div>
+
+<div class="adv-toggle" id="adv-toggle" onclick="toggleAdv()" data-t="advanced">Расширенные настройки ▾</div>
+<div id="advanced">
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-icon">●</div><div class="sec-title" data-t="s_structure">Структура</div></div>
+    <div class="opt-row"><div class="opt on" id="opt-flat" onclick="setLayout('flat')" data-t="flat">Плоская (главы)</div><div class="opt" id="opt-parts" onclick="setLayout('parts')" data-t="parts_label">Части → главы</div></div>
+    <div class="hidden" id="parts-sec"><div id="parts-list"></div><button class="add-btn" onclick="addPart()" data-t="add_part">+ часть</button></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+      <div class="field"><label data-t="chapters">Глав</label><input type="number" id="f-ch" placeholder="20"></div>
+      <div class="field"><label data-t="words_ch">Слов / глава</label><input type="number" id="f-wpc" placeholder="6000" step="500"></div>
+      <div class="field"><label data-t="intro">Введение (слов)</label><input type="number" id="f-intro" placeholder="3000" step="500"></div>
+      <div class="field"><label data-t="outro">Заключение (слов)</label><input type="number" id="f-outro" placeholder="3000" step="500"></div>
+      <div class="field"><label data-t="arenas">Арен / глава</label><input type="number" id="f-arenas" placeholder="3"></div>
+      <div class="field"><label data-t="sig">Сигнатурная фигура</label><input type="number" id="f-sig" placeholder="8"></div>
+    </div>
+    <div class="summary" id="summary">≈ 123K слов · ≈ 492 стр.</div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-icon">◇</div><div class="sec-title" data-t="s_content">Содержание</div></div>
+    <div class="field"><label data-t="biblio">Литература</label>
+      <div class="opt-row" style="margin-top:6px"><div class="opt on" id="opt-uni" onclick="setBiblio('unified')" data-t="biblio_end">Общая в конце</div><div class="opt" id="opt-ch" onclick="setBiblio('per_chapter')" data-t="biblio_ch">В каждой главе</div></div>
+    </div>
+    <div class="field"><label data-t="technique">Ведущая техника</label><div class="hint" data-t="technique_hint">Если решено; иначе предложит bf-researcher</div><input type="text" id="f-tech" data-ph="technique_ph" placeholder="street_calibration…"></div>
+    <div class="field"><label data-t="genre_block">Обязательный блок главы</label><div class="hint" data-t="genre_hint">Повторяющийся блок; пусто = нет</div><input type="text" id="f-genre" data-ph="genre_ph" placeholder="PRAKTISCHE ANWENDUNG"></div>
+    <div class="field"><label data-t="ref_style">Стилистический референс</label><div class="hint" data-t="ref_hint">На какого автора ориентируемся (необязательно)</div><input type="text" id="f-ref" data-ph="ref_ph" placeholder="Нассим Талеб…"></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-icon">✕</div><div class="sec-title" data-t="s_forbidden">Запреты</div></div>
+    <div class="hint" style="margin-bottom:8px" data-t="forbidden_hint">Слова, темы, подходы → verbot_liste</div>
+    <div class="tag-list" id="forbidden-tags"></div>
+    <div class="ti"><input type="text" id="forbidden-in" data-ph="forbidden_ph" placeholder="Запретить…" onkeydown="if(event.key==='Enter'){event.preventDefault();addTag('forbidden')}"><button onclick="addTag('forbidden')">+</button></div>
+  </div>
+
+  <div class="sec">
+    <div class="sec-head"><div class="sec-icon">◎</div><div class="sec-title" data-t="s_metaphor">Метафорические территории</div></div>
+    <div class="field"><label data-t="meta_use">Использовать</label>
+      <div class="tag-list" id="muse-tags"></div>
+      <div class="ti"><input type="text" id="muse-in" data-ph="meta_use_ph" placeholder="спорт, кухня…" onkeydown="if(event.key==='Enter'){event.preventDefault();addTag('muse')}"><button onclick="addTag('muse')">+</button></div>
+    </div>
+    <div class="field"><label data-t="meta_avoid">Избегать</label>
+      <div class="tag-list" id="mavoid-tags"></div>
+      <div class="ti"><input type="text" id="mavoid-in" data-ph="meta_avoid_ph" placeholder="война…" onkeydown="if(event.key==='Enter'){event.preventDefault();addTag('mavoid')}"><button onclick="addTag('mavoid')">+</button></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="gen-wrap">
+  <button class="gen-btn" id="gen-btn" onclick="generate()" disabled data-t="generate">Сгенерировать book_config.json</button>
+  <div class="gen-req" id="gen-req"></div>
+</div>
+
+<div id="output">
+  <div class="out-label" data-t="ready">✓ Конфигурация готова</div>
+  <pre id="json-out"></pre>
+  <button class="out-btn" onclick="downloadJSON()" data-t="download">Скачать book_config.json</button>
+</div>
+
+<div class="footer">BooksFactory · <span data-t="footer">Стартовый пакет v4</span> · <a href="https://spelltext.de" target="_blank">SpellText Verlag Berlin</a></div>
+</div>
+
+<script>
+const T={
+  ru:{s_meta:"Идентификация",title:"Название книги",title_ph:"Рабочее название",code:"Код",code_hint:"2-3 буквы",book_lang:"Язык книги",s_voice:"Голос",tone:"Тон",tone_hint:"Выбери один или несколько",custom_tone_ph:"Свой вариант…",micro:"Микрорежимы",micro_hint:"Авто от тонов. Отключи ненужные, добавь свои.",micro_custom_ph:"Свой микрорежим…",wow:"«wow на грани фола» — экстремальные стилистические ходы",audience:"Целевая аудитория",audience_ph:"Менеджеры среднего звена в DACH-регионе",address:"Обращение к читателю",address_fixed:"фиксировано языком",s_ideas:"Основные идеи",ideas_hint:"3-7 ключевых тезисов книги",idea_ph:"Ключевой тезис…",s_series:"Серия",series:"Книга входит в серию",series_name:"Название серии",volume:"Том №",bible:"Путь к серийному канону",advanced:"Расширенные настройки ▾",hide_adv:"Свернуть ▴",s_structure:"Структура",flat:"Плоская (главы)",parts_label:"Части → главы",add_part:"+ часть",chapters:"Глав",words_ch:"Слов / глава",intro:"Введение (слов)",outro:"Заключение (слов)",arenas:"Арен / глава",sig:"Сигнатурная фигура",s_content:"Содержание",biblio:"Литература",biblio_end:"Общая в конце",biblio_ch:"В каждой главе",technique:"Ведущая техника",technique_hint:"Если решено; иначе предложит bf-researcher",technique_ph:"street_calibration, diagnose_szene…",genre_block:"Обязательный блок главы",genre_hint:"Повторяющийся блок; пусто = нет",genre_ph:"PRAKTISCHE ANWENDUNG",ref_style:"Стилистический референс",ref_hint:"На какого автора ориентируемся (необязательно)",ref_ph:"Нассим Талеб, Роберт Грин…",s_forbidden:"Запреты",forbidden_hint:"Слова, темы, подходы → verbot_liste",forbidden_ph:"Запретить…",s_metaphor:"Метафорические территории",meta_use:"Использовать",meta_avoid:"Избегать",meta_use_ph:"спорт, кухня, механика…",meta_avoid_ph:"война, религия…",generate:"Сгенерировать book_config.json",ready:"✓ Конфигурация готова",download:"Скачать book_config.json",footer:"Стартовый пакет v4",add:"+ добавить",req_tone:"Выберите хотя бы один тон",req_audience:"Укажите целевую аудиторию",req_ideas:"Добавьте хотя бы одну идею",prov_l:["минимум","осторожно","умеренно","ощутимо","на грани"],prov_lbl:"Провокация"},
+  de:{s_meta:"Identifikation",title:"Buchtitel",title_ph:"Arbeitstitel",code:"Code",code_hint:"2-3 Buchstaben",book_lang:"Buchsprache",s_voice:"Ton",tone:"Ton",tone_hint:"Einen oder mehrere wählen",custom_tone_ph:"Eigene Variante…",micro:"Mikromodi",micro_hint:"Auto von Tönen. Deaktiviere/ergänze nach Bedarf.",micro_custom_ph:"Eigener Mikromodus…",wow:"«wow am Limit» — extreme stilistische Mittel",audience:"Zielgruppe",audience_ph:"Führungskräfte im DACH-Raum",address:"Anrede",address_fixed:"sprachabhängig",s_ideas:"Kernideen",ideas_hint:"3-7 Kernthesen",idea_ph:"Kernthese…",s_series:"Reihe",series:"Teil einer Reihe",series_name:"Reihenname",volume:"Band Nr.",bible:"Pfad zum Reihenkanon",advanced:"Erweiterte Einstellungen ▾",hide_adv:"Einklappen ▴",s_structure:"Struktur",flat:"Flach (Kapitel)",parts_label:"Teile → Kapitel",add_part:"+ Teil",chapters:"Kapitel",words_ch:"Wörter/Kapitel",intro:"Einleitung (Wörter)",outro:"Schluss (Wörter)",arenas:"Arenen/Kapitel",sig:"Signaturfigur",s_content:"Inhalt",biblio:"Literatur",biblio_end:"Gesamtverzeichnis",biblio_ch:"Pro Kapitel",technique:"Leittechnik",technique_hint:"Falls entschieden; sonst schlägt bf-researcher vor",technique_ph:"Street-Calibration, Diagnose-Szene…",genre_block:"Pflichtblock",genre_hint:"Wiederkehrender Block; leer = keiner",genre_ph:"PRAKTISCHE ANWENDUNG",ref_style:"Stilistische Referenz",ref_hint:"Welcher Autor als Orientierung (optional)",ref_ph:"Nassim Taleb, Robert Greene…",s_forbidden:"Verbote",forbidden_hint:"Wörter, Themen, Ansätze → verbot_liste",forbidden_ph:"Verbieten…",s_metaphor:"Metaphernterritorien",meta_use:"Verwenden",meta_avoid:"Vermeiden",meta_use_ph:"Sport, Küche, Mechanik…",meta_avoid_ph:"Krieg, Religion…",generate:"book_config.json generieren",ready:"✓ Konfiguration fertig",download:"book_config.json herunterladen",footer:"Startpaket v4",add:"+ hinzufügen",req_tone:"Mindestens einen Ton wählen",req_audience:"Zielgruppe angeben",req_ideas:"Mindestens eine Kernidee",prov_l:["minimal","vorsichtig","moderat","spürbar","am Limit"],prov_lbl:"Provokation"},
+  en:{s_meta:"Identification",title:"Book title",title_ph:"Working title",code:"Code",code_hint:"2-3 letters",book_lang:"Book language",s_voice:"Voice",tone:"Tone",tone_hint:"Pick one or more",custom_tone_ph:"Custom tone…",micro:"Micro modes",micro_hint:"Auto from tones. Toggle off or add your own.",micro_custom_ph:"Custom micro mode…",wow:"'wow on the edge' — extreme stylistic moves",audience:"Target audience",audience_ph:"Mid-level managers in DACH region",address:"Reader address",address_fixed:"fixed by language",s_ideas:"Core ideas",ideas_hint:"3-7 key theses",idea_ph:"Key thesis…",s_series:"Series",series:"Part of a series",series_name:"Series name",volume:"Volume #",bible:"Path to series canon",advanced:"Advanced settings ▾",hide_adv:"Collapse ▴",s_structure:"Structure",flat:"Flat (chapters)",parts_label:"Parts → chapters",add_part:"+ part",chapters:"Chapters",words_ch:"Words/chapter",intro:"Intro (words)",outro:"Outro (words)",arenas:"Arenas/chapter",sig:"Signature figure",s_content:"Content",biblio:"Bibliography",biblio_end:"Unified at end",biblio_ch:"Per chapter",technique:"Lead technique",technique_hint:"If decided; otherwise bf-researcher proposes",technique_ph:"street_calibration, diagnose_szene…",genre_block:"Required chapter block",genre_hint:"Recurring block; empty = none",genre_ph:"PRACTICAL APPLICATION",ref_style:"Stylistic reference",ref_hint:"Which author as orientation (optional)",ref_ph:"Nassim Taleb, Robert Greene…",s_forbidden:"Forbidden",forbidden_hint:"Words, topics, approaches → verbot_liste",forbidden_ph:"Forbid…",s_metaphor:"Metaphor territories",meta_use:"Use from",meta_avoid:"Avoid from",meta_use_ph:"sports, cooking, mechanics…",meta_avoid_ph:"war, religion…",generate:"Generate book_config.json",ready:"✓ Configuration ready",download:"Download book_config.json",footer:"Starter Kit v4",add:"+ add",req_tone:"Select at least one tone",req_audience:"Specify target audience",req_ideas:"Add at least one idea",prov_l:["minimum","careful","moderate","noticeable","edgy"],prov_lbl:"Provocation"},
+};
+const ADDR={de:"du",ru:"ты",en:"you"};
+const TONES=[
+  {id:"standup",ru:"🎤 Стенд-ап",de:"🎤 Stand-up",en:"🎤 Stand-up",m:{ru:["панч-лайн","разогрев-нарастание","тихий удар"],de:["Punchline","Aufbau-Steigerung","leiser Schlag"],en:["punchline","build-up","quiet hit"]}},
+  {id:"sarcastic",ru:"😏 Саркастический",de:"😏 Sarkastisch",en:"😏 Sarcastic",m:{ru:["горькая усмешка","преувеличенная серьёзность","ложное сочувствие"],de:["bitteres Schmunzeln","übertriebener Ernst","falsches Mitgefühl"],en:["bitter smirk","exaggerated gravity","false sympathy"]}},
+  {id:"cynic",ru:"🪨 Циник",de:"🪨 Zyniker",en:"🪨 Cynic",m:{ru:["ледяная клиническая фиксация","сухой протокол","тихая констатация"],de:["eisige klinische Fixierung","trockenes Protokoll","stille Feststellung"],en:["icy clinical fixation","dry protocol","quiet statement"]}},
+  {id:"provocateur",ru:"⚡ Интеллигентный провокатор",de:"⚡ Intelligenter Provokateur",en:"⚡ Intelligent provocateur",m:{ru:["провокационный удар","Street-Calibration","парадокс-разворот"],de:["provokativer Schlag","Street-Calibration","Paradox-Wende"],en:["provocative strike","street calibration","paradox reversal"]}},
+  {id:"analyst",ru:"🧊 Холодный аналитик",de:"🧊 Kühler Analytiker",en:"🧊 Cold analyst",m:{ru:["анатомическая точность","сухой протокол","препарирование"],de:["anatomische Präzision","trockenes Protokoll","Sezierung"],en:["anatomical precision","dry protocol","dissection"]}},
+  {id:"ironic",ru:"🔍 Ироничный наблюдатель",de:"🔍 Ironischer Beobachter",en:"🔍 Ironic observer",m:{ru:["горькая усмешка","тёплая ирония","наигранное удивление"],de:["bitteres Schmunzeln","warme Ironie","gespielte Überraschung"],en:["bitter smirk","warm irony","feigned surprise"]}},
+  {id:"warm",ru:"☕ Тёплый практик",de:"☕ Warmer Praktiker",en:"☕ Warm pragmatist",m:{ru:["мягкий нажим","тёплая ирония","приглашение к размышлению"],de:["sanfter Druck","warme Ironie","Einladung zum Nachdenken"],en:["gentle push","warm irony","invitation to reflect"]}},
+  {id:"harsh",ru:"🔨 Жёсткий реалист",de:"🔨 Harter Realist",en:"🔨 Harsh realist",m:{ru:["ледяная клиническая фиксация","тихая констатация","прямой удар"],de:["eisige klinische Fixierung","stille Feststellung","direkter Schlag"],en:["icy clinical fixation","quiet statement","direct hit"]}},
+];
+let lang="ru",dark=false,tones=[],customTones=[],disabledMicros=new Set(),customMicros=[],
+    wow=false,seriesOn=false,advOpen=false,layout="flat",parts=[],biblio="unified",
+    ideas=[""],tags={forbidden:[],muse:[],mavoid:[]};
+
+function setLang(l){lang=l;document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.toggle('active',b.textContent.trim().toLowerCase()===l));document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(T[l][k]!==undefined)el.textContent=T[l][k];});document.querySelectorAll('[data-ph]').forEach(el=>{const k=el.getAttribute('data-ph');if(T[l][k])el.placeholder=T[l][k];});document.getElementById('h-title').textContent=l==='ru'?'Стартовый пакет':l==='de'?'Startpaket':'Starter Kit';document.getElementById('h-sub').textContent=l==='ru'?'Инициализация книжного проекта → book_config.json':l==='de'?'Buchprojekt initialisieren → book_config.json':'Initialize book project → book_config.json';document.getElementById('f-address').textContent=ADDR[document.getElementById('f-lang').value]||'du';renderTones();renderMicros();updateProv();updateSummary();}
+function toggleDark(){dark=!dark;document.body.classList.toggle('dark',dark);document.getElementById('dark-icon').textContent=dark?'☀️':'🌙';}
+function renderTones(){const w=document.getElementById('tone-chips');w.innerHTML='';TONES.forEach(t=>{const c=document.createElement('span');c.className='chip'+(tones.includes(t.id)?' on':'');c.textContent=t[lang]||t.en;c.onclick=()=>toggleTone(t.id);w.appendChild(c);});customTones.forEach(t=>{const c=document.createElement('span');c.className='chip on';c.textContent=t;c.onclick=()=>{customTones=customTones.filter(x=>x!==t);tones=tones.filter(x=>x!==t);renderTones();renderMicros();};w.appendChild(c);});validate();}
+function toggleTone(id){tones.includes(id)?tones=tones.filter(x=>x!==id):tones.push(id);renderTones();renderMicros();}
+function addCustomTone(){const i=document.getElementById('custom-tone'),v=i.value.trim();if(v&&!tones.includes(v)){customTones.push(v);tones.push(v);i.value='';renderTones();renderMicros();}}
+function getAutoMicros(){const s=new Set();tones.forEach(tid=>{const t=TONES.find(x=>x.id===tid);if(t&&t.m[lang])t.m[lang].forEach(m=>s.add(m));});return[...s];}
+function renderMicros(){const auto=getAutoMicros(),sec=document.getElementById('micro-sec'),w=document.getElementById('micro-chips');sec.classList.toggle('hidden',!(auto.length||customMicros.length));w.innerHTML='';auto.forEach(m=>{const c=document.createElement('span');c.className='chip'+(disabledMicros.has(m)?' off':' on');c.textContent=m;c.onclick=()=>{disabledMicros.has(m)?disabledMicros.delete(m):disabledMicros.add(m);renderMicros();};w.appendChild(c);});customMicros.forEach(m=>{const c=document.createElement('span');c.className='chip on';c.textContent=m;c.onclick=()=>{customMicros=customMicros.filter(x=>x!==m);renderMicros();};w.appendChild(c);});}
+function addCustomMicro(){const i=document.getElementById('custom-micro'),v=i.value.trim();if(v&&!customMicros.includes(v)){customMicros.push(v);i.value='';renderMicros();}}
+function updateProv(){const v=+document.getElementById('f-prov').value;document.getElementById('prov-lbl').textContent=T[lang].prov_lbl+': '+v+'/5';document.getElementById('prov-val').textContent=T[lang].prov_l[v-1]||'';}
+function toggleWow(){wow=!wow;const b=document.getElementById('wow-box');b.classList.toggle('on',wow);b.textContent=wow?'!':'';document.getElementById('wow-check').classList.toggle('active',wow);}
+function toggleSeries(){seriesOn=!seriesOn;document.getElementById('series-box').classList.toggle('on',seriesOn);document.getElementById('series-box').textContent=seriesOn?'✓':'';document.getElementById('series-check').classList.toggle('active',seriesOn);document.getElementById('series-fields').classList.toggle('hidden',!seriesOn);}
+function onLangChange(){document.getElementById('f-address').textContent=ADDR[document.getElementById('f-lang').value]||'du';}
+function toggleAdv(){advOpen=!advOpen;document.getElementById('advanced').classList.toggle('open',advOpen);document.getElementById('adv-toggle').textContent=T[lang][advOpen?'hide_adv':'advanced']||'▾';}
+function setLayout(l){layout=l;document.getElementById('opt-flat').classList.toggle('on',l==='flat');document.getElementById('opt-parts').classList.toggle('on',l==='parts');document.getElementById('parts-sec').classList.toggle('hidden',l!=='parts');updateSummary();}
+function addPart(){parts.push(4);renderParts();}
+function renderParts(){const w=document.getElementById('parts-list');w.innerHTML='';parts.forEach((p,i)=>{const d=document.createElement('div');d.className='part-row';d.innerHTML='<span class="part-lbl">'+(T[lang].part_s||'Часть')+' '+(i+1)+'</span><input type="number" min="1" max="30" value="'+p+'" onchange="parts['+i+']=+this.value;updateSummary()"><span class="part-unit">'+(T[lang].chapters||'глав')+'</span><button class="rm" onclick="parts.splice('+i+',1);renderParts()">×</button>';w.appendChild(d);});updateSummary();}
+function setBiblio(m){biblio=m;document.getElementById('opt-uni').classList.toggle('on',m==='unified');document.getElementById('opt-ch').classList.toggle('on',m==='per_chapter');}
+function addIdea(){if(ideas.length<7){ideas.push('');renderIdeas();}}
+function renderIdeas(){const w=document.getElementById('ideas-list');w.innerHTML='';const ph=T[lang].idea_ph||'';ideas.forEach((v,i)=>{const d=document.createElement('div');d.className='idea-row';d.innerHTML='<span class="idea-num">'+(i+1)+'.</span><input type="text" value="'+v.replace(/"/g,'&quot;')+'" placeholder="'+ph+'" oninput="ideas['+i+']=this.value;validate()"><button class="rm" onclick="ideas.splice('+i+',1);renderIdeas()">×</button>';w.appendChild(d);});validate();}
+function addTag(key){const inp=document.getElementById(key+'-in'),v=inp.value.trim();if(v&&!tags[key].includes(v)){tags[key].push(v);inp.value='';renderTag(key);}}
+function renderTag(key){const w=document.getElementById(key+'-tags');w.innerHTML='';tags[key].forEach((t,i)=>{const s=document.createElement('span');s.className='tag';s.innerHTML=t+'<span class="x" onclick="tags[\''+key+'\'].splice('+i+',1);renderTag(\''+key+'\')">×</span>';w.appendChild(s);});}
+function gv(id,def){const v=+document.getElementById(id).value;return v||def;}
+function updateSummary(){const ch=layout==='parts'&&parts.length?parts.reduce((a,b)=>a+b,0):gv('f-ch',20);const total=ch*gv('f-wpc',6000)+gv('f-intro',3000)+gv('f-outro',3000);document.getElementById('summary').textContent='≈ '+Math.round(total/1000)+'K '+(T[lang].summary||'слов')+' · ≈ '+Math.round(total/250)+' '+(T[lang].pages||'стр.');}
+function validate(){const ok=document.getElementById('f-title').value.trim()&&tones.length&&document.getElementById('f-audience').value.trim()&&ideas.some(s=>s.trim());document.getElementById('gen-btn').disabled=!ok;document.getElementById('tone-req').classList.toggle('show',!tones.length);document.getElementById('aud-req').classList.toggle('show',!document.getElementById('f-audience').value.trim());document.getElementById('ideas-req').classList.toggle('show',!ideas.some(s=>s.trim()));return ok;}
+function genCode(t){return t?t.split(/\s+/).filter(w=>w.length>2).slice(0,3).map(w=>w[0].toUpperCase()).join('')||'BK':'';}
+function generate(){if(!validate())return;const code=(document.getElementById('f-code').value||genCode(document.getElementById('f-title').value)).toUpperCase();const bl=document.getElementById('f-lang').value;const ch=layout==='parts'&&parts.length?parts.reduce((a,b)=>a+b,0):gv('f-ch',20);const auto=getAutoMicros().filter(m=>!disabledMicros.has(m));const cfg={meta:{title:document.getElementById('f-title').value,code,language:bl,created:new Date().toISOString().slice(0,10),factory_version:"2.5"},series:seriesOn?{enabled:true,name:document.getElementById('f-sname').value||null,volume:+document.getElementById('f-vol').value||null,bible_path:document.getElementById('f-bible').value||null,abgrenzung_path:"abgrenzung_"+code+".md"}:{enabled:false,name:null,volume:null,bible_path:null,abgrenzung_path:null},voice:{tones,provocation_level:+document.getElementById('f-prov').value,wow_factor:wow,target_audience:document.getElementById('f-audience').value,address_form:ADDR[bl]||'du',micro_modes:[...auto,...customMicros]},structure:{chapters_planned:ch,words_per_chapter:gv('f-wpc',6000),intro_words:gv('f-intro',3000),outro_words:gv('f-outro',3000),arenas_target:gv('f-arenas',3),signature_figure_limit:gv('f-sig',8),layout,parts:layout==='parts'?parts:[]},content:{core_ideas:ideas.filter(s=>s.trim()),forbidden:tags.forbidden,metaphor_territories:{use:tags.muse,avoid:tags.mavoid},bibliography_mode:biblio,chapter_genre_block:document.getElementById('f-genre').value.trim()||null,lead_technique:document.getElementById('f-tech').value.trim()||null,style_reference:document.getElementById('f-ref').value.trim()||null},paths:{tonal_compass:"stil_und_ton_"+code+".md",verbot_liste:"verbot_liste_"+code+".md",anweisungen:"anweisungen_"+code+".md",arbeitsplan:"arbeitsplan_"+code+".md",session_template:"session_template_"+code+".md",arenen_pool:"arenen_pool_"+code+".md",quellen_pool:"quellen_pool_"+code+".md",reference_chapter:null,skvoznye_formuly:"_skvoznye_formuly_"+code+".md",case_protocol:null,session_state:"_SESSION_STATE.md",drafts_dir:"_drafts/"}};window._lastJSON=JSON.stringify(cfg,null,2);document.getElementById('json-out').textContent=window._lastJSON;document.getElementById('output').classList.add('show');}
+function downloadJSON(){if(!window._lastJSON)return;const b=new Blob([window._lastJSON],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='book_config.json';a.click();URL.revokeObjectURL(a.href);}
+document.getElementById('f-title').oninput=function(){if(!document.getElementById('f-code').dataset.m)document.getElementById('f-code').value=genCode(this.value);validate();};
+document.getElementById('f-code').oninput=function(){this.dataset.m='1';};
+document.getElementById('f-audience').oninput=validate;
+document.getElementById('custom-tone').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();addCustomTone();}};
+document.getElementById('custom-micro').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();addCustomMicro();}};
+['f-ch','f-wpc','f-intro','f-outro'].forEach(id=>document.getElementById(id).oninput=updateSummary);
+renderTones();renderIdeas();updateProv();updateSummary();
+</script>
+</body>
+</html>

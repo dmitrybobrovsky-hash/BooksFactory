@@ -1,0 +1,4 @@
+.claude/backups/
+archive/**/backups/
+__pycache__/
+*.pyc

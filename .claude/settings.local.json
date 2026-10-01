@@ -16,7 +16,12 @@
       "PowerShell(winget search --id Python.Python.3 --source winget --disable-interactivity)",
       "PowerShell(winget install --id Python.Python.3.14 --source winget --scope user --silent --accept-package-agreements --accept-source-agreements --disable-interactivity; \"exit: $LASTEXITCODE\")",
       "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\('Path','Machine'\\) + ';' + [Environment]::GetEnvironmentVariable\\('Path','User'\\); $env:PYTHONIOENCODING='utf-8'; python tools/validate_factory.py; \"exit: $LASTEXITCODE\")",
-      "PowerShell($b = [System.IO.File]::ReadAllBytes\\('.claude/hooks/check_chapter_status.ps1'\\)[0..2]; \\($b | ForEach-Object { '{0:X2}' -f $_ }\\) -join ' ')"
+      "PowerShell($b = [System.IO.File]::ReadAllBytes\\('.claude/hooks/check_chapter_status.ps1'\\)[0..2]; \\($b | ForEach-Object { '{0:X2}' -f $_ }\\) -join ' ')",
+      "Bash(rm -rf /mnt/user-data/outputs/s1)",
+      "Bash(mkdir -p /mnt/user-data/outputs/s1/tools /mnt/user-data/outputs/s1/patch/claude_dir/agents)",
+      "Bash(cp tools/bf_common.py tools/lint_beat.py tools/slice_context.py tools/assemble_chapter.py tools/manifest.py tools/verify_sources.py tools/zotero_pool.py tools/README.md /mnt/user-data/outputs/s1/tools/)",
+      "Bash(cp CHANGELOG.md CLAUDE.md _SESSION1_LOCAL.md /mnt/user-data/outputs/s1/)",
+      "Bash(cp .claude/agents/bf-researcher.md /mnt/user-data/outputs/s1/patch/claude_dir/agents/)"
     ]
   }
 }

@@ -85,7 +85,7 @@ BooksFactory/
 ├── method/                 ← метод, уроки, каталог провалов
 ├── skills/                 ← справочные модули ролей (читаются агентами явно)
 ├── templates/              ← шаблоны артефактов книги
-├── tools/                  ← скрипты (init_book, validate_factory, backup, rollback)
+├── tools/                  ← детерминированный слой (см. tools/README.md)
 ├── .claude/
 │   ├── agents/             ← 9 агентов bf-*
 │   ├── skills/             ← скиллы платформы (вызов только явно)

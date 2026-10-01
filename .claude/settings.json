@@ -1,6 +1,10 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits"
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(python tools/*)",
+      "PowerShell(python tools/*)"
+    ]
   },
   "hooks": {
     "PreToolUse": [
@@ -10,7 +14,13 @@
           {
             "type": "command",
             "command": "powershell",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/check_chapter_status.ps1"],
+            "args": [
+              "-NoProfile",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/check_chapter_status.ps1"
+            ],
             "statusMessage": "Проверка статуса главы"
           }
         ]
@@ -23,7 +33,13 @@
           {
             "type": "command",
             "command": "powershell",
-            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${CLAUDE_PROJECT_DIR}/.claude/hooks/update_production_state.ps1"]
+            "args": [
+              "-NoProfile",
+              "-ExecutionPolicy",
+              "Bypass",
+              "-File",
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/update_production_state.ps1"
+            ]
           }
         ]
       }

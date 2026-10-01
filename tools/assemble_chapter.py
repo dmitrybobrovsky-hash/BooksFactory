@@ -19,6 +19,12 @@ from bf_common import (beat_files, dump_json, load_json, read_text, setup_stdout
                        strip_frontmatter, word_count, write_text)
 
 
+def section_heading(section: str) -> str:
+    """Канон shared_vocabulary §2: «## N. Название», без «§». '§2 Проекция' -> '2. Проекция'."""
+    m = re.match(r"^\s*§?\s*(\d+)[.:)]?\s*(.*)$", section)
+    return f"{m.group(1)}. {m.group(2).strip()}".rstrip() if m else section.strip()
+
+
 def main():
     setup_stdout()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -41,7 +47,7 @@ def main():
     for bid in sorted(beats):
         b, text = beats[bid], strip_frontmatter(read_text(files[bid])).strip()
         if b.get("section") and b["section"] != last_section:
-            body += ["", f"## {b['section']}", ""]
+            body += ["", f"## {section_heading(b['section'])}", ""]
             last_section = b["section"]
         body += [text, ""]
         wc = word_count(text)

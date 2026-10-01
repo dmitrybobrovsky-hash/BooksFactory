@@ -3,7 +3,8 @@
     "defaultMode": "acceptEdits",
     "allow": [
       "Bash(python tools/*)",
-      "PowerShell(python tools/*)"
+      "PowerShell(python tools/*)",
+      "Workflow(write-chapter)"
     ]
   },
   "hooks": {

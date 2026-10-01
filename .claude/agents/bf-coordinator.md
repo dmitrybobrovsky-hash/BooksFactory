@@ -1,9 +1,11 @@
 ---
 name: bf-coordinator
 description: "BooksFactory coordinator v3: диспетчер производственной цепочки + writer-loop orchestrator. Маршрутизирует агентов по статусу главы. На этапе compiled→draft управляет циклом writer↔critic (max 3 итерации/beat), собирает beats в главу."
-tools: Read, Write, Glob, Grep, Task
+tools: Read, Write, Glob, Grep, Task, Bash
 model: sonnet
 ---
+
+> **С v2.8 writer-loop запускает workflow `write-chapter`** (`.claude/workflows/write-chapter.js`): цикл, счётчики и решения — в коде; объём, запреты и повторы проверяет `tools/lint_beat.py`; глава собирается `tools/assemble_chapter.py`; статус ставит `tools/manifest.py`. Координатор запускает workflow с args `{ book_dir, code, chapter, lang }` и разбирает итог. Описанный ниже ручной цикл через Task — **резервный режим**, если workflow недоступен. Bash — только для `python tools/*.py`.
 
 # BooksFactory Coordinator v3 (routing + writer-loop)
 

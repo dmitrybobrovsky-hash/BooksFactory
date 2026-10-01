@@ -24,10 +24,10 @@ BooksFactory — универсальная литературная фабри�
 ## Производственная цепочка
 
 ```
-bf-researcher → bf-material-author → bf-planner → bf-compiler → bf-coordinator (writer-loop) → bf-editor → bf-humanizer
+bf-researcher → bf-material-author → bf-planner → write-chapter (workflow) → bf-editor → bf-humanizer
 ```
 
-Внутри `bf-coordinator` крутится цикл `bf-writer ↔ bf-critic` (max 3 итерации на beat; critic вызывается как изолированный subagent). Контракт цикла — `architecture/_TZ_WRITER_BEAT_BY_BEAT.md` §5.
+Writer-loop — workflow `.claude/workflows/write-chapter.js`: для каждого beat-а скрипт собирает контекст (`tools/slice_context.py`), `bf-writer` пишет, `tools/lint_beat.py` проверяет объём/запреты/повторы, `bf-critic` судит о голосе; до 3 итераций; затем `tools/assemble_chapter.py` собирает главу, `tools/manifest.py` ставит статус. Запуск: `/write-chapter` с данными книги и номером главы. `bf-compiler` и ручной цикл `bf-coordinator` — резерв. Контракт цикла — `architecture/_TZ_WRITER_BEAT_BY_BEAT.md` §5.
 
 Роли работают последовательно. Артефакт, не прошедший контракт, возвращается назад, а не исправляется текущей ролью.
 
@@ -37,7 +37,7 @@ bf-researcher → bf-material-author → bf-planner → bf-compiler → bf-coord
 (нет файла) → outline-ready → material-draft → draft → review → clean → humanized → final
 ```
 
-Перевод — вне BooksFactory (TranslationFactory). Подстатусы writer-loop внутри `draft` (`compiled`, `beat-N-draft`, `beat-N-accepted`) — см. `.claude/memory/production_state.md`.
+Статусы глав хранит `book_manifest.json` в папке книги; меняет их только `tools/manifest.py`. Перевод — вне BooksFactory (TranslationFactory). Подстатусы writer-loop внутри `draft` (`compiled`, `beat-N-draft`, `beat-N-accepted`) — см. `.claude/memory/production_state.md`.
 
 ## Ключевые файлы
 
@@ -90,6 +90,7 @@ BooksFactory/
 │   ├── agents/             ← 9 агентов bf-*
 │   ├── skills/             ← скиллы платформы (вызов только явно)
 │   ├── hooks/              ← PowerShell-хуки (exec-форма)
+│   ├── workflows/          ← write-chapter.js — writer-loop в коде
 │   └── memory/             ← производственное состояние
 ├── _outbound/              ← рабочие директории книг
 └── archive/                ← завершённое и устаревшее

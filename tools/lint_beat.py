@@ -28,7 +28,7 @@ FIGURES = {
     "ru": {
         "не_X_а_Y": r"(?<![А-Яа-яЁё])[Нн]е\s[^.!?\n]{1,80}?(?:—|,)\s*а\s",
         "это_не_X_это_Y": r"Это не [^.!?\n]{1,100}[.!?]\s+Это\s",
-        "не_потому_что_X_а_потому_что_Y": r"не потому,? что[^.!?\n]{1,120}?а потому,? что",
+        "не_потому_что_X_а_потому_что_Y": r"(?<![А-Яа-яЁё])[Нн]е (?:потому|на том|о том|в том),? что[^.!?\n]{1,120}?а (?:потому|на том|о том|в том),? что",
     },
     "de": {
         "nicht_X_sondern_Y": r"\bnicht\b[^.!?\n]{1,80}?,?\s*sondern\b",
@@ -39,6 +39,44 @@ FIGURES = {
         "this_is_not_X_this_is_Y": r"This is not [^.!?\n]{1,100}[.!?]\s+This is\s",
     },
 }
+# Антитеза «не X, а Y» во всех формах — счётчик по ПРЕДЛОЖЕНИЯМ, бюджет на главу.
+# В пилоте KS гл.02 per-beat фигуры не ловили «Это не X — это Y», «X, а не Y», «Не X — Y»:
+# скрипт видел 8, редактор насчитал ~20 (детектор ниже даёт 27, с запасом на ложные срабатывания).
+_W = r"[^.!?\n]"
+ANTITHESIS = {
+    "ru": [
+        rf"(?<![А-Яа-яЁё])[Нн]е\s{_W}{{1,80}}?(?:—|,)\s*а\s",
+        r",\s*а не\s",
+        rf"(?:^|\s)[Ээ]то не\s{_W}{{1,120}}—\s*это\s",
+        rf"(?:^|[.!?]\s+)Не\s[^.!?\n—,]{{1,40}}[—,]\s*[а-яё]",
+        rf"(?<![А-Яа-яЁё])не\s[^.!?\n,—]{{1,40}}—\s*(?:он|она|оно|они|это)\s",
+        r"\s—\s*не\s(?:в|о|об|на|про)\s",
+        r"\s—\s*не\s[^.!?\n]{1,80}[.!?]?$",
+    ],
+    "de": [r"\bnicht\b[^.!?\n]{1,80}?,?\s*sondern\b", r"\bkein\w*\b[^.!?\n]{1,80}?,?\s*sondern\b",
+           r"(?:^|\s)Das ist nicht\b"],
+    "en": [r"\bnot\b[^.!?\n]{1,80}?,?\s*but\b", r",\s*not\s", r"(?:^|\s)This is not\b"],
+}
+# Вторая фраза пары «X — не Y. Это Z.» / «Это не X. Это Y.»
+ANTITHESIS_NEXT = {"ru": r"^(?:Это|Она|Он|Оно|Они)\s", "de": r"^Das ist\b", "en": r"^(?:This|It) is\b"}
+
+
+def antithesis_sentences(text: str, lang: str = "ru") -> list[str]:
+    """Предложения с антитезой. Сигнатурная фигура «не потому что… а потому что» считается отдельно."""
+    pats = ANTITHESIS.get(lang, [])
+    sig = FIGURES.get(lang, {}).get("не_потому_что_X_а_потому_что_Y")
+    ss = sentences(outside_quotes(text))
+    out = []
+    for i, s in enumerate(ss):
+        if sig and re.search(sig, s):
+            continue
+        nxt = ss[i + 1] if i + 1 < len(ss) else ""
+        pair = bool(re.search(r"(?:^|\s)(?:[Ээ]то не|—\s*не)\s", s) and re.match(ANTITHESIS_NEXT.get(lang, "^$"), nxt))
+        if pair or any(re.search(p, s) for p in pats):
+            out.append(s)
+    return out
+
+
 FORMAL_ADDRESS = {
     "ru": r"(?<![А-Яа-яЁё])(?:[Вв]ы|[Вв]ас|[Вв]ам|[Вв]ами|[Вв]аш[а-яё]*)(?![А-Яа-яЁё])",
     "de": r"(?<=[a-zäöüß,;:]\s)(?:Sie|Ihnen|Ihr[a-z]*)\b",
@@ -178,13 +216,29 @@ def lint(args) -> dict:
         chapter_text = "\n".join(strip_frontmatter(read_text(p)) for p in others) + "\n" + text
     ch_low = chapter_text.lower()
 
-    fig_counts = {name: len(re.findall(rx, chapter_text)) for name, rx in FIGURES.get(lang, {}).items()}
-    facts["chapter_figures"] = fig_counts
-    planned = {p["pattern"]: p["planned_count"] for p in (args.planned or [])}
-    for name, n in fig_counts.items():
-        limit = planned.get(name, 5) + 1
-        if n >= limit:
-            candidates.append({"flag": "structural_pattern_repeat", "pattern": name, "count": n, "threshold": limit})
+    anti_beat = antithesis_sentences(text, lang)
+    anti_chapter = len(antithesis_sentences(chapter_text, lang))
+    budget = args.antithesis_budget
+    facts["antithesis"] = {"beat": len(anti_beat), "chapter": anti_chapter, "budget_chapter": budget}
+    if anti_beat:
+        over = anti_chapter > budget
+        if len(anti_beat) >= 3 or (over and len(anti_beat) >= 2):
+            hard.append({"flag": "antithesis_overuse",
+                         "detail": f"«не X, а Y» в beat-е {len(anti_beat)}×, в главе {anti_chapter} (бюджет {budget})",
+                         "sentences": [x[:120] for x in anti_beat]})
+        elif over or len(anti_beat) == 2:
+            candidates.append({"flag": "antithesis_overuse", "count_beat": len(anti_beat), "count_chapter": anti_chapter,
+                               "budget": budget, "sentences": [x[:120] for x in anti_beat]})
+
+    # Сигнатурная фигура книги («не потому что X — а потому что Y»): счёт против pattern_budget плана
+    sig_rx = FIGURES.get(lang, {}).get("не_потому_что_X_а_потому_что_Y")
+    if sig_rx:
+        n = len(re.findall(sig_rx, chapter_text))
+        planned = next((p["planned_count"] for p in (args.planned or []) if "потому" in p.get("pattern", "")), None)
+        facts["signature_figure"] = {"chapter": n, "planned": planned}
+        if planned is not None and n > planned + 1 and re.search(sig_rx, text):
+            candidates.append({"flag": "structural_pattern_repeat", "pattern": "не потому что X — а потому что Y",
+                               "count": n, "planned": planned})
 
     for spec in args.limit or []:
         word, _, mx = spec.partition("=")
@@ -224,6 +278,8 @@ def main():
     ap.add_argument("--chapter-beats")
     ap.add_argument("--lang", default="ru", choices=["ru", "de", "en"])
     ap.add_argument("--limit", action="append", help="слово=максимум на главу, напр. паттерн=2")
+    ap.add_argument("--antithesis-budget", type=int, default=8,
+                    help="антитез «не X, а Y» на главу по детектору (≈6 по счёту редактора)")
     args = ap.parse_args()
     args.planned = []
     if args.plan:

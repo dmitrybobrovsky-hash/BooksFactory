@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-10-01 (51)
+status: completed
+step: Сессия 3 — пилот новой фабрики (_SESSION3_PILOT.md), глава 02 KS: bf-planner → 02_beat_plan.json (16 beats, 6230 слов) → workflow write-chapter (16/16 приняты, 31 итерация, 6464 слова; обрыв по лимиту сессии на beat 13, возобновлён) → bf-editor (вердикт review). Глава 01 не тронута.
+agent: Claude Code (desktop, Opus)
+artifacts_updated: 02_beat_plan.json, 02_beats/, _work/02/, _critic_log_Glava_02.json, glava_02_build.log.json, Glava_02_KS_draft.md, Glava_02_KS_editor_report.md, book_manifest.json (02 → review)
+next: решение автора по Glava_02_KS_editor_report.md (лимит «Таро», сокращение ~600 слов, «не X, а Y», кейсы). Отчёт пилота — _SESSION3_PILOT_REPORT.md в корне фабрики.
+
 ## 2026-05-10 (50)
 status: completed
 step: BOOKSFACTORY_AI.md v1.9 → v2.0, updated 2026-05-10. Добавлен блок «§11b. События 2026-05-10» перед §12 Глоссарий: аудит (16 находок, все починены, BEL устранён), smoke-test A3 закрыт, german_idiomatic.md создан (DE-полировка), канон заголовков §→N. зафиксирован, архивация мета-файлов. Сессия 2026-05-10 закрыта.

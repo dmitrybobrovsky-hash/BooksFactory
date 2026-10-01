@@ -1,7 +1,7 @@
 export const meta = {
   name: 'write-chapter',
   description: 'BooksFactory: writer-loop одной главы — beat за beat-ом: контекст → писатель → проверка скриптом → критик (до 3 итераций) → сборка главы',
-  phases: ['Подготовка', 'Beats', 'Сборка'],
+  phases: [{ title: 'Подготовка' }, { title: 'Beats' }, { title: 'Сборка' }],
 }
 
 // ── Входные данные ────────────────────────────────────────────────

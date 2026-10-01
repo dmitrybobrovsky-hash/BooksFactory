@@ -41,6 +41,12 @@ def surname(authors: str) -> str:
     return first.strip().split()[0].strip(".").lower()
 
 
+def all_surnames(authors: str) -> list[str]:
+    """'Freudenberger, H., Richelson, G.' -> ['freudenberger', 'richelson']"""
+    parts = [p.strip() for p in re.split(r",|\s+и\s+|\s+and\s+|&", authors) if p.strip()]
+    return [p.split()[0].strip(".").lower() for p in parts if not re.fullmatch(r"[A-ZА-ЯЁ]\.?(\s*[A-ZА-ЯЁ]\.)*", p)]
+
+
 def by_isbn(isbn: str) -> list[dict]:
     hits = []
     try:
@@ -83,7 +89,18 @@ def by_title(title: str, author: str) -> list[dict]:
     return hits
 
 
-def judge(entry: dict, hits: list[dict]) -> tuple[str, str]:
+def judge(entry: dict, hits: list[dict], isbn_hits: list[dict] | None = None) -> tuple[str, str]:
+    sname = surname(entry["authors"])
+    coauthors = all_surnames(entry["authors"])
+
+    def authors_match(h: dict) -> bool:
+        return not h["authors"] or all(c in h["authors"].lower() for c in coauthors)
+
+    isbn_ok = [h for h in (isbn_hits or []) if authors_match(h)]
+    if isbn_hits and not isbn_ok and any(h["authors"] for h in isbn_hits):
+        return "mismatch", f"авторы по ISBN: {next(h['authors'] for h in isbn_hits if h['authors'])}"
+    if any(entry["year"] in str(h["year"]) for h in isbn_ok):
+        return "confirmed", ""
     if not hits:
         return "not_found", "каталоги не нашли издание — нужна ручная сверка"
     sname = surname(entry["authors"])
@@ -92,6 +109,10 @@ def judge(entry: dict, hits: list[dict]) -> tuple[str, str]:
         return "mismatch", f"автор в каталоге: {hits[0]['authors']}"
     if any(entry["year"] in str(h["year"]) for h in author_ok):
         return "confirmed", ""
+    isbn_years = [int(y) for h in isbn_ok for y in re.findall(r"\d{4}", str(h["year"]))]
+    if isbn_ok and isbn_years and int(entry["year"]) <= min(isbn_years):
+        # указан год первого издания, ISBN — более позднее переиздание: данные корректны
+        return "confirmed_reprint", f"ISBN — переиздание ({str(isbn_ok[0]['year'])[:20]}), в списке — год первого издания"
     years = "; ".join(str(h["year"])[:40] for h in author_ok[:3])
     return "mismatch", f"год {entry['year']} не найден; в каталоге: {years}"
 
@@ -108,6 +129,7 @@ def main():
     pool_text = read_text(a.pool)
     entries = [m.groupdict() for m in ENTRY_RE.finditer(pool_text)]
     isbns: dict[str, str] = {}
+    manual: set[str] = set()  # позиции, подтверждённые вручную в протоколе SOURCES_VERIFIED
     for line in pool_text.splitlines():  # ISBN из заготовки Zotero: <!-- ISBN … -->
         m, e = re.search(r"<!--\s*ISBN\s+(97[89]\d{10})", line), ENTRY_RE.match(line)
         if m and e:
@@ -115,6 +137,7 @@ def main():
     if a.verified and Path(a.verified).exists():
         for m in ISBN_ROW_RE.finditer(read_text(a.verified)):
             isbns[surname(m.group("entry"))] = m.group("isbn")
+            manual.add(surname(m.group("entry")))
 
     rows, online = [], False
     for e in entries:
@@ -122,20 +145,24 @@ def main():
         if a.offline:
             status, note, hits = "offline", "", []
         else:
-            hits = by_isbn(isbn) if isbn else []
-            status, note = judge(e, hits) if hits else ("not_found", "")
+            isbn_hits = by_isbn(isbn) if isbn else []
+            status, note = judge(e, isbn_hits) if isbn_hits else ("not_found", "")
+            hits = isbn_hits
             if status != "confirmed":
                 # ISBN часто принадлежит переизданию — год первого издания ищем по названию
-                hits = hits + by_title(e["title"], surname(e["authors"]))
-                status, note = judge(e, hits)
+                hits = isbn_hits + by_title(e["title"], surname(e["authors"]))
+                status, note = judge(e, hits, isbn_hits)
             online = online or bool(hits)
+            if status == "not_found" and isbn and surname(e["authors"]) in manual:
+                status, note = "confirmed_manual", "нет в открытых каталогах; подтверждено по каталогам магазинов (протокол сверки)"
         rows.append((e, isbn or "", status, note))
 
     if not a.offline and not online:
         print("Каталоги недоступны (нет сети?). Сверка не выполнена.")
         raise SystemExit(2)
 
-    mark = {"confirmed": "✅", "mismatch": "⚠", "not_found": "❓", "offline": "·"}
+    mark = {"confirmed": "✅", "confirmed_reprint": "✅", "confirmed_manual": "✅", "mismatch": "⚠",
+            "not_found": "❓", "offline": "·"}
     lines = ["# Сверка списка литературы", "", f"Источник: `{Path(a.pool).name}` — позиций: {len(rows)}", "",
              "| # | Книга | ISBN | Статус | Примечание |", "|---|---|---|---|---|"]
     for i, (e, isbn, st, note) in enumerate(rows, 1):

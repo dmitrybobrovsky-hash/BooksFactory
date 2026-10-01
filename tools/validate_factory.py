@@ -18,6 +18,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Директории фабрики (проверяются)
 FACTORY_DIRS = [
     '.claude/agents',
+    '.claude/workflows',
+    '.claude/hooks',
     '.claude/skills',
     '.claude/memory',
     'architecture',
@@ -89,6 +91,8 @@ ALLOWED_EXCEPTIONS = {
     'CLAUDE.md': [r'_outbound/\s+←'],
     # Исторический ТЗ writer-loop (2026-04): упоминания тестового тома и удалённого переводчика
     'architecture/_TZ_WRITER_BEAT_BY_BEAT.md': [r'Band', r'Manipulationen', r'bf-translator'],
+    # Шаблон пути «_outbound/<папка книги>» — плейсхолдер, не конкретный проект
+    '.claude/workflows/write-chapter.js': [r'_outbound/<'],
     # Историческая справка об INCIDENT-04 (Test3)
     'architecture/handoff_contracts.md': [r'INCIDENT-04'],
 }
@@ -112,7 +116,7 @@ def validate():
         for root, dirs, files in os.walk(dir_path):
             dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
             for fname in files:
-                if not fname.endswith(('.md', '.json', '.py', '.sh')):
+                if not fname.endswith(('.md', '.json', '.py', '.sh', '.js', '.ps1')):
                     continue
                 if fname in SKIP_FILES:
                     continue

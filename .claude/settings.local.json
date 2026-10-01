@@ -21,7 +21,12 @@
       "Bash(mkdir -p /mnt/user-data/outputs/s1/tools /mnt/user-data/outputs/s1/patch/claude_dir/agents)",
       "Bash(cp tools/bf_common.py tools/lint_beat.py tools/slice_context.py tools/assemble_chapter.py tools/manifest.py tools/verify_sources.py tools/zotero_pool.py tools/README.md /mnt/user-data/outputs/s1/tools/)",
       "Bash(cp CHANGELOG.md CLAUDE.md _SESSION1_LOCAL.md /mnt/user-data/outputs/s1/)",
-      "Bash(cp .claude/agents/bf-researcher.md /mnt/user-data/outputs/s1/patch/claude_dir/agents/)"
+      "Bash(cp .claude/agents/bf-researcher.md /mnt/user-data/outputs/s1/patch/claude_dir/agents/)",
+      "Bash(rm -rf /mnt/user-data/outputs/s2b)",
+      "Bash(mkdir -p /mnt/user-data/outputs/s2b/patch/claude_dir/workflows /mnt/user-data/outputs/s2b/tools)",
+      "Bash(cp .claude/workflows/write-chapter.js /mnt/user-data/outputs/s2b/patch/claude_dir/workflows/)",
+      "Bash(cp tools/verify_sources.py tools/validate_factory.py /mnt/user-data/outputs/s2b/tools/)",
+      "Bash(cp _SESSION2B_LOCAL.md /mnt/user-data/outputs/s2b/)"
     ]
   }
 }

@@ -5,14 +5,14 @@ export const meta = {
 }
 
 // ── Входные данные ────────────────────────────────────────────────
-// args = { book_dir: '_outbound/<папка книги>', code: 'KS', chapter: '02', lang: 'ru',
+// args = { book_dir: '_outbound/<папка книги>', code: '<CODE>', chapter: '02', lang: 'ru',
 //          max_iterations: 3, start_beat: 1, word_limits: ['паттерн=2'] }
 // Цикл, счётчики и решения — здесь, в коде. Модели только пишут и судят.
 // Слова, запреты, повторы считают скрипты tools/*.py (агент-исполнитель запускает их и возвращает JSON).
 
 const A = args || {}
 if (!A.book_dir || !A.code || !A.chapter) {
-  throw new Error('Нужны args: book_dir, code, chapter (например { book_dir: "_outbound/Test3_05.05.2026", code: "KS", chapter: "02" })')
+  throw new Error('Нужны args: book_dir, code, chapter (например { book_dir: "_outbound/<папка книги>", code: "<CODE>", chapter: "02" })')
 }
 const B = A.book_dir.replace(/\\/g, '/').replace(/\/$/, '')
 const CH = String(A.chapter).padStart(2, '0')

@@ -68,12 +68,14 @@ def by_isbn(isbn: str) -> list[dict]:
 
 def by_title(title: str, author: str) -> list[dict]:
     hits = []
-    q = urllib.parse.urlencode({"title": title, "author": author, "limit": 5})
+    q = urllib.parse.urlencode({"title": title, "author": author, "limit": 5,
+                               "fields": "title,author_name,publish_year,first_publish_year"})
     try:
         d = fetch_json(f"https://openlibrary.org/search.json?{q}")
         for doc in d.get("docs", [])[:5]:
             hits.append({"source": "Open Library", "title": doc.get("title", ""),
-                         "year": " ".join(str(y) for y in sorted(set(doc.get("publish_year", [])))[:30]),
+                         "year": " ".join(str(y) for y in sorted(set(doc.get("publish_year", []) +
+                                                                     [doc.get("first_publish_year") or 0]) - {0})[:40]),
                          "authors": ", ".join(doc.get("author_name", [])), "publisher": ""})
     except Exception:
         pass

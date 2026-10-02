@@ -82,3 +82,12 @@ def find_phrase(text_lower: str, phrase: str) -> list[int]:
     """Позиции вхождений фразы (по границам слов)."""
     pat = r"(?<![\wА-Яа-яЁё])" + re.escape(phrase) + r"(?![\wА-Яа-яЁё])"
     return [m.start() for m in re.finditer(pat, text_lower)]
+
+
+def find_word_forms(text_lower: str, word: str) -> list[int]:
+    """Вхождения слова с падежными окончаниями (Роршах → Роршаха, Роршаху). Для фраз — как find_phrase."""
+    w = word.lower().strip()
+    if " " in w:
+        return find_phrase(text_lower, w)
+    pat = r"(?<![\wА-Яа-яЁё])" + re.escape(w) + r"(?:[а-яё]{0,3})(?![\wА-Яа-яЁё])"
+    return [m.start() for m in re.finditer(pat, text_lower)]

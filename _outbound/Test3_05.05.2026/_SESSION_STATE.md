@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-10-02 (52)
+status: completed
+step: Сессия 4 (_SESSION4_LOCAL.md): фабрика v2.9 установлена (validate — ЧИСТО); пилот главы 02 → archive/2026-10-01_session3/KS_glava02_pilot/; глава 02 переписана через write-chapter в три захода (обрывы: лимит сессии + переполнение диска C:): 16/16 beat-ов, 17 итераций, проход по главе — правки beat-ов 6, 7, 10, 12, 14, 16 (правку beat-а 6 перенёс вручную из ответа писателя из-за ENOSPC; старый вариант — _work/02/beat_6_before_chapterpass.md); 6135 слов, problems пусты → bf-editor: review (5 точек). Сравнительный прогон sonnet, beat-ы 1–4 → 02_beats_sonnet/.
+agent: Claude Code (desktop, Opus)
+artifacts_updated: 02_beats/, _work/02/, Glava_02_KS_draft.md, glava_02_build.log.json, _critic_log_Glava_02.json (только beat-ы 15–16 и chapter-pass), Glava_02_KS_editor_report.md, 02_beats_sonnet/, _critic_log_Glava_02_sonnet.json, book_manifest.json (02 → review)
+next: решение автора по Glava_02_KS_editor_report.md (точка 1 — центральный аргумент; потолок 6000 или 6325); сравнение opus/sonnet по beat-ам 1–4. Отчёт — _SESSION4_LOCAL_REPORT.md в корне фабрики.
+
 ## 2026-10-01 (51)
 status: completed
 step: Сессия 3 — пилот новой фабрики (_SESSION3_PILOT.md), глава 02 KS: bf-planner → 02_beat_plan.json (16 beats, 6230 слов) → workflow write-chapter (16/16 приняты, 31 итерация, 6464 слова; обрыв по лимиту сессии на beat 13, возобновлён) → bf-editor (вердикт review). Глава 01 не тронута.

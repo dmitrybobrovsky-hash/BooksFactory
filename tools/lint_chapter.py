@@ -18,9 +18,9 @@ import argparse
 import re
 from collections import Counter, defaultdict
 
-from bf_common import (beat_files, dump_json, find_phrase, load_json, read_text, setup_stdout,
-                       strip_frontmatter, word_count, words, write_text)
-from lint_beat import FIGURES, antithesis_sentences
+from bf_common import (beat_files, dump_json, find_phrase, find_word_forms, load_json, read_text, setup_stdout,
+                       sentences, strip_frontmatter, word_count, words, write_text)
+from lint_beat import FIGURES, antithesis_sentences, plan_word_limits
 
 PROPS = {
     "ru": {
@@ -37,6 +37,11 @@ PROPS = {
         "weekday": r"\b(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)s?\b",
         "duration": r"\b(?:\d+|\w+)\s+(?:minutes?|hours?|days?|weeks?)\b",
     },
+}
+CONNECTORS = {
+    "ru": r"^(Отсюда|Поэтому|Значит|Итак|Следовательно|Таким образом|Иначе говоря|Другими словами|При этом|Кроме того|Именно поэтому|Вот почему)\b",
+    "de": r"^(Daher|Deshalb|Also|Folglich|Somit|Mit anderen Worten|Dabei|Außerdem)\b",
+    "en": r"^(Hence|Therefore|Thus|So|In other words|Moreover|That is why)\b",
 }
 STOP = {"ru": set("который которая которое которые этого этому этот эта это эти того тому тоже также потому "
                   "чтобы когда если только можно нельзя нужно своей свой свою своих себя всего всех каждый "
@@ -57,10 +62,13 @@ def main():
     ap.add_argument("--max-words", type=int, help="потолок главы из правил книги (anweisungen)")
     ap.add_argument("--antithesis-budget", type=int, default=8)
     ap.add_argument("--limit", action="append", help="слово=максимум на главу")
+    ap.add_argument("--max-connector", type=int, default=2, help="одна связка-мостик в начале предложения — не чаще")
     ap.add_argument("--out")
     a = ap.parse_args()
 
     plan = load_json(a.plan)
+    given = {sp.partition("=")[0].lower() for sp in (a.limit or [])}
+    a.limit = list(a.limit or []) + [f"{w}={n}" for w, n in plan_word_limits(plan).items() if w.lower() not in given]
     sec_of = {b["beat_id"]: b.get("section", "") for b in plan.get("beats", [])}
     beats = {int(re.search(r"beat_(\d+)", p.stem).group(1)): strip_frontmatter(read_text(p)).strip()
              for p in beat_files(a.beats_dir)}
@@ -77,7 +85,7 @@ def main():
     anti_total, sig_total = 0, 0
     props = defaultdict(lambda: defaultdict(list))  # тип -> значение -> [beat_id]
     for bid, t in sorted(beats.items()):
-        anti = antithesis_sentences(t, a.lang)
+        anti = antithesis_sentences(t, a.lang, True)
         sig = len(re.findall(sig_rx, t)) if sig_rx else 0
         anti_total += len(anti)
         sig_total += sig
@@ -85,7 +93,7 @@ def main():
                "antithesis": len(anti), "antithesis_sentences": [s[:140] for s in anti], "signature": sig}
         for spec in a.limit or []:
             w = spec.partition("=")[0]
-            row.setdefault("word_limits", {})[w] = len(find_phrase(t.lower(), w.lower()))
+            row.setdefault("word_limits", {})[w] = len(find_word_forms(t.lower(), w))
         report["beats"].append(row)
         for kind, rx in PROPS.get(a.lang, {}).items():
             for m in re.finditer(rx, t, re.I):
@@ -102,6 +110,20 @@ def main():
         report.setdefault("word_limits", {})[w] = {"chapter": n, "limit": mx}
         if mx.isdigit() and n > int(mx):
             problems.append(f"«{w}» {n}× > лимита {mx}")
+
+    # Повтор связок-мостиков в начале предложений (в пилоте v2.9 — «Отсюда…» ×6)
+    conn_rx = CONNECTORS.get(a.lang)
+    if conn_rx:
+        cnt = Counter()
+        for t in beats.values():
+            for snt in sentences(t):
+                m = re.match(conn_rx, snt)
+                if m:
+                    cnt[m.group(1).lower()] += 1
+        report["connectors"] = dict(cnt)
+        for w, n in cnt.items():
+            if n > a.max_connector:
+                problems.append(f"связка «{w}» в начале предложения {n}× (лимит {a.max_connector})")
 
     # Реквизит сцен: значения, которые встречаются в нескольких секциях, и разные значения одного типа
     report["props"] = {kind: {v: sorted(set(ids)) for v, ids in vals.items()} for kind, vals in props.items()}

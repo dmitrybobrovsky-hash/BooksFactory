@@ -23,8 +23,8 @@ from pathlib import Path
 
 from bf_common import (beat_files, dump_json, load_json, read_text, setup_stdout,
                        strip_frontmatter, write_text)
-from bf_common import find_phrase
-from lint_beat import FIGURES, antithesis_sentences, formula_registry, verbot_phrases
+from bf_common import find_phrase, find_word_forms
+from lint_beat import FIGURES, antithesis_sentences, formula_registry, plan_word_limits, verbot_phrases
 
 
 def section_number(section_label: str) -> str | None:
@@ -97,7 +97,7 @@ def build(args) -> str:
     material = read_text(args.material) if args.material else ""
     sec = material_section(material, beat.get("section", "")) if material else ""
     if material and not sec:
-        # без MATERIAL писатель сочиняет главу по одному плану — так глава 02 KS была написана в пилоте
+        # без MATERIAL писатель сочиняет главу по одному плану — так в пилоте была написана целая глава
         raise SystemExit(f"Секция «{beat.get('section')}» не найдена в {args.material}. Контекст не собран.")
     parts += ["", "## 3. MATERIAL — секция этого beat-а", "", sec or "_(MATERIAL не передан)_"]
     if material:
@@ -136,23 +136,26 @@ def budget_block(args, plan: dict, beat: dict) -> list[str]:
               if int(re.search(r"beat_(\d+)", p.stem).group(1)) < args.beat_id]
     text = "\n".join(before)
     remaining = sum(1 for b in plan.get("beats", []) if b.get("beat_id", 0) >= args.beat_id)
-    used = len(antithesis_sentences(text, args.lang)) if text else 0
+    used = len(antithesis_sentences(text, args.lang, True)) if text else 0
     left = max(0, args.antithesis_budget - used)
     allow = 1 if left else 0
     lines = ["", "## 9. Бюджет главы до этого beat-а (посчитано скриптом)", "",
-             f"- Антитезы «не X, а Y» / «Это не X — это Y» / «X, а не Y» / «Не X — Y»: использовано {used} "
+             f"- Антитезы («не X, а Y», «Это не X — это Y», «X, а не Y», «Не X — Y», включая сигнатурную фигуру): использовано {used} "
              f"из {args.antithesis_budget} на главу; осталось {left} на {remaining} beat(ов). "
-             f"В этом beat-е — не больше {allow}. Мысль формулируй прямым утверждением."]
+             f"В этом beat-е — не больше {allow} сверх тех, что прямо требует задание (quote_before, сигнатурная фигура). Мысль формулируй прямым утверждением."]
     sig_rx = FIGURES.get(args.lang, {}).get("не_потому_что_X_а_потому_что_Y")
     planned = next((p["planned_count"] for p in plan.get("pattern_budget", []) or [] if "потому" in p.get("pattern", "")), None)
     if sig_rx and planned is not None:
         n = len(re.findall(sig_rx, text))
         lines.append(f"- Сигнатурная фигура «не потому что X — а потому что Y»: использовано {n} из {planned} "
                      f"по плану; ставь её только там, где её требует задание beat-а.")
-    for spec in args.limit or []:
+    specs = list(args.limit or [])
+    given = {sp.partition("=")[0].lower() for sp in specs}
+    specs += [f"{w}={n}" for w, n in plan_word_limits(plan).items() if w.lower() not in given]
+    for spec in specs:
         word, _, mx = spec.partition("=")
-        n = len(find_phrase(text.lower(), word.lower()))
-        lines.append(f"- «{word}»: в главе уже {n} из {mx or '?'}.")
+        n = len(find_word_forms(text.lower(), word))
+        lines.append(f"- «{word}» (любая форма слова): в главе уже {n} из {mx or '?'} на главу.")
     return lines
 
 

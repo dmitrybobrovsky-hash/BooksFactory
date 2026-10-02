@@ -19,7 +19,7 @@ import re
 from collections import Counter
 from pathlib import Path
 
-from bf_common import (QUOTED_RE, beat_files, dump_json, find_phrase, load_json,
+from bf_common import (QUOTED_RE, beat_files, dump_json, find_phrase, find_word_forms, load_json,
                        normalize_phrase, read_text, sentences, setup_stdout,
                        strip_frontmatter, word_count, words)
 
@@ -40,7 +40,7 @@ FIGURES = {
     },
 }
 # Антитеза «не X, а Y» во всех формах — счётчик по ПРЕДЛОЖЕНИЯМ, бюджет на главу.
-# В пилоте KS гл.02 per-beat фигуры не ловили «Это не X — это Y», «X, а не Y», «Не X — Y»:
+# В пилоте (2026-10-01) per-beat фигуры не ловили «Это не X — это Y», «X, а не Y», «Не X — Y»:
 # скрипт видел 8, редактор насчитал ~20 (детектор ниже даёт 27, с запасом на ложные срабатывания).
 _W = r"[^.!?\n]"
 ANTITHESIS = {
@@ -52,6 +52,8 @@ ANTITHESIS = {
         rf"(?<![А-Яа-яЁё])не\s[^.!?\n,—]{{1,40}}—\s*(?:он|она|оно|они|это)\s",
         r"\s—\s*не\s(?:в|о|об|на|про)\s",
         r"\s—\s*не\s[^.!?\n]{1,80}[.!?]?$",
+        rf"(?<![А-Яа-яЁё])не\s{_W}{{1,80}}?,\s*(?:а\s)?это\s",          # не X, это Y
+        r"[А-Яа-яЁё],\s*не\s[А-Яа-яЁё]+(?:ый|ий|ой|ая|яя|ое|ее|ые|ие)?,\s",  # профессиональный, не научный,
     ],
     "de": [r"\bnicht\b[^.!?\n]{1,80}?,?\s*sondern\b", r"\bkein\w*\b[^.!?\n]{1,80}?,?\s*sondern\b",
            r"(?:^|\s)Das ist nicht\b"],
@@ -61,18 +63,24 @@ ANTITHESIS = {
 ANTITHESIS_NEXT = {"ru": r"^(?:Это|Она|Он|Оно|Они)\s", "de": r"^Das ist\b", "en": r"^(?:This|It) is\b"}
 
 
-def antithesis_sentences(text: str, lang: str = "ru") -> list[str]:
-    """Предложения с антитезой. Сигнатурная фигура «не потому что… а потому что» считается отдельно."""
+def antithesis_sentences(text: str, lang: str = "ru", with_signature: bool = False) -> list[str]:
+    """Предложения с антитезой. Сигнатурная фигура «не потому что… а потому что» — только при with_signature."""
     pats = ANTITHESIS.get(lang, [])
-    sig = FIGURES.get(lang, {}).get("не_потому_что_X_а_потому_что_Y")
-    ss = sentences(outside_quotes(text))
+    sig = None if with_signature else FIGURES.get(lang, {}).get("не_потому_что_X_а_потому_что_Y")
+    # цитату внутри фразы заменяем словом-заглушкой: «МАК не «говорит» — он…» остаётся антитезой
+    flat = re.sub(r"(?m)^\s*[—–]\s.*$", " ", text)
+    flat = re.sub(r"«[^»]*»|„[^“]*“", "цитата", flat)
+    ss = sentences(flat)
     out = []
     for i, s in enumerate(ss):
         if sig and re.search(sig, s):
             continue
         nxt = ss[i + 1] if i + 1 < len(ss) else ""
-        pair = bool(re.search(r"(?:^|\s)(?:[Ээ]то не|—\s*не)\s", s) and re.match(ANTITHESIS_NEXT.get(lang, "^$"), nxt))
-        if pair or any(re.search(p, s) for p in pats):
+        pair = bool(re.search(r"(?:^|\s)(?:[Ээ]то не|—\s*не|[а-яё]+\s+не\s+[а-яё]+\s+не)\s", s)
+                    or re.search(r"(?<![А-Яа-яЁё])не\s(?:список|повод|вопрос|тест|приговор|дефект|сбой|метод|инструмент)\b", s)) \
+            and bool(re.match(ANTITHESIS_NEXT.get(lang, "^$"), nxt))
+        sig_hit = with_signature and re.search(FIGURES.get(lang, {}).get("не_потому_что_X_а_потому_что_Y", "^$"), s)
+        if pair or sig_hit or any(re.search(p, s) for p in pats):
             out.append(s)
     return out
 
@@ -90,7 +98,8 @@ ATTRIBUTION_MARKERS = {
 
 
 def outside_quotes(text: str) -> str:
-    """Текст без прямой речи/цитат в «…» и „…“."""
+    """Текст без прямой речи: цитаты в «…» и „…“, реплики диалога (абзац, начатый тире)."""
+    text = re.sub(r"(?m)^\s*[—–]\s.*$", " ", text)
     text = re.sub(r"«[^»]*»", " ", text)
     return re.sub(r"„[^“]*“", " ", text)
 
@@ -130,6 +139,31 @@ def formula_registry(path: Path) -> list[dict]:
             if ph:
                 out.append({"id": cells[0], "phrase": ph, "kind": kind})
     return out
+
+
+NUM_WORDS = {"один": 1, "одного": 1, "одной": 1, "два": 2, "двух": 2, "три": 3, "трёх": 3, "трех": 3}
+
+
+def plan_word_limits(plan: dict) -> dict[str, int]:
+    """Лимиты слов на главу из constraints ВСЕХ beat-ов плана: «Роршах» — один раз; «Таро» — не более 3 раз.
+    В пилоте лимит имени стоял только у одного beat-а и в соседнем не действовал (5 употреблений при плане 1)."""
+    limits: dict[str, int] = {}
+    locked: set[str] = set()  # «Решение автора …» главнее остальных ограничений плана
+    rx = re.compile(r"«([^»]{2,40})»[^;«]{0,80}?(?:(один|одного|одной)\s+раз|(?:не более|не больше|максимум|≤)\s*(\d+|одного|одной|двух|трёх|трех)|(\d+)\s+раз)", re.I)
+    for b in plan.get("beats", []):
+        for c in b.get("constraints") or []:
+            for m in rx.finditer(c):
+                word = m.group(1).strip()
+                if len(word.split()) > 3 or re.search(r"\b(не X|X —|потому что)\b", word):
+                    continue  # фигуры и длинные формулы считаются отдельно
+                raw = m.group(2) or m.group(3) or m.group(4)
+                n = int(raw) if raw.isdigit() else NUM_WORDS.get(raw.lower(), 1)
+                if "решение автора" in c.lower():
+                    limits[word] = n
+                    locked.add(word)
+                elif word not in locked:
+                    limits[word] = min(n, limits.get(word, n))
+    return limits
 
 
 def constraint_phrases(constraints: list[str]) -> list[str]:
@@ -216,8 +250,8 @@ def lint(args) -> dict:
         chapter_text = "\n".join(strip_frontmatter(read_text(p)) for p in others) + "\n" + text
     ch_low = chapter_text.lower()
 
-    anti_beat = antithesis_sentences(text, lang)
-    anti_chapter = len(antithesis_sentences(chapter_text, lang))
+    anti_beat = antithesis_sentences(text, lang, True)
+    anti_chapter = len(antithesis_sentences(chapter_text, lang, True))
     budget = args.antithesis_budget
     facts["antithesis"] = {"beat": len(anti_beat), "chapter": anti_chapter, "budget_chapter": budget}
     if anti_beat:
@@ -240,12 +274,16 @@ def lint(args) -> dict:
             candidates.append({"flag": "structural_pattern_repeat", "pattern": "не потому что X — а потому что Y",
                                "count": n, "planned": planned})
 
-    for spec in args.limit or []:
+    specs = list(args.limit or [])
+    given = {sp.partition("=")[0].lower() for sp in specs}
+    specs += [f"{w}={n}" for w, n in getattr(args, "plan_limits", {}).items() if w.lower() not in given]
+    for spec in specs:
         word, _, mx = spec.partition("=")
-        n = len(find_phrase(ch_low, word.lower()))
+        n = len(find_word_forms(ch_low, word))
         facts.setdefault("word_limits", {})[word] = n
-        if mx.isdigit() and n > int(mx):
-            hard.append({"flag": "word_limit", "detail": f"«{word}» {n}× в главе (лимит {mx})"})
+        in_beat = len(find_word_forms(low, word))
+        if mx.isdigit() and n > int(mx) and in_beat:
+            hard.append({"flag": "word_limit", "detail": f"«{word}» {n}× в главе, из них {in_beat} в этом beat-е (лимит {mx})"})
 
     if args.formulas:
         for f in formula_registry(Path(args.formulas)):
@@ -279,11 +317,13 @@ def main():
     ap.add_argument("--lang", default="ru", choices=["ru", "de", "en"])
     ap.add_argument("--limit", action="append", help="слово=максимум на главу, напр. паттерн=2")
     ap.add_argument("--antithesis-budget", type=int, default=8,
-                    help="антитез «не X, а Y» на главу по детектору (≈6 по счёту редактора)")
+                    help="антитез на главу, включая сигнатурную фигуру (так считает редактор)")
     args = ap.parse_args()
-    args.planned = []
+    args.planned, args.plan_limits = [], {}
     if args.plan:
-        args.planned = load_json(args.plan).get("pattern_budget", []) or []
+        plan = load_json(args.plan)
+        args.planned = plan.get("pattern_budget", []) or []
+        args.plan_limits = plan_word_limits(plan)
     report = lint(args)
     print(dump_json(report))
     raise SystemExit(1 if report["hard_flags"] else 0)

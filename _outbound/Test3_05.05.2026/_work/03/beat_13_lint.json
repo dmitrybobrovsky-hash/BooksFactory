@@ -2,9 +2,9 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_13.md",
   "beat_id": 13,
   "facts": {
-    "word_count": 598,
+    "word_count": 466,
     "target_words": 580,
-    "ratio": 1.031,
+    "ratio": 0.803,
     "antithesis": {
       "beat": 1,
       "chapter": 8,
@@ -25,14 +25,19 @@
       "Maslach": 1,
       "Таро": 1,
       "тимбилдинг": 2,
-      "МАК не тест": 1,
+      "МАК не тест": 2,
       "три механизма": 0,
       "держит рамку": 2,
       "снижает порог называния": 1,
-      "Performance Review": 1
+      "Performance Review": 2
     }
   },
-  "hard_flags": [],
+  "hard_flags": [
+    {
+      "flag": "volume_short",
+      "detail": "466/580"
+    }
+  ],
   "candidates_for_critic": [
     {
       "flag": "cross_chapter_phrase_repeat",
@@ -42,5 +47,5 @@
       "in_chapter": 1
     }
   ],
-  "verdict_floor": "pass"
+  "verdict_floor": "fail"
 }

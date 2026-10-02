@@ -260,5 +260,60 @@
   "flags": null,
   "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
   "minor": null
+ },
+ {
+  "beat_id": 4,
+  "iteration": "chapter-pass",
+  "words": 511,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1",
+  "minor": null
+ },
+ {
+  "beat_id": 7,
+  "iteration": "chapter-pass",
+  "words": 454,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1",
+  "minor": null
+ },
+ {
+  "beat_id": 10,
+  "iteration": "chapter-pass",
+  "words": 359,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1",
+  "minor": null
+ },
+ {
+  "beat_id": 13,
+  "iteration": "chapter-pass",
+  "words": 452,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — оркестратор: удалён quote_before R-12, нужна попытка 2",
+  "minor": null
+ },
+ {
+  "beat_id": 13,
+  "iteration": "chapter-pass",
+  "words": 466,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 2: возвращён quote_before R-12",
+  "minor": null
  }
 ]

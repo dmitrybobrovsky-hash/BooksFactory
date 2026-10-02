@@ -2,12 +2,12 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_7.md",
   "beat_id": 7,
   "facts": {
-    "word_count": 451,
+    "word_count": 454,
     "target_words": 440,
-    "ratio": 1.025,
+    "ratio": 1.032,
     "antithesis": {
       "beat": 0,
-      "chapter": 5,
+      "chapter": 7,
       "budget_chapter": 8
     },
     "signature_figure": {
@@ -16,20 +16,20 @@
     },
     "word_limits": {
       "паттерн": 0,
-      "Шайн": 2,
+      "Шайн": 3,
       "Cameron": 1,
       "Quinn": 1,
       "OCAI": 2,
       "Argyris": 1,
       "Schön": 1,
-      "Maslach": 0,
+      "Maslach": 1,
       "Таро": 1,
-      "тимбилдинг": 0,
-      "МАК не тест": 1,
+      "тимбилдинг": 2,
+      "МАК не тест": 2,
       "три механизма": 0,
-      "держит рамку": 1,
-      "снижает порог называния": 0,
-      "Performance Review": 0
+      "держит рамку": 2,
+      "снижает порог называния": 1,
+      "Performance Review": 2
     }
   },
   "hard_flags": [],

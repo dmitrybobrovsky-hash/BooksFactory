@@ -81,13 +81,19 @@
       ]
     },
     "03": {
-      "status": "material-draft",
-      "updated": "2026-10-01T13:04",
+      "status": "draft",
+      "updated": "2026-10-02T11:10",
       "history": [
         {
           "to": "material-draft",
           "at": "2026-10-01T13:04",
           "by": "manifest.py scan"
+        },
+        {
+          "from": "material-draft",
+          "to": "draft",
+          "at": "2026-10-02T11:10",
+          "by": "write-chapter"
         }
       ]
     },
@@ -114,5 +120,5 @@
       ]
     }
   },
-  "updated": "2026-10-02T10:39"
+  "updated": "2026-10-02T11:10"
 }

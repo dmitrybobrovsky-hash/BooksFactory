@@ -116,8 +116,8 @@
       ]
     },
     "04": {
-      "status": "review",
-      "updated": "2026-10-02T13:16",
+      "status": "clean",
+      "updated": "2026-10-02T13:20",
       "history": [
         {
           "to": "material-draft",
@@ -135,6 +135,12 @@
           "to": "review",
           "at": "2026-10-02T13:16",
           "by": "bf-editor"
+        },
+        {
+          "from": "review",
+          "to": "clean",
+          "at": "2026-10-02T13:20",
+          "by": "bf-editor"
         }
       ]
     },
@@ -150,5 +156,5 @@
       ]
     }
   },
-  "updated": "2026-10-02T13:16"
+  "updated": "2026-10-02T13:20"
 }

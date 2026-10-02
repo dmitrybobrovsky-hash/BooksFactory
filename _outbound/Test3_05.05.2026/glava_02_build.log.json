@@ -2,9 +2,9 @@
   "chapter": 2,
   "date": "2026-10-02",
   "output_draft": "_outbound/Test3_05.05.2026/Glava_02_KS_draft.md",
-  "total_words": 5953,
+  "total_words": 5954,
   "chapter_target_words": 5500,
-  "ratio_to_chapter_target": 1.082,
+  "ratio_to_chapter_target": 1.083,
   "sum_target_words": 6230,
   "beats": [
     {
@@ -39,8 +39,8 @@
       "beat_id": 5,
       "section": "2. Проективные методы и академическая критика",
       "target_words": 320,
-      "actual_words": 322,
-      "ratio": 1.006
+      "actual_words": 323,
+      "ratio": 1.009
     },
     {
       "beat_id": 6,

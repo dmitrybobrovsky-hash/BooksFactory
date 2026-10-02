@@ -1,6 +1,9 @@
 ---
 title: "Глава 2 — Научная база и честная критика — Что можно знать о МАК точно, а что — нельзя"
-status: draft
+status: clean
+clean_from: Glava_02_KS_draft.md
+editor_cycle: 3
+editor_verdict: clean
 language: RU
 total_words: 5954
 beats_count: 16

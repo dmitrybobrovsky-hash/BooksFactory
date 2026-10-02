@@ -53,3 +53,5 @@ start_commit: e02ced7ba455f1f8c9b702e5d18090636a693ba7
 - editor_fixes_cycle1.json: 10 beat-ов (1, 4, 6, 8, 9, 10, 11, 12, 13, 14). Архив до правок: archive/2026-10-02_session8/04_beats_before_editor_cycle1/.
 - Параллельно запущен bf-planner главы 05 (C1 гл. 05).
 - Агентов всего: 41 (+10 правок в работе).
+- 13:27 Правки цикла 1: 10/10 с 1-й попытки, hard_flags нет. Глава 5761 → 5713, антитез 7 → 6/8, problems пусто → добор не нужен. Сборка: Glava_04_KS_draft.md (5713), lint — _work/04/chapter_lint_final_c1.json.
+- Агентов всего: 51.

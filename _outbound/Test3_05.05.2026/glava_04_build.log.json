@@ -2,17 +2,17 @@
   "chapter": 4,
   "date": "2026-10-02",
   "output_draft": "_outbound/Test3_05.05.2026/Glava_04_KS_draft.md",
-  "total_words": 5761,
+  "total_words": 5713,
   "chapter_target_words": 5500,
-  "ratio_to_chapter_target": 1.047,
+  "ratio_to_chapter_target": 1.039,
   "sum_target_words": 6250,
   "beats": [
     {
       "beat_id": 1,
       "section": "1. Позиция фасилитатора — отдельная роль рядом с терапевтом, коучем и тренером",
       "target_words": 420,
-      "actual_words": 390,
-      "ratio": 0.929
+      "actual_words": 389,
+      "ratio": 0.926
     },
     {
       "beat_id": 2,
@@ -60,22 +60,22 @@
       "beat_id": 8,
       "section": "3. Ход сессии — пять шагов как протокол",
       "target_words": 340,
-      "actual_words": 317,
-      "ratio": 0.932
+      "actual_words": 315,
+      "ratio": 0.926
     },
     {
       "beat_id": 9,
       "section": "4. Работа с молчанием, защитой и сильной эмоцией",
       "target_words": 410,
-      "actual_words": 412,
-      "ratio": 1.005
+      "actual_words": 376,
+      "ratio": 0.917
     },
     {
       "beat_id": 10,
       "section": "4. Работа с молчанием, защитой и сильной эмоцией",
       "target_words": 500,
-      "actual_words": 391,
-      "ratio": 0.782
+      "actual_words": 388,
+      "ratio": 0.776
     },
     {
       "beat_id": 11,
@@ -88,22 +88,22 @@
       "beat_id": 12,
       "section": "4. Работа с молчанием, защитой и сильной эмоцией",
       "target_words": 420,
-      "actual_words": 398,
-      "ratio": 0.948
+      "actual_words": 399,
+      "ratio": 0.95
     },
     {
       "beat_id": 13,
       "section": "5. Индивидуальная и групповая работа — и когда останавливать сессию",
       "target_words": 580,
-      "actual_words": 420,
-      "ratio": 0.724
+      "actual_words": 414,
+      "ratio": 0.714
     },
     {
       "beat_id": 14,
       "section": "5. Индивидуальная и групповая работа — и когда останавливать сессию",
       "target_words": 420,
-      "actual_words": 455,
-      "ratio": 1.083
+      "actual_words": 454,
+      "ratio": 1.081
     }
   ]
 }

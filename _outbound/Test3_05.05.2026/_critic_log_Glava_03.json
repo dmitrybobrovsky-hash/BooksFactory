@@ -425,5 +425,82 @@
   "flags": null,
   "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
   "minor": null
+ },
+ {
+  "beat_id": 2,
+  "iteration": "editor-micro-c2",
+  "words": 474,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 5,
+  "iteration": "editor-micro-c2",
+  "words": 408,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 6,
+  "iteration": "editor-micro-c2",
+  "words": 336,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 8,
+  "iteration": "editor-micro-c2",
+  "words": 539,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 9,
+  "iteration": "editor-micro-c2",
+  "words": 229,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 10,
+  "iteration": "editor-micro-c2",
+  "words": 367,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
+ },
+ {
+  "beat_id": 11,
+  "iteration": "editor-micro-c2",
+  "words": 573,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-micro cycle2 — см. _work/03/editor_micro_cycle2.json",
+  "minor": null
  }
 ]

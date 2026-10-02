@@ -2,9 +2,9 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_5.md",
   "beat_id": 5,
   "facts": {
-    "word_count": 406,
+    "word_count": 408,
     "target_words": 400,
-    "ratio": 1.015,
+    "ratio": 1.02,
     "antithesis": {
       "beat": 0,
       "chapter": 8,

@@ -1,6 +1,9 @@
 ---
 title: "Глава 3 — МАК в организации — Когда власть входит в комнату с картами"
-status: draft
+status: clean
+clean_from: Glava_03_KS_draft.md
+editor_cycle: 2
+editor_verdict: clean
 language: RU
 total_words: 5840
 beats_count: 14

@@ -1,6 +1,6 @@
 {
   "permissions": {
-    "defaultMode": "acceptEdits",
+    "defaultMode": "bypassPermissions",
     "allow": [
       "Read",
       "Write",
@@ -16,18 +16,40 @@
     ],
     "deny": [
       "Bash(rm *)",
+      "Bash(*rm -*)",
       "Bash(rmdir *)",
+      "Bash(*rmdir *)",
       "Bash(git push*)",
+      "Bash(*git push*)",
       "Bash(git reset --hard*)",
+      "Bash(*git reset --hard*)",
+      "Bash(python -c*)",
+      "Bash(*python -c*)",
+      "Bash(cmd /c*)",
+      "Bash(*cmd /c*)",
       "PowerShell(Remove-Item*)",
+      "PowerShell(*Remove-Item*)",
       "PowerShell(rm *)",
+      "PowerShell(*; rm *)",
       "PowerShell(rmdir *)",
+      "PowerShell(*rmdir *)",
       "PowerShell(del *)",
+      "PowerShell(*; del *)",
       "PowerShell(erase *)",
       "PowerShell(rd *)",
       "PowerShell(ri *)",
+      "PowerShell(*Clear-Content*)",
+      "PowerShell(*Format-Volume*)",
+      "PowerShell(*Clear-Disk*)",
+      "PowerShell(python -c*)",
+      "PowerShell(*python -c*)",
+      "PowerShell(cmd /c*)",
+      "PowerShell(*cmd /c*)",
+      "PowerShell(*cmd.exe*)",
       "PowerShell(git push*)",
-      "PowerShell(git reset --hard*)"
+      "PowerShell(*git push*)",
+      "PowerShell(git reset --hard*)",
+      "PowerShell(*git reset --hard*)"
     ]
   }
 }

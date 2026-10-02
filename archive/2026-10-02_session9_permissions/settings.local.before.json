@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(_outbound/**)",
+      "Write(*/_drafts/**)",
+      "Read(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "PowerShell(node --version)",
+      "PowerShell(Test-Path \"C:\\\\Program Files\\\\nodejs\\\\node.exe\"; Test-Path \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\node.exe\"; Test-Path \"$env:APPDATA\\\\nvm\"; Get-Command node.exe -ErrorAction SilentlyContinue; [Environment]::GetEnvironmentVariable\\('Path','Machine'\\) -split ';' | Select-String -Pattern node; [Environment]::GetEnvironmentVariable\\('Path','User'\\) -split ';' | Select-String -Pattern node)",
+      "PowerShell(Get-Content .claude/memory/production_state.md -Encoding UTF8 -Tail 5; \\(Get-Content .claude/memory/production_state.md -Encoding UTF8 | Measure-Object -Line\\).Lines)",
+      "PowerShell(Get-Content .claude/memory/production_state.md -Encoding UTF8 -Tail 6; \\(Get-Content .claude/memory/production_state.md -Encoding UTF8 | Measure-Object -Line\\).Lines; Get-Content _testing/hooktest.md -Encoding UTF8)",
+      "PowerShell(python --version)",
+      "PowerShell(py --version)",
+      "PowerShell(winget --version)",
+      "PowerShell(winget search --id Python.Python.3 --source winget --disable-interactivity)",
+      "PowerShell(winget install --id Python.Python.3.14 --source winget --scope user --silent --accept-package-agreements --accept-source-agreements --disable-interactivity; \"exit: $LASTEXITCODE\")",
+      "PowerShell($env:Path = [Environment]::GetEnvironmentVariable\\('Path','Machine'\\) + ';' + [Environment]::GetEnvironmentVariable\\('Path','User'\\); $env:PYTHONIOENCODING='utf-8'; python tools/validate_factory.py; \"exit: $LASTEXITCODE\")",
+      "PowerShell($b = [System.IO.File]::ReadAllBytes\\('.claude/hooks/check_chapter_status.ps1'\\)[0..2]; \\($b | ForEach-Object { '{0:X2}' -f $_ }\\) -join ' ')",
+      "Bash(rm -rf /mnt/user-data/outputs/s1)",
+      "Bash(mkdir -p /mnt/user-data/outputs/s1/tools /mnt/user-data/outputs/s1/patch/claude_dir/agents)",
+      "Bash(cp tools/bf_common.py tools/lint_beat.py tools/slice_context.py tools/assemble_chapter.py tools/manifest.py tools/verify_sources.py tools/zotero_pool.py tools/README.md /mnt/user-data/outputs/s1/tools/)",
+      "Bash(cp CHANGELOG.md CLAUDE.md _SESSION1_LOCAL.md /mnt/user-data/outputs/s1/)",
+      "Bash(cp .claude/agents/bf-researcher.md /mnt/user-data/outputs/s1/patch/claude_dir/agents/)",
+      "Bash(rm -rf /mnt/user-data/outputs/s2b)",
+      "Bash(mkdir -p /mnt/user-data/outputs/s2b/patch/claude_dir/workflows /mnt/user-data/outputs/s2b/tools)",
+      "Bash(cp .claude/workflows/write-chapter.js /mnt/user-data/outputs/s2b/patch/claude_dir/workflows/)",
+      "Bash(cp tools/verify_sources.py tools/validate_factory.py /mnt/user-data/outputs/s2b/tools/)",
+      "Bash(cp _SESSION2B_LOCAL.md /mnt/user-data/outputs/s2b/)"
+    ]
+  }
+}

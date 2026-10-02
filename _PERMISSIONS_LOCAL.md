@@ -1,16 +1,14 @@
 ---
 document: PERMISSIONS_LOCAL
-created: 2026-10-01
-purpose: Права для работы фабрики без подтверждений. Команда автора: «выполни _PERMISSIONS_LOCAL.md» (после окончания пилота).
+created: 2026-10-02
+purpose: Права фабрики без подтверждений. Команда автора: «выполни _PERMISSIONS_LOCAL.md».
 ---
 
 # Права фабрики — без подтверждений
 
-1. Перемести текущий `.claude/settings.local.json` в `archive/2026-10-01_session3/settings.local.before.json`.
-2. Скопируй `_permissions_patch/claude_dir/settings.local.json` → `.claude/settings.local.json`.
-3. Перемести `_permissions_patch/` и этот файл в `archive/2026-10-01_session3/`.
-4. Скажи автору: «Права обновлены. Перезапустите Claude Code в папке BooksFactory».
+1. Скопируй `_permissions_patch/settings.local.json` → `.claude/settings.local.json` (прежний файл уже сохранён в `archive/2026-10-02_session9_permissions/settings.local.before.json`).
+2. Перемести `_permissions_patch/` и этот файл в `archive/2026-10-02_session9_permissions/`.
+3. Скажи автору одной строкой: «Права обновлены. Перезапустите Claude Code в папке BooksFactory и введите: выполни _SESSION9_LOCAL.md».
 
-Что это даёт: внутри BooksFactory Claude Code работает без запросов подтверждения.
-Запрещено полностью (даже без вопроса): удаление файлов и папок, `git push`, `git reset --hard`.
-Действует только когда Claude Code открыт в папке BooksFactory; в других папках — обычные подтверждения.
+Что это даёт: в папке BooksFactory Claude Code работает без запросов подтверждения (чтение, запись, команды, агенты).
+Запрещено даже без вопроса: удаление файлов и папок, `git push`, `git reset --hard`.

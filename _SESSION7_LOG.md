@@ -22,3 +22,8 @@ start_commit: 7f5f61825a0a9945f207caf981fe3319d0690eea
 
 ## A2. Заморозка — 10:28
 - Glava_02_KS_clean.md создан из draft; frontmatter: status clean, clean_from, editor_cycle 3, editor_verdict clean. Агентов: 2.
+
+## A3. Гуманизация главы 02 — 10:33
+- bf-humanizer (opus): Glava_02_KS_humanized.md, заметки _work/02/humanizer_notes.md. 18 правок (П1–П6 — 8, калька «Это + прил.» — 2, названная эмоция — 2, повторы — 4, лишние слова — 2). Все П1–П6 применены.
+- Объём 5954 → 5927 (по счёту гуманизатора; lint_beat по файлу целиком: 6009 → 5981, −0,5 %).
+- Агентов: 4 (+ bf-planner B1 запущен параллельно = 4 с учётом A3; планировщик считается в B1).

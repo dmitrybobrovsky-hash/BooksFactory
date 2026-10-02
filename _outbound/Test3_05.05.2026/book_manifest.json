@@ -116,8 +116,8 @@
       ]
     },
     "04": {
-      "status": "clean",
-      "updated": "2026-10-02T13:20",
+      "status": "humanized",
+      "updated": "2026-10-02T13:29",
       "history": [
         {
           "to": "material-draft",
@@ -141,6 +141,12 @@
           "to": "clean",
           "at": "2026-10-02T13:20",
           "by": "bf-editor"
+        },
+        {
+          "from": "clean",
+          "to": "humanized",
+          "at": "2026-10-02T13:29",
+          "by": "bf-humanizer"
         }
       ]
     },
@@ -156,5 +162,5 @@
       ]
     }
   },
-  "updated": "2026-10-02T13:20"
+  "updated": "2026-10-02T13:29"
 }

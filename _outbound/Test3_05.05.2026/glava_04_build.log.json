@@ -2,9 +2,9 @@
   "chapter": 4,
   "date": "2026-10-02",
   "output_draft": "_outbound/Test3_05.05.2026/Glava_04_KS_draft.md",
-  "total_words": 5713,
+  "total_words": 5700,
   "chapter_target_words": 5500,
-  "ratio_to_chapter_target": 1.039,
+  "ratio_to_chapter_target": 1.036,
   "sum_target_words": 6250,
   "beats": [
     {
@@ -25,15 +25,15 @@
       "beat_id": 3,
       "section": "1. Позиция фасилитатора — отдельная роль рядом с терапевтом, коучем и тренером",
       "target_words": 380,
-      "actual_words": 387,
-      "ratio": 1.018
+      "actual_words": 385,
+      "ratio": 1.013
     },
     {
       "beat_id": 4,
       "section": "2. Стартовый контракт и выбор карты",
       "target_words": 430,
-      "actual_words": 473,
-      "ratio": 1.1
+      "actual_words": 470,
+      "ratio": 1.093
     },
     {
       "beat_id": 5,
@@ -53,15 +53,15 @@
       "beat_id": 7,
       "section": "3. Ход сессии — пять шагов как протокол",
       "target_words": 480,
-      "actual_words": 458,
-      "ratio": 0.954
+      "actual_words": 455,
+      "ratio": 0.948
     },
     {
       "beat_id": 8,
       "section": "3. Ход сессии — пять шагов как протокол",
       "target_words": 340,
-      "actual_words": 315,
-      "ratio": 0.926
+      "actual_words": 312,
+      "ratio": 0.918
     },
     {
       "beat_id": 9,
@@ -81,8 +81,8 @@
       "beat_id": 11,
       "section": "4. Работа с молчанием, защитой и сильной эмоцией",
       "target_words": 350,
-      "actual_words": 306,
-      "ratio": 0.874
+      "actual_words": 304,
+      "ratio": 0.869
     },
     {
       "beat_id": 12,

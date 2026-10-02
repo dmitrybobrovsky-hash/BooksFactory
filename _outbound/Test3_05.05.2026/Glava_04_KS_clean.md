@@ -1,6 +1,9 @@
 ---
 title: "Глава 4 — Принципы фасилитации — Что делает фасилитатор и чего он не делает"
-status: draft
+status: clean
+clean_from: Glava_04_KS_draft.md
+editor_cycle: 2
+editor_verdict: clean
 language: RU
 total_words: 5700
 beats_count: 14

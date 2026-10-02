@@ -1,0 +1,49 @@
+{
+  "beat": "_outbound/Test3_05.05.2026/04_beats/beat_1.md",
+  "beat_id": 1,
+  "facts": {
+    "word_count": 466,
+    "target_words": 420,
+    "ratio": 1.11,
+    "antithesis": {
+      "beat": 1,
+      "chapter": 1,
+      "budget_chapter": 8
+    },
+    "signature_figure": {
+      "chapter": 0,
+      "planned": null
+    },
+    "word_limits": {
+      "паттерн": 0,
+      "нейтральност": 0,
+      "толкован": 0,
+      "салфетк": 0,
+      "двойн": 0,
+      "пространств": 0,
+      "присутстви": 0,
+      "рабоч": 1,
+      "операци": 0,
+      "двадцать-тридцать секунд": 0,
+      "власть в комнате": 0,
+      "нейтральный посредник": 1,
+      "маленький, но точный": 0
+    }
+  },
+  "hard_flags": [],
+  "candidates_for_critic": [
+    {
+      "flag": "repetition_local",
+      "phrase": "он работает с",
+      "count": 3
+    },
+    {
+      "flag": "cross_chapter_phrase_repeat",
+      "id": "R-14",
+      "phrase": "фасилитатор отвечает не за то, что человек скажет — а за то, что он вообще сможет это сказать в этой комнате",
+      "kind": "single",
+      "in_chapter": 1
+    }
+  ],
+  "verdict_floor": "pass"
+}

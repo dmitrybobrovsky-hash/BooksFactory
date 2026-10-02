@@ -1,0 +1,49 @@
+{
+  "beat": "_outbound/Test3_05.05.2026/04_beats/beat_4.md",
+  "beat_id": 4,
+  "facts": {
+    "word_count": 473,
+    "target_words": 430,
+    "ratio": 1.1,
+    "antithesis": {
+      "beat": 1,
+      "chapter": 4,
+      "budget_chapter": 8
+    },
+    "signature_figure": {
+      "chapter": 1,
+      "planned": null
+    },
+    "word_limits": {
+      "паттерн": 0,
+      "нейтральност": 1,
+      "толкован": 1,
+      "салфетк": 0,
+      "двойн": 0,
+      "пространств": 0,
+      "присутстви": 0,
+      "рабоч": 2,
+      "операци": 0,
+      "двадцать-тридцать секунд": 0,
+      "власть в комнате": 0,
+      "нейтральный посредник": 1,
+      "маленький, но точный": 0
+    }
+  },
+  "hard_flags": [],
+  "candidates_for_critic": [
+    {
+      "flag": "anaphora_storm",
+      "phrase": "в",
+      "sentence_no": 22
+    },
+    {
+      "flag": "cross_chapter_phrase_repeat",
+      "id": "R-16",
+      "phrase": "стартовый контракт работает не тогда, когда его озвучивают — а тогда, когда фасилитатор удерживает каждый его пункт в каждом следующем шаге",
+      "kind": "single",
+      "in_chapter": 1
+    }
+  ],
+  "verdict_floor": "pass"
+}

@@ -8,7 +8,7 @@ Per-beat проверка не видит того, что складывает�
 
 Использование:
   python tools/lint_chapter.py --plan <NN_beat_plan.json> --beats-dir <NN_beats/> \
-      [--lang ru] [--max-words 6000] [--antithesis-budget 8] [--limit Таро=3] [--out <json>]
+      [--lang ru] [--min-words 5800] [--max-words 6200] [--antithesis-budget 8] [--limit Таро=3] [--out <json>]
 
 Вывод: JSON. Код выхода 0 — превышений нет, 1 — есть (объём, бюджет, лимиты).
 """
@@ -59,7 +59,8 @@ def main():
     ap.add_argument("--plan", required=True)
     ap.add_argument("--beats-dir", required=True)
     ap.add_argument("--lang", default="ru", choices=["ru", "de", "en"])
-    ap.add_argument("--max-words", type=int, help="потолок главы из правил книги (anweisungen)")
+    ap.add_argument("--max-words", type=int, help="потолок главы (по умолчанию — word_range плана)")
+    ap.add_argument("--min-words", type=int, help="нижняя граница главы (по умолчанию — word_range плана)")
     ap.add_argument("--antithesis-budget", type=int, default=8)
     ap.add_argument("--limit", action="append", help="слово=максимум на главу")
     ap.add_argument("--max-connector", type=int, default=2, help="одна связка-мостик в начале предложения — не чаще")
@@ -76,10 +77,17 @@ def main():
 
     total = sum(word_count(t) for t in beats.values())
     target = plan.get("chapter_target_words")
-    report["volume"] = {"total_words": total, "target": target, "max_words": a.max_words,
+    rng = plan.get("word_range") or []
+    if a.min_words is None and len(rng) == 2:
+        a.min_words = rng[0]
+    if a.max_words is None and len(rng) == 2:
+        a.max_words = rng[1]
+    report["volume"] = {"total_words": total, "target": target, "min_words": a.min_words, "max_words": a.max_words,
                         "ratio_to_target": round(total / target, 3) if target else None}
     if a.max_words and total > a.max_words:
         problems.append(f"объём {total} > потолка {a.max_words} (сократить ≈{total - a.max_words})")
+    if a.min_words and total < a.min_words:
+        problems.append(f"объём {total} < нижней границы {a.min_words} (добавить ≈{a.min_words - total})")
 
     sig_rx = FIGURES.get(a.lang, {}).get("не_потому_что_X_а_потому_что_Y")
     anti_total, sig_total = 0, 0

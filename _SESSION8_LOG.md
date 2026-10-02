@@ -111,3 +111,5 @@ start_commit: e02ced7ba455f1f8c9b702e5d18090636a693ba7
 - manifest: 05 draft → review (--by bf-editor).
 - Архив до правок: archive/2026-10-02_session8/05_beats_before_editor_cycle1/. Файл: _work/05/editor_fixes_cycle1.json (10 beat-ов: 1, 2, 3, 4, 6, 7, 8, 9, 11, 12).
 - Агентов всего: 95 (+10 правок в работе).
+- 13:54 Правки цикла 1: 10/10 с 1-й попытки, hard_flags нет. Глава 5136 → 5122, антитез 5/8, problems пусто → добор не нужен. Сборка: Glava_05_KS_draft.md (5122), lint — _work/05/chapter_lint_final_c1.json.
+- Агентов всего: 105.

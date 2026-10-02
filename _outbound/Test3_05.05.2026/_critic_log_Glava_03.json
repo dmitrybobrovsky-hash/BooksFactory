@@ -205,5 +205,60 @@
   "flags": [],
   "notes": "Замыкание выполнено. Три ошибки с названным нарушением. «МАК не тест» второй раз. KS-L04 ~68 слов, якорь дословно, без вывода. Арка к гл. 4 одним предложением.",
   "minor": "«Такие звонки раздаются чаще любых других» опирается на звонок из beat 12–13 без повторного названия — уточнить. «Ответ стандартный — отказ» дублирует MATERIAL."
+ },
+ {
+  "beat_id": 3,
+  "iteration": "chapter-pass",
+  "words": 324,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
+  "minor": null
+ },
+ {
+  "beat_id": 6,
+  "iteration": "chapter-pass",
+  "words": 339,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
+  "minor": null
+ },
+ {
+  "beat_id": 9,
+  "iteration": "chapter-pass",
+  "words": 248,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
+  "minor": null
+ },
+ {
+  "beat_id": 12,
+  "iteration": "chapter-pass",
+  "words": 327,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
+  "minor": null
+ },
+ {
+  "beat_id": 14,
+  "iteration": "chapter-pass",
+  "words": 423,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "chapter-pass, попытка 1 — см. _work/03/chapter_pass_fixes.json",
+  "minor": null
  }
 ]

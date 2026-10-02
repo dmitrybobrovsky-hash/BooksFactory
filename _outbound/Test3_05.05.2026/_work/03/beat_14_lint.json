@@ -2,9 +2,9 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_14.md",
   "beat_id": 14,
   "facts": {
-    "word_count": 498,
+    "word_count": 423,
     "target_words": 470,
-    "ratio": 1.06,
+    "ratio": 0.9,
     "antithesis": {
       "beat": 0,
       "chapter": 8,
@@ -29,7 +29,7 @@
       "три механизма": 0,
       "держит рамку": 2,
       "снижает порог называния": 1,
-      "Performance Review": 1
+      "Performance Review": 2
     }
   },
   "hard_flags": [],

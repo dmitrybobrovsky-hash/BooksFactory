@@ -1,6 +1,9 @@
 ---
 title: "Глава 5 — Этика и границы — «Нет — это профессиональный ответ»"
-status: draft
+status: clean
+clean_from: Glava_05_KS_draft.md
+editor_cycle: 2
+editor_verdict: clean
 language: RU
 total_words: 5109
 beats_count: 12

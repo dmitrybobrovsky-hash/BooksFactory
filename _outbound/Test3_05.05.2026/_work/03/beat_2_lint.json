@@ -6,8 +6,8 @@
     "target_words": 470,
     "ratio": 1.017,
     "antithesis": {
-      "beat": 2,
-      "chapter": 2,
+      "beat": 1,
+      "chapter": 6,
       "budget_chapter": 8
     },
     "signature_figure": {
@@ -16,34 +16,23 @@
     },
     "word_limits": {
       "паттерн": 0,
-      "Шайн": 1,
+      "Шайн": 2,
       "Cameron": 1,
       "Quinn": 1,
       "OCAI": 2,
-      "Argyris": 0,
-      "Schön": 0,
-      "Maslach": 0,
-      "Таро": 0,
+      "Argyris": 1,
+      "Schön": 1,
+      "Maslach": 1,
+      "Таро": 1,
       "тимбилдинг": 0,
       "МАК не тест": 1,
       "три механизма": 0,
-      "держит рамку": 0,
-      "снижает порог называния": 0,
+      "держит рамку": 2,
+      "снижает порог называния": 1,
       "Performance Review": 0
     }
   },
   "hard_flags": [],
-  "candidates_for_critic": [
-    {
-      "flag": "antithesis_overuse",
-      "count_beat": 2,
-      "count_chapter": 2,
-      "budget": 8,
-      "sentences": [
-        "МАК достаёт не то, чего человек не знает — а то, чего он не может сказать прямо в этой комнате.",
-        "Каждый инструмент упирается в границу своего уровня, и граница эта проходит по устройству инструмента, а не по старатель"
-      ]
-    }
-  ],
+  "candidates_for_critic": [],
   "verdict_floor": "pass"
 }

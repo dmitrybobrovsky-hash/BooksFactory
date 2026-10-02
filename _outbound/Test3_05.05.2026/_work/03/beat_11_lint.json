@@ -1,0 +1,55 @@
+{
+  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_11.md",
+  "beat_id": 11,
+  "facts": {
+    "word_count": 543,
+    "target_words": 520,
+    "ratio": 1.044,
+    "antithesis": {
+      "beat": 2,
+      "chapter": 8,
+      "budget_chapter": 8
+    },
+    "signature_figure": {
+      "chapter": 0,
+      "planned": 4
+    },
+    "word_limits": {
+      "паттерн": 0,
+      "Шайн": 2,
+      "Cameron": 1,
+      "Quinn": 1,
+      "OCAI": 2,
+      "Argyris": 1,
+      "Schön": 1,
+      "Maslach": 1,
+      "Таро": 1,
+      "тимбилдинг": 0,
+      "МАК не тест": 1,
+      "три механизма": 0,
+      "держит рамку": 2,
+      "снижает порог называния": 1,
+      "Performance Review": 0
+    }
+  },
+  "hard_flags": [],
+  "candidates_for_critic": [
+    {
+      "flag": "forbidden_phrase",
+      "phrase": "мак помогает",
+      "section": "I. Маркетинговые штампы",
+      "context": "оформляют как событие одного вторника. мак помогает не пройти выгорание — а увидеть, что ты"
+    },
+    {
+      "flag": "antithesis_overuse",
+      "count_beat": 2,
+      "count_chapter": 8,
+      "budget": 8,
+      "sentences": [
+        "Если ни одной ресурсной карты он не берёт, это фиксируется как признак второго уровня, и фасилитатор идёт дальше.",
+        "МАК помогает не пройти выгорание — а увидеть, что ты в нём, и что следующий шаг не в этой комнате."
+      ]
+    }
+  ],
+  "verdict_floor": "pass"
+}

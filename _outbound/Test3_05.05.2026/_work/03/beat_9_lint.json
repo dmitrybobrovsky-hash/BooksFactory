@@ -1,12 +1,12 @@
 {
-  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_4.md",
-  "beat_id": 4,
+  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_9.md",
+  "beat_id": 9,
   "facts": {
-    "word_count": 641,
-    "target_words": 620,
-    "ratio": 1.034,
+    "word_count": 348,
+    "target_words": 320,
+    "ratio": 1.087,
     "antithesis": {
-      "beat": 1,
+      "beat": 0,
       "chapter": 6,
       "budget_chapter": 8
     },
@@ -22,13 +22,13 @@
       "OCAI": 2,
       "Argyris": 1,
       "Schön": 1,
-      "Maslach": 1,
+      "Maslach": 0,
       "Таро": 1,
       "тимбилдинг": 0,
       "МАК не тест": 1,
       "три механизма": 0,
       "держит рамку": 2,
-      "снижает порог называния": 1,
+      "снижает порог называния": 0,
       "Performance Review": 0
     }
   },

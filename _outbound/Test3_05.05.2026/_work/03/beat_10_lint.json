@@ -1,12 +1,12 @@
 {
-  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_4.md",
-  "beat_id": 4,
+  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_10.md",
+  "beat_id": 10,
   "facts": {
-    "word_count": 641,
-    "target_words": 620,
-    "ratio": 1.034,
+    "word_count": 450,
+    "target_words": 400,
+    "ratio": 1.125,
     "antithesis": {
-      "beat": 1,
+      "beat": 0,
       "chapter": 6,
       "budget_chapter": 8
     },
@@ -28,7 +28,7 @@
       "МАК не тест": 1,
       "три механизма": 0,
       "держит рамку": 2,
-      "снижает порог называния": 1,
+      "снижает порог называния": 0,
       "Performance Review": 0
     }
   },

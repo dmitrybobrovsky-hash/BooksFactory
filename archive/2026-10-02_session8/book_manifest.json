@@ -1,0 +1,142 @@
+{
+  "book_code": "KS",
+  "title": "Карты на стол",
+  "language": "ru",
+  "created": "2026-10-01T13:04",
+  "chapters": {
+    "00": {
+      "status": "humanized",
+      "updated": "2026-10-01T13:04",
+      "history": [
+        {
+          "to": "humanized",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        }
+      ]
+    },
+    "01": {
+      "status": "draft",
+      "updated": "2026-10-01T13:04",
+      "history": [
+        {
+          "to": "draft",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        }
+      ]
+    },
+    "02": {
+      "status": "humanized",
+      "updated": "2026-10-02T10:39",
+      "history": [
+        {
+          "to": "material-draft",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        },
+        {
+          "from": "material-draft",
+          "to": "draft",
+          "at": "2026-10-01T17:51",
+          "by": "write-chapter"
+        },
+        {
+          "from": "draft",
+          "to": "review",
+          "at": "2026-10-01T17:59",
+          "by": "bf-editor"
+        },
+        {
+          "from": "review",
+          "to": "material-draft",
+          "at": "2026-10-01T19:19",
+          "by": "session4",
+          "note": "пилот v2.8 в архиве: писатель не получал MATERIAL; переписывание на v2.9"
+        },
+        {
+          "from": "material-draft",
+          "to": "draft",
+          "at": "2026-10-02T07:45",
+          "by": "write-chapter"
+        },
+        {
+          "from": "draft",
+          "to": "review",
+          "at": "2026-10-02T07:50",
+          "by": "bf-editor"
+        },
+        {
+          "from": "review",
+          "to": "clean",
+          "at": "2026-10-02T08:56",
+          "by": "bf-editor"
+        },
+        {
+          "from": "clean",
+          "to": "humanized",
+          "at": "2026-10-02T10:39",
+          "by": "bf-humanizer"
+        }
+      ]
+    },
+    "03": {
+      "status": "humanized",
+      "updated": "2026-10-02T11:37",
+      "history": [
+        {
+          "to": "material-draft",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        },
+        {
+          "from": "material-draft",
+          "to": "draft",
+          "at": "2026-10-02T11:10",
+          "by": "write-chapter"
+        },
+        {
+          "from": "draft",
+          "to": "review",
+          "at": "2026-10-02T11:17",
+          "by": "bf-editor"
+        },
+        {
+          "from": "review",
+          "to": "clean",
+          "at": "2026-10-02T11:24",
+          "by": "bf-editor"
+        },
+        {
+          "from": "clean",
+          "to": "humanized",
+          "at": "2026-10-02T11:37",
+          "by": "bf-humanizer"
+        }
+      ]
+    },
+    "04": {
+      "status": "material-draft",
+      "updated": "2026-10-01T13:04",
+      "history": [
+        {
+          "to": "material-draft",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        }
+      ]
+    },
+    "05": {
+      "status": "material-draft",
+      "updated": "2026-10-01T13:04",
+      "history": [
+        {
+          "to": "material-draft",
+          "at": "2026-10-01T13:04",
+          "by": "manifest.py scan"
+        }
+      ]
+    }
+  },
+  "updated": "2026-10-02T11:37"
+}

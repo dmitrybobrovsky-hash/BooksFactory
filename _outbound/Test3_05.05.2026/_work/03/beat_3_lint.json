@@ -1,0 +1,38 @@
+{
+  "beat": "_outbound/Test3_05.05.2026/03_beats/beat_3.md",
+  "beat_id": 3,
+  "facts": {
+    "word_count": 408,
+    "target_words": 380,
+    "ratio": 1.074,
+    "antithesis": {
+      "beat": 1,
+      "chapter": 3,
+      "budget_chapter": 8
+    },
+    "signature_figure": {
+      "chapter": 0,
+      "planned": 4
+    },
+    "word_limits": {
+      "паттерн": 0,
+      "Шайн": 1,
+      "Cameron": 1,
+      "Quinn": 1,
+      "OCAI": 2,
+      "Argyris": 1,
+      "Schön": 1,
+      "Maslach": 0,
+      "Таро": 0,
+      "тимбилдинг": 0,
+      "МАК не тест": 1,
+      "три механизма": 0,
+      "держит рамку": 0,
+      "снижает порог называния": 0,
+      "Performance Review": 0
+    }
+  },
+  "hard_flags": [],
+  "candidates_for_critic": [],
+  "verdict_floor": "pass"
+}

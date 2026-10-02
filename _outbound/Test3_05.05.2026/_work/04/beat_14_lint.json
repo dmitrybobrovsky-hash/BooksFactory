@@ -1,0 +1,36 @@
+{
+  "beat": "_outbound/Test3_05.05.2026/04_beats/beat_14.md",
+  "beat_id": 14,
+  "facts": {
+    "word_count": 455,
+    "target_words": 420,
+    "ratio": 1.083,
+    "antithesis": {
+      "beat": 0,
+      "chapter": 7,
+      "budget_chapter": 8
+    },
+    "signature_figure": {
+      "chapter": 1,
+      "planned": null
+    },
+    "word_limits": {
+      "паттерн": 0,
+      "нейтральност": 1,
+      "толкован": 3,
+      "салфетк": 3,
+      "двойн": 2,
+      "пространств": 1,
+      "присутстви": 3,
+      "рабоч": 6,
+      "операци": 1,
+      "двадцать-тридцать секунд": 1,
+      "власть в комнате": 1,
+      "нейтральный посредник": 1,
+      "маленький, но точный": 0
+    }
+  },
+  "hard_flags": [],
+  "candidates_for_critic": [],
+  "verdict_floor": "pass"
+}

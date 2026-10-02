@@ -2,9 +2,9 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_14.md",
   "beat_id": 14,
   "facts": {
-    "word_count": 423,
+    "word_count": 398,
     "target_words": 470,
-    "ratio": 0.9,
+    "ratio": 0.847,
     "antithesis": {
       "beat": 0,
       "chapter": 8,
@@ -23,7 +23,7 @@
       "Argyris": 1,
       "Schön": 1,
       "Maslach": 1,
-      "Таро": 1,
+      "Таро": 0,
       "тимбилдинг": 2,
       "МАК не тест": 2,
       "три механизма": 0,
@@ -32,7 +32,12 @@
       "Performance Review": 2
     }
   },
-  "hard_flags": [],
+  "hard_flags": [
+    {
+      "flag": "volume_short",
+      "detail": "398/470"
+    }
+  ],
   "candidates_for_critic": [],
-  "verdict_floor": "pass"
+  "verdict_floor": "fail"
 }

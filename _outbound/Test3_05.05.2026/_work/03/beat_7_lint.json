@@ -2,12 +2,12 @@
   "beat": "_outbound/Test3_05.05.2026/03_beats/beat_7.md",
   "beat_id": 7,
   "facts": {
-    "word_count": 454,
+    "word_count": 455,
     "target_words": 440,
-    "ratio": 1.032,
+    "ratio": 1.034,
     "antithesis": {
       "beat": 0,
-      "chapter": 7,
+      "chapter": 8,
       "budget_chapter": 8
     },
     "signature_figure": {
@@ -23,7 +23,7 @@
       "Argyris": 1,
       "Schön": 1,
       "Maslach": 1,
-      "Таро": 1,
+      "Таро": 0,
       "тимбилдинг": 2,
       "МАК не тест": 2,
       "три механизма": 0,

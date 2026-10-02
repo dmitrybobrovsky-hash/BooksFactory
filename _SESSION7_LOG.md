@@ -69,3 +69,5 @@ start_commit: 7f5f61825a0a9945f207caf981fe3319d0690eea
 - manifest: 03 draft → review (--by bf-editor).
 - editor_fixes_cycle1.json: 10 beat-ов (3, 4, 5, 7, 9, 10, 11, 12, 13, 14). Решение без автора: точка 4 для b2, b6, b8 отложена (лимит 10 beat-ов). Архив до правок: archive/2026-10-02_session7/03_beats_before_editor_cycle1/.
 - Агентов всего: 53.
+- 11:20 Правки цикла 1: 10/10 с 1-й попытки, hard_flags нет (кроме volume_short — в правках не учитывается). Глава 5877 → 5852, антитез 8/8, problems пусто → добор не нужен. Сборка: Glava_03_KS_draft.md (5852), lint — _work/03/chapter_lint_final_c1.json.
+- Агентов всего: 63.

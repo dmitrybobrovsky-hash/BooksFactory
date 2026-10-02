@@ -315,5 +315,115 @@
   "flags": null,
   "notes": "chapter-pass, попытка 2: возвращён quote_before R-12",
   "minor": null
+ },
+ {
+  "beat_id": 3,
+  "iteration": "editor-fix-c1",
+  "words": 323,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 4,
+  "iteration": "editor-fix-c1",
+  "words": 523,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 5,
+  "iteration": "editor-fix-c1",
+  "words": 406,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 7,
+  "iteration": "editor-fix-c1",
+  "words": 455,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 9,
+  "iteration": "editor-fix-c1",
+  "words": 243,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 10,
+  "iteration": "editor-fix-c1",
+  "words": 368,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 11,
+  "iteration": "editor-fix-c1",
+  "words": 564,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 12,
+  "iteration": "editor-fix-c1",
+  "words": 305,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 13,
+  "iteration": "editor-fix-c1",
+  "words": 454,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
+ },
+ {
+  "beat_id": 14,
+  "iteration": "editor-fix-c1",
+  "words": 398,
+  "verdict": "fix",
+  "floor": null,
+  "hard_flags": [],
+  "flags": null,
+  "notes": "editor-fix cycle1 — см. _work/03/editor_fixes_cycle1.json",
+  "minor": null
  }
 ]

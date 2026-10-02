@@ -6,6 +6,13 @@
 
 ---
 
+## 2026-10-02 (58)
+status: completed
+step: Сессия 8 (облако, автономно, _SESSION8_CLOUD.md, без Workflow). Гл. 04: bf-planner (14 beat-ов, 6250) → 14/14 beat-ов (14 итераций, все accept с 1-й) → проход по главе (6470 → 5761) → draft → bf-editor цикл 1 (5 точек, M1–M24, правки 10 beat-ов) → цикл 2 clean → микроправки M1–M6 → чистовик 5700 → bf-humanizer → проверка pass → humanized (5686, антитез 6/8). Гл. 05: bf-planner (12 beat-ов, 5330) → 12/12 beat-ов (12 итераций, все accept с 1-й) → проход по главе (5658 → 5136) → draft → bf-editor цикл 1 (5 точек, M1–M32, правки 10 beat-ов) → цикл 2 clean → микроправки M1–M5 → чистовик 5109 → bf-humanizer → проверка pass → humanized (5102, антитез 5/8). Реестр для финальной вычитки (гл. 02–05). Аудит F1: мелкие расхождения, исправлены в отчёте и реестре. Агентов 110 (с аудитом).
+agent: Claude Code (cloud), оркестратор
+artifacts_updated: 04_beat_plan.json, 04_beats/, 05_beat_plan.json, 05_beats/, _work/04/, _work/05/, _critic_log_Glava_04.json, _critic_log_Glava_05.json, glava_04_build.log.json, glava_05_build.log.json, Glava_04_KS_{draft,clean,humanized}.md, Glava_05_KS_{draft,clean,humanized}.md, Glava_0{4,5}_KS_editor_report{,_cycle2}.md, Glava_0{4,5}_KS_humanizer_check.md, _REVIEW_FOR_AUTHOR_KS.md (создан), book_manifest.json (04, 05 → humanized); архив — archive/2026-10-02_session8/
+next: финальная вычитка автором по _REVIEW_FOR_AUTHOR_KS.md (главы 02–05); затем final для глав 02–05; гл. 01 (draft) и Часть II (гл. 06 и далее) — следующие сессии.
+
 ## 2026-10-02 (57)
 status: completed
 step: Сессия 7 (облако, автономно, _SESSION7_CLOUD.md, без Workflow). Гл. 02: микроправки M1/M2 → чистовик → bf-humanizer (проверка 1 fail, проход 2, проверка 2 pass) → manifest clean → humanized (5928 слов, антитез 8/8). Гл. 03: bf-planner (14 beat-ов, 6300) → 14/14 beat-ов (16 итераций критика) → проход по главе (6708 → 5877) → draft → bf-editor цикл 1 (5 точек, правки 10 beat-ов) → цикл 2 clean → микроправки M1–M9 → чистовик 5840 → bf-humanizer (проверка 1 fail, проход 2, проверка 2 pass) → humanized (5806, антитез 8/8). Аудит F1: мелкие расхождения, исправлены в отчёте. Агентов 76.

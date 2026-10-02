@@ -27,8 +27,8 @@
       ]
     },
     "02": {
-      "status": "review",
-      "updated": "2026-10-02T07:50",
+      "status": "clean",
+      "updated": "2026-10-02T06:56",
       "history": [
         {
           "to": "material-draft",
@@ -64,6 +64,12 @@
           "from": "draft",
           "to": "review",
           "at": "2026-10-02T07:50",
+          "by": "bf-editor"
+        },
+        {
+          "from": "review",
+          "to": "clean",
+          "at": "2026-10-02T06:56",
           "by": "bf-editor"
         }
       ]
@@ -102,5 +108,5 @@
       ]
     }
   },
-  "updated": "2026-10-02T07:50"
+  "updated": "2026-10-02T06:56"
 }

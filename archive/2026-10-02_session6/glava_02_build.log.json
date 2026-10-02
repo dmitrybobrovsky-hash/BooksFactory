@@ -2,17 +2,17 @@
   "chapter": 2,
   "date": "2026-10-02",
   "output_draft": "_outbound/Test3_05.05.2026/Glava_02_KS_draft.md",
-  "total_words": 5953,
+  "total_words": 6090,
   "chapter_target_words": 5500,
-  "ratio_to_chapter_target": 1.082,
+  "ratio_to_chapter_target": 1.107,
   "sum_target_words": 6230,
   "beats": [
     {
       "beat_id": 1,
       "section": "1. Доказательность в психологии и почему её аппарат не подходит к МАК",
       "target_words": 400,
-      "actual_words": 351,
-      "ratio": 0.877
+      "actual_words": 350,
+      "ratio": 0.875
     },
     {
       "beat_id": 2,
@@ -25,43 +25,43 @@
       "beat_id": 3,
       "section": "1. Доказательность в психологии и почему её аппарат не подходит к МАК",
       "target_words": 500,
-      "actual_words": 549,
-      "ratio": 1.098
+      "actual_words": 568,
+      "ratio": 1.136
     },
     {
       "beat_id": 4,
       "section": "2. Проективные методы и академическая критика",
       "target_words": 480,
-      "actual_words": 442,
-      "ratio": 0.921
+      "actual_words": 451,
+      "ratio": 0.94
     },
     {
       "beat_id": 5,
       "section": "2. Проективные методы и академическая критика",
       "target_words": 320,
-      "actual_words": 322,
-      "ratio": 1.006
+      "actual_words": 325,
+      "ratio": 1.016
     },
     {
       "beat_id": 6,
       "section": "2. Проективные методы и академическая критика",
       "target_words": 320,
-      "actual_words": 295,
-      "ratio": 0.922
+      "actual_words": 310,
+      "ratio": 0.969
     },
     {
       "beat_id": 7,
       "section": "3. Что мы знаем о МАК",
       "target_words": 480,
-      "actual_words": 369,
-      "ratio": 0.769
+      "actual_words": 412,
+      "ratio": 0.858
     },
     {
       "beat_id": 8,
       "section": "3. Что мы знаем о МАК",
       "target_words": 450,
-      "actual_words": 476,
-      "ratio": 1.058
+      "actual_words": 475,
+      "ratio": 1.056
     },
     {
       "beat_id": 9,
@@ -74,8 +74,8 @@
       "beat_id": 10,
       "section": "4. Где МАК полезен и где нет",
       "target_words": 380,
-      "actual_words": 371,
-      "ratio": 0.976
+      "actual_words": 376,
+      "ratio": 0.989
     },
     {
       "beat_id": 11,
@@ -95,8 +95,8 @@
       "beat_id": 13,
       "section": "5. МАК vs Таро vs другие образные методы",
       "target_words": 350,
-      "actual_words": 333,
-      "ratio": 0.951
+      "actual_words": 378,
+      "ratio": 1.08
     },
     {
       "beat_id": 14,
